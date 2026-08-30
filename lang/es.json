@@ -38,9 +38,9 @@
   "examples_eyebrow": "EJEMPLOS",
   "examples_title": "Mira en qué puede convertirse la misma estructura.",
   "examples_intro": "Las imágenes y textos son contenido de demostración. Cada cliente tendrá su propia imagen, textos y fotografías.",
-  "tag_hair": "PELUQUERÍA",
-  "example_hair_title": "Web elegante para un salón",
-  "example_hair_text": "Servicios, precios, galería y solicitudes de cita.",
+  "tag_hair": "PELUQUERÍA • ESTÉTICA",
+  "example_hair_title": "Web elegante para salón",
+  "example_hair_text": "Peluquería, estética, precios, servicios beauty y solicitud de cita.",
   "tag_electric": "ELECTRICISTA",
   "example_electric_title": "Web profesional para servicios",
   "example_electric_text": "Servicios, zona de trabajo y presupuestos rápidos.",
@@ -108,5 +108,11 @@
   "tag_cleaning": "LIMPIEZA",
   "example_cleaning_title": "Web de limpieza TisztaPont",
   "example_cleaning_text": "Limpieza de viviendas, tapicerías, alfombras y ventanas con solicitud de presupuesto.",
-  "example_open_demo": "Abrir demo →"
+  "example_open_demo": "Abrir demo →",
+  "tag_plumber": "FONTANERO • DESATASCOS",
+  "example_plumber_title": "Web profesional MesterFix",
+  "example_plumber_text": "Fontanería, desatascos, aviso rápido de averías y solicitud de presupuesto.",
+  "tag_apartment": "APARTAMENTO • ALOJAMIENTO VACACIONAL",
+  "example_apartment_title": "Web de apartamento CostaLuz",
+  "example_apartment_text": "Galería, equipamiento, entorno, consultas y presentación multilingüe."
 }
