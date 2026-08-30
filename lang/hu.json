@@ -38,10 +38,6 @@
   "examples_eyebrow": "BEMUTATÓK",
   "examples_title": "Néhány példa, mire alakítható át.",
   "examples_intro": "A képek és szövegek itt bemutató tartalmak. Ügyfelenként saját arculat, szöveg és képek kerülnek az oldalra.",
-  "tag_plumber": "VÍZVEZETÉK-SZERELŐ • DUGULÁSELHÁRÍTÁS",
-  "example_plumber_title": "MesterFix – működő mintaoldal",
-  "example_plumber_text": "Háromnyelvű, mobilbarát bemutatóoldal vízvezeték-szerelőknek.",
-  "example_plumber_button": "Mintaoldal megtekintése →",
   "tag_hair": "FODRÁSZ",
   "example_hair_title": "Elegáns szalonoldal",
   "example_hair_text": "Szolgáltatások, árak, galéria és időpontkérés.",
@@ -104,9 +100,13 @@
   "footer_desc": "Modern weboldalak kisvállalkozásoknak.",
   "footer_menu": "Menü",
   "footer_sources": "Képforrások",
-  "credit_note": "a bemutató képek forrásai az images/README.txt fájlban találhatók.",
+  "credit_note": "Képforrások és fotósok megtekintése →",
   "footer_copy": "© 2026 MesterWeb – Weboldalak vállalkozásoknak",
   "footer_demo": "Bemutató weboldal – a tartalom és az elérhetőségek később személyre szabhatók.",
   "mobile_examples": "PÉLDÁK",
-  "mobile_contact": "ÉRDEKLŐDÉS"
+  "mobile_contact": "ÉRDEKLŐDÉS",
+  "tag_cleaning": "TAKARÍTÁS",
+  "example_cleaning_title": "TisztaPont takarító oldal",
+  "example_cleaning_text": "Lakás-, kárpit-, szőnyeg- és ablaktisztítás, ajánlatkéréssel.",
+  "example_open_demo": "Bemutató megnyitása →"
 }
