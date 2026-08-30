@@ -38,10 +38,6 @@
   "examples_eyebrow": "EJEMPLOS",
   "examples_title": "Mira en qué puede convertirse la misma estructura.",
   "examples_intro": "Las imágenes y textos son contenido de demostración. Cada cliente tendrá su propia imagen, textos y fotografías.",
-  "tag_plumber": "FONTANERO • DESATASCOS",
-  "example_plumber_title": "MesterFix – web de demostración activa",
-  "example_plumber_text": "Una web de demostración multilingüe y adaptada a móviles para servicios de fontanería.",
-  "example_plumber_button": "Ver web de demostración →",
   "tag_hair": "PELUQUERÍA",
   "example_hair_title": "Web elegante para un salón",
   "example_hair_text": "Servicios, precios, galería y solicitudes de cita.",
@@ -104,9 +100,13 @@
   "footer_desc": "Webs modernas para pequeños negocios.",
   "footer_menu": "Menú",
   "footer_sources": "Créditos de imágenes",
-  "credit_note": "las fuentes y créditos de las imágenes están en images/README.txt.",
+  "credit_note": "Ver fuentes de imágenes y fotógrafos →",
   "footer_copy": "© 2026 MesterWeb – Webs para negocios",
   "footer_demo": "Web de demostración – el contenido y los datos de contacto se pueden personalizar.",
   "mobile_examples": "EJEMPLOS",
-  "mobile_contact": "CONSULTA"
+  "mobile_contact": "CONSULTA",
+  "tag_cleaning": "LIMPIEZA",
+  "example_cleaning_title": "Web de limpieza TisztaPont",
+  "example_cleaning_text": "Limpieza de viviendas, tapicerías, alfombras y ventanas con solicitud de presupuesto.",
+  "example_open_demo": "Abrir demo →"
 }
