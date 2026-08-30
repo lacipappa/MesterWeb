@@ -38,9 +38,9 @@
   "examples_eyebrow": "EXAMPLES",
   "examples_title": "See what the same system can become.",
   "examples_intro": "The images and texts here are demo content. Each client gets their own branding, copy and photos.",
-  "tag_hair": "HAIRDRESSER",
+  "tag_hair": "HAIR • BEAUTY",
   "example_hair_title": "Elegant salon website",
-  "example_hair_text": "Services, prices, gallery and appointment requests.",
+  "example_hair_text": "Hairdressing, beauty treatments, prices, services and appointment requests.",
   "tag_electric": "ELECTRICIAN",
   "example_electric_title": "Professional trade website",
   "example_electric_text": "Services, service area and fast quote requests.",
@@ -108,5 +108,11 @@
   "tag_cleaning": "CLEANING",
   "example_cleaning_title": "TisztaPont cleaning website",
   "example_cleaning_text": "Home, upholstery, carpet and window cleaning with quote request.",
-  "example_open_demo": "Open demo →"
+  "example_open_demo": "Open demo →",
+  "tag_plumber": "PLUMBER • DRAIN UNBLOCKING",
+  "example_plumber_title": "MesterFix tradesman website",
+  "example_plumber_text": "Plumbing, drain unblocking, fast fault reporting and quote requests.",
+  "tag_apartment": "APARTMENT • HOLIDAY RENTAL",
+  "example_apartment_title": "CostaLuz apartment website",
+  "example_apartment_text": "Gallery, amenities, local area, enquiries and multilingual presentation."
 }
