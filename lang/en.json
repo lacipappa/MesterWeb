@@ -38,10 +38,6 @@
   "examples_eyebrow": "EXAMPLES",
   "examples_title": "See what the same system can become.",
   "examples_intro": "The images and texts here are demo content. Each client gets their own branding, copy and photos.",
-  "tag_plumber": "PLUMBER • DRAIN UNBLOCKING",
-  "example_plumber_title": "MesterFix – live demo website",
-  "example_plumber_text": "A multilingual, mobile-friendly demo website for plumbing businesses.",
-  "example_plumber_button": "View demo website →",
   "tag_hair": "HAIRDRESSER",
   "example_hair_title": "Elegant salon website",
   "example_hair_text": "Services, prices, gallery and appointment requests.",
@@ -104,9 +100,13 @@
   "footer_desc": "Modern websites for small businesses.",
   "footer_menu": "Menu",
   "footer_sources": "Image credits",
-  "credit_note": "image sources and credits are listed in images/README.txt.",
+  "credit_note": "View image sources and photographers →",
   "footer_copy": "© 2026 MesterWeb – Websites for businesses",
   "footer_demo": "Demo website – content and contact details can be customized later.",
   "mobile_examples": "EXAMPLES",
-  "mobile_contact": "ENQUIRY"
+  "mobile_contact": "ENQUIRY",
+  "tag_cleaning": "CLEANING",
+  "example_cleaning_title": "TisztaPont cleaning website",
+  "example_cleaning_text": "Home, upholstery, carpet and window cleaning with quote request.",
+  "example_open_demo": "Open demo →"
 }
