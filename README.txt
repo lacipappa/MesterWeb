@@ -1,35 +1,19 @@
-# MesterWeb
+MesterWeb – képforrások
 
-Háromnyelvű (HU / EN / ES), GitHub Pages-kompatibilis bemutatkozó weboldal.
+A nyilvánosan megtekinthető, aktuális képforráslista:
+kepforrasok.html
 
-## Fájlok
-- `index.html` – teljes oldal
-- `style.css` – megjelenés és mobilnézet
-- `script.js` – nyelvváltás és demo űrlap
-- `lang/hu.json` – magyar
-- `lang/en.json` – angol
-- `lang/es.json` – spanyol
-- `images/README.txt` – Unsplash képhivatkozások és kreditek
+A jelenlegi bemutatók:
+- MesterFix – vízvezeték-szerelő / duguláselhárítás
+- Elegáns szalon – fodrász / kozmetika
+- Villanyszerelő
+- Autószerelő
+- Étterem
+- TisztaPont – takarítás
+- CostaLuz – apartman / nyaralószállás
 
-## GitHub Pages
-1. Hozz létre egy új GitHub repositoryt, például `mesterweb`.
-2. Töltsd fel a teljes mappa tartalmát.
-3. GitHub → Settings → Pages → Deploy from a branch.
-4. Branch: `main`, folder: `/root`.
-5. Mentés után a GitHub ad egy `github.io` címet.
+A képek az Unsplash oldalairól származó demo/illusztrációs képek.
+A konkrét fotóoldalak a kepforrasok.html fájlban találhatók.
 
-## Későbbi ügyféloldalak
-Ezt az alapot érdemes sablonként megtartani. Egy új ügyfélnél:
-- másold a teljes projektet;
-- módosítsd a logót és a meta adatokat;
-- cseréld a `lang/*.json` szövegeit;
-- cseréld a képeket az `images/` mappában;
-- állítsd át a telefonszámot, e-mailt, szolgáltatási területet és űrlapot;
-- a végleges ügyféloldalon vedd ki a demo jelöléseket.
 
-## Fontos
-Az űrlap jelenleg bemutató űrlap, nem küld valódi e-mailt. Később össze lehet kötni például Formspree-vel,
-Web3Forms-szal vagy saját backenddel.
-
-A képek jelenleg közvetlen Unsplash URL-ről töltődnek. Ha letöltöd őket, az `images/README.txt` alapján
-az index.html-ben egyszerűen átírhatók helyi fájlokra.
+Megjegyzés: A „Ugyanaz az alap, teljesen más vállalkozás” szekcióban ugyanazokat a már forrásolt képeket használjuk újra, ezért új képforrás nem került hozzáadásra.
