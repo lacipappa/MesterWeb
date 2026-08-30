@@ -36,14 +36,37 @@ async function loadLanguage(lang) {
 function demoForm(event) {
   event.preventDefault();
 
-  const messages = {
-    hu: 'Köszönjük! Ez jelenleg egy bemutató űrlap. A végleges oldalon az üzenet e-mailre vagy űrlapszolgáltatásra köthető.',
-    en: 'Thank you! This is currently a demo form. On the final website, the message can be connected to email or a form service.',
-    es: '¡Gracias! Este es actualmente un formulario de demostración. En la web final, el mensaje puede conectarse al correo electrónico o a un servicio de formularios.'
+  const form = event.target;
+  const name = form.name.value.trim();
+  const business = form.business.options[form.business.selectedIndex]?.text || '';
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  const subjects = {
+    hu: `MesterWeb érdeklődés – ${business}`,
+    en: `MesterWeb enquiry – ${business}`,
+    es: `Consulta MesterWeb – ${business}`
   };
 
-  alert(messages[currentLang] || messages.hu);
-  event.target.reset();
+  const labels = {
+    hu: {name:'Név', business:'Vállalkozás', email:'E-mail', message:'Üzenet'},
+    en: {name:'Name', business:'Business', email:'Email', message:'Message'},
+    es: {name:'Nombre', business:'Negocio', email:'E-mail', message:'Mensaje'}
+  };
+
+  const l = labels[currentLang] || labels.hu;
+  const body = [
+    `${l.name}: ${name}`,
+    `${l.business}: ${business}`,
+    `${l.email}: ${email}`,
+    '',
+    `${l.message}:`,
+    message
+  ].join('\\n');
+
+  window.location.href =
+    `mailto:mesterweb@lnkr.es?subject=${encodeURIComponent(subjects[currentLang] || subjects.hu)}&body=${encodeURIComponent(body)}`;
+
   return false;
 }
 
