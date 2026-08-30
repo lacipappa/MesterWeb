@@ -38,9 +38,9 @@
   "examples_eyebrow": "BEMUTATÓK",
   "examples_title": "Néhány példa, mire alakítható át.",
   "examples_intro": "A képek és szövegek itt bemutató tartalmak. Ügyfelenként saját arculat, szöveg és képek kerülnek az oldalra.",
-  "tag_hair": "FODRÁSZ",
+  "tag_hair": "FODRÁSZ • KOZMETIKA",
   "example_hair_title": "Elegáns szalonoldal",
-  "example_hair_text": "Szolgáltatások, árak, galéria és időpontkérés.",
+  "example_hair_text": "Fodrászat, kozmetika, árak, beauty szolgáltatások és időpontkérés.",
   "tag_electric": "VILLANYSZERELŐ",
   "example_electric_title": "Bizalmat építő szakmai oldal",
   "example_electric_text": "Szolgáltatások, kiszállási terület és gyors ajánlatkérés.",
@@ -108,5 +108,11 @@
   "tag_cleaning": "TAKARÍTÁS",
   "example_cleaning_title": "TisztaPont takarító oldal",
   "example_cleaning_text": "Lakás-, kárpit-, szőnyeg- és ablaktisztítás, ajánlatkéréssel.",
-  "example_open_demo": "Bemutató megnyitása →"
+  "example_open_demo": "Bemutató megnyitása →",
+  "tag_plumber": "VÍZVEZETÉK-SZERELŐ • DUGULÁSELHÁRÍTÁS",
+  "example_plumber_title": "MesterFix szakemberoldal",
+  "example_plumber_text": "Vízszerelés, duguláselhárítás, gyors hibabejelentés és ajánlatkérés.",
+  "tag_apartment": "APARTMAN • NYARALÓSZÁLLÁS",
+  "example_apartment_title": "CostaLuz apartmanoldal",
+  "example_apartment_text": "Galéria, felszereltség, környék, ajánlatkérés és többnyelvű bemutatkozás."
 }
