@@ -167,5 +167,8 @@
   "choice_flow_3": "Contact",
   "choice_button": "Help me choose →",
   "choice_note": "I do not want to sell you a bigger website than you need – I recommend the solution that genuinely fits your business.",
-  "footer_choice": "Landing page or website?"
+  "footer_choice": "Landing page or website?",
+  "tag_cosmetic": "COSMETIC STUDIO • SKINCARE",
+  "example_cosmetic_title": "Eurelia cosmetic studio",
+  "example_cosmetic_text": "An elegant multi-page presentation with treatments, prices, gallery and appointment enquiries."
 }
