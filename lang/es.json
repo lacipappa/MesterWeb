@@ -167,5 +167,8 @@
   "choice_flow_3": "Contacto",
   "choice_button": "Ayúdeme a elegir →",
   "choice_note": "No quiero venderle un sitio web más grande de lo que necesita: le recomiendo la solución que realmente encaje con su negocio.",
-  "footer_choice": "¿Landing o sitio web?"
+  "footer_choice": "¿Landing o sitio web?",
+  "tag_cosmetic": "CENTRO DE ESTÉTICA • CUIDADO DE LA PIEL",
+  "example_cosmetic_title": "Centro de estética Eurelia",
+  "example_cosmetic_text": "Una presentación elegante de varias páginas con tratamientos, precios, galería y solicitud de cita."
 }
