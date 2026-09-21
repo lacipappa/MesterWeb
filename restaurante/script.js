@@ -1,4 +1,4 @@
-const cache={};let current=localStorage.getItem("casabrasa_lang")||"hu";
+const cache={};let current=localStorage.getItem("casabrasa_lang")||"es";
 async function setLang(lang){
   if(!cache[lang]){const r=await fetch(`lang/${lang}.json`,{cache:"no-store"});cache[lang]=await r.json();}
   const t=cache[lang];document.documentElement.lang=lang;
