@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CostaLuz Apartamento – demo multilingüe para alquiler vacacional en España.">
+  <meta name="theme-color" content="#123c3a">
+  <title data-i18n="meta_title">CostaLuz Apartamento – Alquiler vacacional</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span data-i18n="topbar">ALTEA · COSTA BLANCA · ESPAÑA</span>
+      <a href="#booking" data-i18n="topbar_cta">Consultar disponibilidad →</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#top" class="logo" aria-label="CostaLuz">Costa<span>Luz</span></a>
+      <nav>
+        <a href="#apartment" data-i18n="nav_apartment">Apartamento</a>
+        <a href="#gallery" data-i18n="nav_gallery">Galería</a>
+        <a href="#amenities" data-i18n="nav_amenities">Servicios</a>
+        <a href="#location" data-i18n="nav_location">Ubicación</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-switcher" aria-label="Language selector">
+          <button data-lang="es" class="active">ES</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="hu">HU</button>
+        </div>
+        <a href="#booking" class="btn btn-small" data-i18n="nav_book">Reservar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-bg" src="https://images.unsplash.com/photo-1686953377385-c26161ce0971?auto=format&fit=crop&w=2200&q=88" alt="Vista al mar desde un balcón en Altea">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="hero_eyebrow">TU ESCAPADA MEDITERRÁNEA</p>
+        <h1 data-i18n="hero_title">Despierta con el Mediterráneo delante de ti.</h1>
+        <p data-i18n="hero_text">Apartamento luminoso para hasta 4 huéspedes, cerca del mar, del casco antiguo y de todos los servicios.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn" data-i18n="hero_btn">Consultar fechas</a>
+          <a href="#gallery" class="btn btn-ghost" data-i18n="hero_btn2">Ver galería</a>
+        </div>
+        <div class="hero-facts">
+          <span>👥 <b>4</b> <span data-i18n="fact_guests">huéspedes</span></span>
+          <span>🛏️ <b>2</b> <span data-i18n="fact_beds">dormitorios</span></span>
+          <span>🛁 <b>1</b> <span data-i18n="fact_bath">baño</span></span>
+          <span>🌊 <span data-i18n="fact_sea">vista al mar</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-book">
+      <div class="container quick-grid">
+        <div><small data-i18n="quick_from">Desde</small><strong>95 € / <span data-i18n="night">noche</span></strong></div>
+        <div><small data-i18n="quick_checkin">Entrada</small><strong>15:00</strong></div>
+        <div><small data-i18n="quick_checkout">Salida</small><strong>11:00</strong></div>
+        <div><small data-i18n="quick_cancel">Consulta</small><strong data-i18n="quick_response">respuesta rápida</strong></div>
+        <a href="#booking" class="btn" data-i18n="quick_btn">Comprobar fechas</a>
+      </div>
+    </section>
+
+    <section id="apartment" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow dark" data-i18n="about_eyebrow">EL APARTAMENTO</p>
+          <h2 data-i18n="about_title">Cómodo, cuidado y pensado para disfrutar sin prisas.</h2>
+          <p data-i18n="about_text">Un alojamiento de estilo mediterráneo con salón-comedor, cocina equipada, dos dormitorios y terraza. Ideal para parejas, familias pequeñas o estancias de teletrabajo junto al mar.</p>
+          <div class="feature-list">
+            <div>✓ <span data-i18n="about_f1">Wi‑Fi de alta velocidad</span></div>
+            <div>✓ <span data-i18n="about_f2">Aire acondicionado</span></div>
+            <div>✓ <span data-i18n="about_f3">Cocina equipada</span></div>
+            <div>✓ <span data-i18n="about_f4">Terraza / balcón</span></div>
+            <div>✓ <span data-i18n="about_f5">Lavadora</span></div>
+            <div>✓ <span data-i18n="about_f6">Ropa de cama y toallas</span></div>
+          </div>
+        </div>
+        <img class="rounded" src="https://images.unsplash.com/photo-1723470917105-d175964de3f9?auto=format&fit=crop&w=1500&q=86" alt="Cocina y salón abiertos">
+      </div>
+    </section>
+
+    <section id="gallery" class="section section-soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark" data-i18n="gallery_eyebrow">GALERÍA</p>
+          <h2 data-i18n="gallery_title">Mira cómo podría presentarse tu alojamiento.</h2>
+          <p data-i18n="gallery_text">Las imágenes son de demostración. En una web real se sustituyen por fotografías propias del apartamento.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item gallery-large"><img src="https://images.unsplash.com/photo-1686953377385-c26161ce0971?auto=format&fit=crop&w=1600&q=85" alt="Vista mediterránea"></button>
+          <button class="gallery-item"><img src="https://images.unsplash.com/photo-1776303054657-4d21e2a6ef18?auto=format&fit=crop&w=1200&q=85" alt="Salón moderno"></button>
+          <button class="gallery-item"><img src="https://images.unsplash.com/photo-1774716926071-fc03e73d0806?auto=format&fit=crop&w=1200&q=85" alt="Dormitorio moderno"></button>
+          <button class="gallery-item"><img src="https://images.unsplash.com/photo-1723470917105-d175964de3f9?auto=format&fit=crop&w=1200&q=85" alt="Cocina abierta"></button>
+          <button class="gallery-item"><img src="https://images.unsplash.com/photo-1759691555010-7f3f8674d2f2?auto=format&fit=crop&w=1200&q=85" alt="Interior de apartamento"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="amenities" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark" data-i18n="amen_eyebrow">SERVICIOS</p>
+          <h2 data-i18n="amen_title">Todo lo que el huésped quiere saber, sin tener que preguntar.</h2>
+        </div>
+        <div class="amenities">
+          <article><span>📶</span><h3 data-i18n="am1t">Wi‑Fi</h3><p data-i18n="am1p">Conexión rápida para ocio y teletrabajo.</p></article>
+          <article><span>❄️</span><h3 data-i18n="am2t">Climatización</h3><p data-i18n="am2p">Aire acondicionado para los meses más cálidos.</p></article>
+          <article><span>🍳</span><h3 data-i18n="am3t">Cocina completa</h3><p data-i18n="am3p">Nevera, horno, cafetera y menaje.</p></article>
+          <article><span>🧺</span><h3 data-i18n="am4t">Lavadora</h3><p data-i18n="am4p">Práctica para estancias de varios días.</p></article>
+          <article><span>🅿️</span><h3 data-i18n="am5t">Aparcamiento</h3><p data-i18n="am5p">Ejemplo: plaza privada o parking cercano.</p></article>
+          <article><span>🔑</span><h3 data-i18n="am6t">Entrada sencilla</h3><p data-i18n="am6p">Instrucciones claras antes de la llegada.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="section location">
+      <div class="container split">
+        <div class="map-card">
+          <div class="fake-map">
+            <span class="pin">📍</span>
+            <strong>Altea · Costa Blanca</strong>
+            <small data-i18n="map_note">Mapa de demostración – en la web final se puede integrar Google Maps.</small>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow dark" data-i18n="loc_eyebrow">UBICACIÓN</p>
+          <h2 data-i18n="loc_title">Todo cerca: playa, restaurantes y casco antiguo.</h2>
+          <p data-i18n="loc_text">La ubicación es una de las decisiones principales del viajero. Esta sección permite destacar distancias reales, transporte, aparcamiento y puntos de interés.</p>
+          <div class="distance-list">
+            <div><span>🏖️</span><b>350 m</b><span data-i18n="dist1">playa</span></div>
+            <div><span>🍽️</span><b>200 m</b><span data-i18n="dist2">restaurantes</span></div>
+            <div><span>🛒</span><b>450 m</b><span data-i18n="dist3">supermercado</span></div>
+            <div><span>🚆</span><b>900 m</b><span data-i18n="dist4">estación</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+      <div class="container booking-grid">
+        <div>
+          <p class="eyebrow" data-i18n="book_eyebrow">CONSULTA DIRECTA</p>
+          <h2 data-i18n="book_title">Comprueba tus fechas y envía una solicitud.</h2>
+          <p data-i18n="book_text">Esta demo no procesa pagos. El formulario puede conectarse después a correo electrónico, WhatsApp, Formspree o un sistema de reservas.</p>
+          <div class="price-note">
+            <span data-i18n="price_from">Precio orientativo desde</span>
+            <strong>95 € / <span data-i18n="night">noche</span></strong>
+          </div>
+        </div>
+        <form id="bookingForm" class="booking-form">
+          <div class="form-row">
+            <label><span data-i18n="form_arrival">Llegada</span><input id="arrival" type="date" required></label>
+            <label><span data-i18n="form_departure">Salida</span><input id="departure" type="date" required></label>
+          </div>
+          <div class="form-row">
+            <label><span data-i18n="form_guests">Huéspedes</span>
+              <select id="guests"><option>1</option><option>2</option><option>3</option><option selected>4</option></select>
+            </label>
+            <label><span data-i18n="form_name">Nombre</span><input type="text" required placeholder="Nombre"></label>
+          </div>
+          <label><span data-i18n="form_email">E-mail</span><input type="email" required placeholder="nombre@email.com"></label>
+          <label><span data-i18n="form_message">Mensaje</span><textarea rows="4" data-i18n-placeholder="form_placeholder" placeholder="¿Alguna pregunta sobre la estancia?"></textarea></label>
+          <div id="estimate" class="estimate" data-i18n="estimate_start">Selecciona las fechas para ver una estimación.</div>
+          <button class="btn btn-full" type="submit" data-i18n="form_btn">Enviar solicitud →</button>
+          <small data-i18n="form_note">Formulario de demostración. No se realiza ninguna reserva ni cobro.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section rules">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark" data-i18n="rules_eyebrow">INFORMACIÓN IMPORTANTE</p>
+          <h2 data-i18n="rules_title">Normas claras antes de reservar.</h2>
+        </div>
+        <div class="rules-grid">
+          <div><b>15:00</b><span data-i18n="rule1">Check-in</span></div>
+          <div><b>11:00</b><span data-i18n="rule2">Check-out</span></div>
+          <div><b>🚭</b><span data-i18n="rule3">No fumar</span></div>
+          <div><b>🎉</b><span data-i18n="rule4">Sin fiestas</span></div>
+          <div><b>🐾</b><span data-i18n="rule5">Mascotas: según condiciones</span></div>
+          <div><b>🪪</b><span data-i18n="rule6">Registro de huéspedes según normativa aplicable</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-soft">
+      <div class="container narrow">
+        <div class="section-heading">
+          <p class="eyebrow dark">FAQ</p>
+          <h2 data-i18n="faq_title">Preguntas frecuentes</h2>
+        </div>
+        <details open><summary data-i18n="faq1q">¿Cómo se confirma la reserva?</summary><p data-i18n="faq1a">En esta demo, el huésped envía una solicitud. En la versión final puede configurarse confirmación por e-mail, WhatsApp o motor de reservas.</p></details>
+        <details><summary data-i18n="faq2q">¿Se puede cobrar online?</summary><p data-i18n="faq2a">Sí, se puede añadir más adelante un proveedor de pago o una plataforma de reservas compatible.</p></details>
+        <details><summary data-i18n="faq3q">¿Se puede mostrar disponibilidad real?</summary><p data-i18n="faq3a">Sí. El diseño está preparado para sustituir esta demo por un calendario conectado.</p></details>
+        <details><summary data-i18n="faq4q">¿Dónde aparece el número de registro?</summary><p data-i18n="faq4a">La web final debe mostrar los datos exigidos por la normativa aplicable a la ubicación y al tipo de alquiler. Aquí dejamos un campo preparado.</p></details>
+      </div>
+    </section>
+
+
+    <section class="web-cta">
+      <div class="container web-cta-inner">
+        <div>
+          <p class="eyebrow" data-i18n="web_sales_eyebrow">NINCS MÉG WEBOLDALA?</p>
+          <h2 data-i18n="web_sales_title">Modern weboldalt szeretne apartmanjához?</h2>
+          <p data-i18n="web_sales_text">Ez a CostaLuz oldal egy bemutató példa. Hasonló, saját névre, képekre, szolgáltatásokra és elérhetőségekre szabott oldalt készítek apartmanok és nyaralószállások számára.</p>
+        </div>
+        <a href="https://mesterweb-nco7.onrender.com" target="_blank" rel="noopener noreferrer" class="btn web-cta-button" data-i18n="web_sales_button">Érdeklődöm a weboldalról →</a>
+      </div>
+    </section>
+
+    <section class="legal-strip">
+      <div class="container">
+        <div><strong data-i18n="reg_title">Registro turístico</strong><span data-i18n="reg_value">[añadir número real del alojamiento]</span></div>
+        <div><strong data-i18n="legal_title">Avisos legales</strong><span data-i18n="legal_value">Privacidad · Cookies · Condiciones de reserva</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="logo footer-logo" href="#top">Costa<span>Luz</span></a><p data-i18n="footer_desc">Demo de web directa para apartamentos y viviendas vacacionales en España.</p></div>
+      <div><strong data-i18n="footer_contact">Contacto</strong><a href="tel:+34600123456">+34 600 123 456</a><a href="mailto:hola@costaluz-demo.es">hola@costaluz-demo.es</a></div>
+      <div>
+        <strong data-i18n="footer_sources">Imágenes</strong>
+        <a class="footer-source-link" href="kepforrasok.html">
+          <span data-i18n="footer_sources_text">Ver fuentes y autores →</span>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 CostaLuz Demo</span>
+      <span data-i18n="footer_demo">Contenido, precios, distancias y datos de contacto son de demostración.</span>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="#booking" data-i18n="mobile_book">CONSULTAR FECHAS</a>
+    <a href="tel:+34600123456" data-i18n="mobile_call">LLAMAR</a>
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightboxClose" aria-label="Cerrar">×</button>
+    <img id="lightboxImg" alt="">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
