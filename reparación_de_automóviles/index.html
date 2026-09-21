@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="TORQ Garage – modern autószerviz demo weboldal.">
+  <title data-i18n="meta_title">TORQ Garage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="#top">TORQ<span>//</span></a>
+    <nav>
+      <a href="#services" data-i18n="nav_services">Szolgáltatások</a>
+      <a href="#why" data-i18n="nav_why">Miért mi?</a>
+      <a href="#quote" data-i18n="nav_quote">Ajánlatkérés</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang">
+        <button class="active" data-lang="hu">HU</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a class="call-btn" href="tel:+34600999111" data-i18n="nav_call">Hívás</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1643700973089-baa86a1ab9ee?auto=format&fit=crop&w=2000&q=88" alt="Autószerelő műhely">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-left">
+      <p class="eyebrow" data-i18n="hero_eyebrow">AUTÓSZERVIZ • DIAGNOSZTIKA • KARBANTARTÁS</p>
+      <h1><span data-i18n="hero_line1">Nem találgatunk.</span><em data-i18n="hero_line2">Megjavítjuk.</em></h1>
+      <p class="lead" data-i18n="hero_text">Modern autószerviz mindennapi hibákhoz, időszakos karbantartáshoz és pontos diagnosztikához.</p>
+      <div class="hero-buttons">
+        <a class="btn red" href="#quote" data-i18n="hero_quote">Ajánlatot kérek →</a>
+        <a class="btn ghost" href="#services" data-i18n="hero_services">Szolgáltatások</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div><span>01</span><b data-i18n="panel1">Gyors hibafelmérés</b></div>
+      <div><span>02</span><b data-i18n="panel2">Átlátható javítási javaslat</b></div>
+      <div><span>03</span><b data-i18n="panel3">Rendezett átadás</b></div>
+    </div>
+  </div>
+  <div class="hero-strip"><span>ENGINE</span><span>DIAGNOSTICS</span><span>BRAKES</span><span>SERVICE</span><span>TORQ GARAGE</span></div>
+</section>
+
+<section class="metrics">
+  <div class="container metrics-grid">
+    <div><strong>24h</strong><span data-i18n="metric1">visszajelzés</span></div>
+    <div><strong>6+</strong><span data-i18n="metric2">fő szolgáltatási terület</span></div>
+    <div><strong>3</strong><span data-i18n="metric3">nyelvű ügyfélkapcsolat</span></div>
+    <div><strong>100%</strong><span data-i18n="metric4">demo átláthatóság</span></div>
+  </div>
+</section>
+
+<section id="services" class="services section">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow dark" data-i18n="services_eyebrow">MŰHELYSZOLGÁLTATÁSOK</p><h2 data-i18n="services_title">A napi szerviztől a komolyabb hibakeresésig.</h2></div>
+      <span class="section-code">SRV / 02</span>
+    </div>
+
+    <div class="service-layout">
+      <article class="service-photo big">
+        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1500&q=86" alt="Motor javítása">
+        <div class="shade"></div>
+        <div class="service-copy"><span>01</span><h3 data-i18n="s1_title">Motor & általános javítás</h3><p data-i18n="s1_text">Szivárgás, zaj, teljesítményprobléma, alkatrészcsere és általános műszaki hibák feltárása.</p></div>
+      </article>
+      <article class="service-text-card red-card">
+        <span>02</span><h3 data-i18n="s2_title">Diagnosztika</h3><p data-i18n="s2_text">Hibakód-kiolvasás, műszeres ellenőrzés és célzott hibakeresés találgatás helyett.</p><b>OBD / LIVE DATA</b>
+      </article>
+      <article class="service-photo">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=86" alt="Autó szervizben">
+        <div class="shade"></div>
+        <div class="service-copy"><span>03</span><h3 data-i18n="s3_title">Időszakos szerviz</h3><p data-i18n="s3_text">Olaj, szűrők, folyadékok és kopóalkatrészek rendszeres ellenőrzése és cseréje.</p></div>
+      </article>
+      <article class="service-text-card dark-card">
+        <span>04</span><h3 data-i18n="s4_title">Fék & futómű</h3><p data-i18n="s4_text">Fékbetét, féktárcsa, futóműelemek, rendellenes zajok és stabilitási problémák.</p><div class="gauge">87%</div>
+      </article>
+      <article class="service-photo wide">
+        <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=1500&q=86" alt="Autódiagnosztika">
+        <div class="shade"></div>
+        <div class="service-copy"><span>05</span><h3 data-i18n="s5_title">Elektronika & hibakód</h3><p data-i18n="s5_text">Műszerfali hibajelzések, szenzorok, akkumulátor és elektronikai rendellenességek vizsgálata.</p></div>
+      </article>
+      <article class="service-text-card light-card">
+        <span>06</span><h3 data-i18n="s6_title">Átvizsgálás vásárlás előtt</h3><p data-i18n="s6_text">Használt autó állapotának alapvető műszaki ellenőrzése vásárlási döntés előtt.</p><b>CHECK / REPORT</b>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="container why-grid">
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1500&q=86" alt="Modern autószerviz">
+      <span class="stamp">TORQ<br>GARAGE</span>
+    </div>
+    <div class="why-copy">
+      <p class="eyebrow" data-i18n="why_eyebrow">MÁSHOGY ÁLLUNK HOZZÁ</p>
+      <h2 data-i18n="why_title">Előbb megértjük a hibát. Utána javítunk.</h2>
+      <p data-i18n="why_text">Egy jó szervizoldalnak ugyanazt kell sugároznia, mint a jó műhelynek: rendezettséget, szakértelmet és kiszámíthatóságot. Ez a demo erre épül.</p>
+      <div class="why-list">
+        <div><b>01</b><span><strong data-i18n="why1t">Érthető kommunikáció</strong><small data-i18n="why1p">A javítás oka és javasolt menete világosan követhető.</small></span></div>
+        <div><b>02</b><span><strong data-i18n="why2t">Fókuszált hibakeresés</strong><small data-i18n="why2p">A cél a hiba forrásának megtalálása, nem a felesleges alkatrészcserék.</small></span></div>
+        <div><b>03</b><span><strong data-i18n="why3t">Karbantartási szemlélet</strong><small data-i18n="why3p">A megelőzés sokszor olcsóbb, mint a későbbi nagy javítás.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process section">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow dark" data-i18n="process_eyebrow">FOLYAMAT</p><h2 data-i18n="process_title">Egyszerűen követhető szervizfolyamat.</h2></div>
+      <span class="section-code">FLOW / 03</span>
+    </div>
+    <div class="timeline">
+      <article><span>01</span><h3 data-i18n="p1t">Bejelentkezés</h3><p data-i18n="p1p">Megírja az autó típusát és a tapasztalt problémát.</p></article>
+      <article><span>02</span><h3 data-i18n="p2t">Átvizsgálás</h3><p data-i18n="p2p">A járművet és a hibajelenséget célzottan ellenőrizzük.</p></article>
+      <article><span>03</span><h3 data-i18n="p3t">Javaslat</h3><p data-i18n="p3p">Összefoglaljuk a szükséges munkát és a következő lépést.</p></article>
+      <article><span>04</span><h3 data-i18n="p4t">Javítás & átadás</h3><p data-i18n="p4p">A jóváhagyott munkát elvégezzük, majd ellenőrzés után átadjuk az autót.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="tools-band">
+  <div class="container tools-grid">
+    <div class="tools-copy">
+      <p class="eyebrow" data-i18n="tools_eyebrow">KARBANTARTÁS</p>
+      <h2 data-i18n="tools_title">A legjobb meghibásodás az, ami meg sem történik.</h2>
+      <p data-i18n="tools_text">Olajcsere, szűrők, fékek, akkumulátor és folyadékok rendszeres ellenőrzése segít csökkenteni a váratlan hibák esélyét.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1500&q=86" alt="Autószerelő szerszámok">
+  </div>
+</section>
+
+<section id="quote" class="quote section">
+  <div class="container quote-grid">
+    <div class="quote-intro">
+      <p class="eyebrow dark" data-i18n="quote_eyebrow">AJÁNLATKÉRÉS / BEJELENTKEZÉS</p>
+      <h2 data-i18n="quote_title">Mi a helyzet az autóval?</h2>
+      <p data-i18n="quote_text">Ez egy demonstrációs kapcsolatfelvételi űrlap. A valódi ügyféloldal e-maillel, WhatsApp-pal vagy időpontfoglaló rendszerrel is összekapcsolható.</p>
+      <div class="contact-box">
+        <strong>+34 600 999 111</strong>
+        <span>hola@torq-demo.es</span>
+        <span data-i18n="contact_area">Demo műhely · Valencia, España</span>
+      </div>
+    </div>
+    <form id="quoteForm" class="quote-form">
+      <div class="row">
+        <label><span data-i18n="form_name">Név</span><input required></label>
+        <label><span data-i18n="form_phone">Telefonszám</span><input type="tel" required></label>
+      </div>
+      <div class="row">
+        <label><span data-i18n="form_car">Autó típusa</span><input placeholder="pl. Seat León 1.5 TSI"></label>
+        <label><span data-i18n="form_year">Évjárat</span><input placeholder="2020"></label>
+      </div>
+      <label><span data-i18n="form_service">Szolgáltatás</span><select required>
+        <option value="" data-i18n="form_choose">Válasszon...</option>
+        <option data-i18n="s1_title">Motor & általános javítás</option>
+        <option data-i18n="s2_title">Diagnosztika</option>
+        <option data-i18n="s3_title">Időszakos szerviz</option>
+        <option data-i18n="s4_title">Fék & futómű</option>
+        <option data-i18n="s5_title">Elektronika & hibakód</option>
+        <option data-i18n="s6_title">Átvizsgálás vásárlás előtt</option>
+      </select></label>
+      <label><span data-i18n="form_message">Hiba / kérés röviden</span><textarea rows="5" data-i18n-placeholder="form_placeholder" placeholder="Pl. hidegen nehezen indul, és világít a motorhiba-jelzés..."></textarea></label>
+      <button class="btn red full" type="submit" data-i18n="form_send">Kérés elküldése →</button>
+      <small data-i18n="form_demo">Demo űrlap – nem küld valódi üzenetet.</small>
+    </form>
+  </div>
+</section>
+
+<section class="mesterweb">
+  <div class="container mw-grid">
+    <div>
+      <p class="eyebrow" data-i18n="mw_eyebrow">AUTÓSZERVIZE VAN?</p>
+      <h2 data-i18n="mw_title">Stílusos, modern weboldalt szeretne autószervizének?</h2>
+      <p data-i18n="mw_text">Ez a TORQ Garage egy bemutató oldal. A MesterWeb saját névre, szolgáltatásokra, képekre és elérhetőségekre szabott weboldalt készít autószerelőknek és más kisvállalkozásoknak.</p>
+    </div>
+    <a class="btn red" href="https://mesterweb-nco7.onrender.com" target="_blank" rel="noopener noreferrer" data-i18n="mw_btn">MesterWeb megnyitása →</a>
+  </div>
+</section>
+
+<section id="faq" class="faq section">
+  <div class="container faq-grid">
+    <div><p class="eyebrow dark">FAQ</p><h2 data-i18n="faq_title">Gyakori kérdések a szerviz előtt.</h2></div>
+    <div>
+      <details open><summary data-i18n="faq1q">Világít a motorhiba-jelzés. Használhatom még az autót?</summary><p data-i18n="faq1a">A jelzés oka sokféle lehet. Ha villog, rendellenes hang, erővesztés vagy más komoly tünet jelentkezik, a további használat előtt érdemes szakemberrel egyeztetni.</p></details>
+      <details><summary data-i18n="faq2q">Milyen gyakran kell olajat cserélni?</summary><p data-i18n="faq2a">A pontos periódust az autó gyártói előírása, a motor típusa és a használat módja határozza meg.</p></details>
+      <details><summary data-i18n="faq3q">Használt autót is átvizsgálnak vásárlás előtt?</summary><p data-i18n="faq3a">A demo szolgáltatási listában igen; a valódi ügyféloldalon a műhely saját szolgáltatási feltételei jelennek meg.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><a class="logo footer-logo" href="#top">TORQ<span>//</span></a><p data-i18n="footer_desc">Garage & Auto Service · Demo weboldal</p></div>
+    <div><strong data-i18n="footer_contact">Kapcsolat</strong><a href="tel:+34600999111">+34 600 999 111</a><a href="mailto:hola@torq-demo.es">hola@torq-demo.es</a></div>
+    <div><strong data-i18n="footer_sources">Képforrások</strong><a class="source-link" href="kepforrasok.html" data-i18n="footer_source_link">Képforrások megtekintése →</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 TORQ Garage Demo</span><span data-i18n="footer_note">A szolgáltatások és elérhetőségek bemutató adatok.</span></div>
+</footer>
+
+<div class="mobile-cta"><a href="#quote" data-i18n="mobile_quote">BEJELENTKEZÉS</a></div>
+<script src="script.js"></script>
+</body>
+</html>
