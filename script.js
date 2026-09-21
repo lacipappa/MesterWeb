@@ -1,8 +1,8 @@
 const LANGS = ['hu', 'en', 'es'];
-let currentLang = localStorage.getItem('mesterweb_lang') || 'hu';
+let currentLang = localStorage.getItem('mesterweb_lang') || 'es';
 
 async function loadLanguage(lang) {
-  if (!LANGS.includes(lang)) lang = 'hu';
+  if (!LANGS.includes(lang)) lang = 'es';
 
   try {
     const response = await fetch(`lang/${lang}.json`, { cache: 'no-store' });
