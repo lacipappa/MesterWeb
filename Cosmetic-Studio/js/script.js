@@ -1,4 +1,4 @@
-const state = { lang: localStorage.getItem("eureliaLang") || "en" };
+const state = { lang: localStorage.getItem("eureliaLang") || "es" };
 
 const scriptBase = (() => {
   const script = document.currentScript;
