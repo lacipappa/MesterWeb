@@ -87,3 +87,57 @@ details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:
   .web-cta-inner{flex-direction:column;align-items:flex-start}
   .web-cta-button{width:100%}
 }
+
+/* ===== Apartman galéria – almappás MesterWeb elrendezés javítása ===== */
+#gallery .gallery-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) !important;
+  grid-template-rows:240px 240px !important;
+  gap:12px !important;
+  width:100% !important;
+  align-items:stretch !important;
+}
+#gallery .gallery-item{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:16px !important;
+  overflow:hidden !important;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+}
+#gallery .gallery-item.gallery-large{
+  grid-column:1 !important;
+  grid-row:1 / span 2 !important;
+}
+#gallery .gallery-item img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+}
+@media (max-width:900px){
+  #gallery .gallery-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    grid-template-rows:260px 190px 190px !important;
+  }
+  #gallery .gallery-item.gallery-large{
+    grid-column:1 / -1 !important;
+    grid-row:1 !important;
+  }
+}
+@media (max-width:620px){
+  #gallery .gallery-grid{
+    grid-template-columns:minmax(0,1fr) !important;
+    grid-template-rows:230px repeat(4,180px) !important;
+  }
+  #gallery .gallery-item.gallery-large{
+    grid-column:1 !important;
+    grid-row:1 !important;
+  }
+}
