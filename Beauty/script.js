@@ -1,4 +1,4 @@
-const cache={};let current=localStorage.getItem("lumea_lang")||"hu";
+const cache={};let current=localStorage.getItem("lumea_lang")||"es";
 async function setLang(lang){
   if(!cache[lang]){
     const r=await fetch(`lang/${lang}.json`,{cache:"no-store"});
