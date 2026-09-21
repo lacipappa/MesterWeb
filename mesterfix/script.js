@@ -1,8 +1,8 @@
 const LANGS = ['hu', 'en', 'es'];
-let currentLang = localStorage.getItem('mesterfix_lang') || 'hu';
+let currentLang = localStorage.getItem('mesterfix_lang') || 'es';
 
 async function loadLanguage(lang) {
-  if (!LANGS.includes(lang)) lang = 'hu';
+  if (!LANGS.includes(lang)) lang = 'es';
   try {
     const response = await fetch(`lang/${lang}.json`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
