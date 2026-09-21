@@ -4,7 +4,7 @@ let currentLang = localStorage.getItem("costaluz_lang") || "es";
 async function loadLanguage(lang){
   try{
     if(!translations[lang]){
-      const res = await fetch(`lang/${lang}.json`, {cache:"no-store"});
+      const res = await fetch(`/apartman/lang/${lang}.json`, {cache:"no-store"});
       translations[lang] = await res.json();
     }
     const t = translations[lang];
