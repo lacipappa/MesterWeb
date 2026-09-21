@@ -9,7 +9,7 @@ const BUSINESS = {"brandName": "Mancs & Móka", "phone": "+36 30 123 4567", "wha
   const cleanPhone = v => String(v || "").replace(/[^\d+]/g, "");
   const getStored = () => { try { return localStorage.getItem("mancs-language"); } catch(e) { return null; } };
   const setStored = v => { try { localStorage.setItem("mancs-language", v); } catch(e) {} };
-  let lang = supported.includes(getStored()) ? getStored() : "hu";
+  let lang = supported.includes(getStored()) ? getStored() : "es";
 
   const FALLBACK_UI = {
     service_book: "Időpontot kérek →",
