@@ -1,5 +1,5 @@
 const cache = {};
-let currentLang = localStorage.getItem("tisztapont_lang") || "hu";
+let currentLang = localStorage.getItem("tisztapont_lang") || "es";
 
 async function setLanguage(lang){
   try{
