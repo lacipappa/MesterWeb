@@ -34,9 +34,19 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .task-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}.task-meta span{font-size:11px;background:#f1f4f8;padding:5px 7px;border-radius:6px;color:#667489}
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.weekcol{background:#fff;border:1px solid var(--line);border-radius:11px;min-height:170px;padding:10px}.weekcol h4{margin:0 0 10px}.weektask{font-size:10px;padding:7px;background:#e8f2ff;color:#176dd0;border-radius:6px;margin:6px 0;cursor:pointer}
 @media(max-width:900px){.agenda-stats{grid-template-columns:1fr 1fr}.week{grid-template-columns:1fr 1fr}}@media(max-width:520px){.agenda-stats,.week{grid-template-columns:1fr}}
+
+.money-positive{color:#14845c}.money-warning{color:#b9690e}.money-danger{color:#b63b41}
+.payment-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.payment-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.payment-card b{display:block;font-size:24px;margin-top:6px}
+.payment-progress{min-width:150px}.payment-detail-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}
+.payment-amount{text-align:right}.payment-amount strong{display:block;font-size:28px}
+.timeline{display:grid;gap:9px;margin-top:12px}.timeline-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}
+.timeline-dot{width:12px;height:12px;border-radius:50%;background:#1da56f;margin-top:4px;flex:0 0 auto}.timeline-dot.pending{background:#f49a38}.timeline-dot.late{background:#e35c61}
+@media(max-width:850px){.payment-summary{grid-template-columns:1fr 1fr}}@media(max-width:520px){.payment-summary{grid-template-columns:1fr}.payment-detail-head{display:block}.payment-amount{text-align:left;margin-top:10px}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -149,6 +159,36 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1780849327888-cb6e5e6b9cc7?auto=format&fit=crop&w=1200&q=82','Reforma exterior'],
 ['https://images.unsplash.com/photo-1659031158304-5c0c54fb3592?auto=format&fit=crop&w=1200&q=82','Cocina en reforma']];content.innerHTML=`<div class="toolbar"><button class="primary" onclick="demoAdd('Foto')">+ Añadir foto</button><a href="fuentes-imagenes.html" style="align-self:center;color:#1478ff;font-weight:700;text-decoration:none">Fuentes de imágenes →</a></div><div class="photos">${imgs.map((x,i)=>`<div class="photo" title="${x[1]}"><img src="${x[0]}" alt="${x[1]}" loading="lazy"></div>`).join('')}</div>`}
 
+
+const payments=[
+{ref:'COB-2026-031',client:'José Martínez',work:'Casa Martínez',total:2450.25,paid:1225.00,due:1225.25,date:'30/09/2026',status:'Pendiente',method:'Transferencia',history:[['18/09/2026','Anticipo recibido','1.225,00 €','paid'],['30/09/2026','Pago final','1.225,25 €','pending']]},
+{ref:'COB-2026-032',client:'Ana López',work:'Piso López',total:4979.15,paid:1500.00,due:3479.15,date:'10/10/2026',status:'Pendiente',method:'Transferencia',history:[['20/09/2026','Anticipo recibido','1.500,00 €','paid'],['10/10/2026','Saldo previsto','3.479,15 €','pending']]},
+{ref:'COB-2026-033',client:'Carlos Ruiz',work:'Terraza Ruiz',total:3750.00,paid:3375.00,due:375.00,date:'25/09/2026',status:'Pendiente',method:'Tarjeta / transferencia',history:[['01/09/2026','Anticipo','1.500,00 €','paid'],['15/09/2026','Segundo pago','1.875,00 €','paid'],['25/09/2026','Saldo final','375,00 €','pending']]},
+{ref:'COB-2026-034',client:'María Sánchez',work:'Pintura interior',total:1179.15,paid:0,due:1179.15,date:'20/09/2026',status:'Vencido',method:'Pendiente',history:[['20/09/2026','Pago previsto','1.179,15 €','late']]},
+{ref:'COB-2026-035',client:'David Moreno',work:'Villa Moreno',total:18748.95,paid:2000.00,due:16748.95,date:'30/09/2026',status:'Pendiente',method:'Transferencia',history:[['22/09/2026','Reserva / anticipo','2.000,00 €','paid'],['30/09/2026','Próximo pago','4.000,00 €','pending']]}
+];
+function eur(n){return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'}
+function paymentPill(s){return `<span class="pill ${s==='Pagado'?'green':s==='Vencido'?'red':'orange'}">${s}</span>`}
+function paymentsView(){
+title.textContent='Pagos / Cobros';
+const total=payments.reduce((a,x)=>a+x.total,0),paid=payments.reduce((a,x)=>a+x.paid,0),due=payments.reduce((a,x)=>a+x.due,0),late=payments.filter(x=>x.status==='Vencido').reduce((a,x)=>a+x.due,0);
+content.innerHTML=`<div class="payment-summary"><div class="payment-card"><span class="muted">FACTURADO / PREVISTO</span><b>${eur(total)}</b></div><div class="payment-card"><span class="muted">COBRADO</span><b class="money-positive">${eur(paid)}</b></div><div class="payment-card"><span class="muted">PENDIENTE</span><b class="money-warning">${eur(due)}</b></div><div class="payment-card"><span class="muted">VENCIDO</span><b class="money-danger">${eur(late)}</b></div></div>
+<div class="toolbar"><input class="filter" placeholder="Buscar cliente, obra, referencia…"><button class="primary" onclick="demoAdd('Cobro')">+ Registrar cobro</button></div>
+<div class="tablewrap"><table><thead><tr><th>Referencia</th><th>Cliente / Obra</th><th>Total</th><th>Cobrado</th><th>Pendiente</th><th>Vencimiento</th><th>Estado</th></tr></thead><tbody>${payments.map((x,i)=>`<tr class="click" onclick="showPayment(${i})"><td><b>${x.ref}</b></td><td>${x.client}<div class="muted">${x.work}</div></td><td>${eur(x.total)}</td><td class="money-positive"><b>${eur(x.paid)}</b></td><td class="${x.status==='Vencido'?'money-danger':'money-warning'}"><b>${eur(x.due)}</b></td><td>${x.date}</td><td>${paymentPill(x.status)}</td></tr>`).join('')}</tbody></table></div>`;
+$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+function showPayment(i){
+const x=payments[i], pct=Math.round((x.paid/x.total)*100);
+$('#modalContent').innerHTML=`<div class="payment-detail-head"><div><div class="muted">COBRO · DEMO</div><h2 style="margin:4px 0">${x.ref}</h2><div>${x.client} · ${paymentPill(x.status)}</div></div><div class="payment-amount"><small class="muted">PENDIENTE</small><strong class="${x.status==='Vencido'?'money-danger':'money-warning'}">${eur(x.due)}</strong></div></div>
+<div class="detailgrid"><div class="detail"><small>Obra</small><b>${x.work}</b></div><div class="detail"><small>Vencimiento</small><b>${x.date}</b></div><div class="detail"><small>Importe total</small><b>${eur(x.total)}</b></div><div class="detail"><small>Método</small><b>${x.method}</b></div></div>
+<div class="mini-item" style="margin-top:14px"><b>Progreso de cobro · ${pct}%</b><div class="bar"><i style="width:${pct}%"></i></div><div class="muted" style="margin-top:6px">${eur(x.paid)} cobrados de ${eur(x.total)}</div></div>
+<h3 style="margin:18px 0 8px">Historial de pagos</h3><div class="timeline">${x.history.map(h=>`<div class="timeline-item"><span class="timeline-dot ${h[3]}"></span><div class="grow"><b>${h[1]}</b><div class="muted">${h[0]}</div></div><b>${h[2]}</b></div>`).join('')}</div>
+<div class="quote-actions"><button class="primary" onclick="demoPaymentAction('Registrar nuevo cobro')">+ Registrar cobro</button><button class="printbtn" onclick="demoPaymentAction('Generar recibo')">▤ Recibo</button><button class="printbtn" onclick="demoPaymentAction('Enviar recordatorio')">✉ Recordatorio</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoPaymentAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción actualizaría el historial financiero del cliente y de la obra.</p><p class="muted">Esta demo no procesa pagos reales ni envía mensajes.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 const tasks=[
 {title:'Confirmar azulejos',date:'23/09/2026',time:'09:30',client:'José Martínez',work:'Casa Martínez',priority:'Alta',status:'Pendiente',note:'Confirmar modelo y color antes de realizar el pedido.'},
 {title:'Visita de obra',date:'23/09/2026',time:'12:00',client:'Ana López',work:'Piso López',priority:'Media',status:'Pendiente',note:'Revisar instalaciones y medidas de mobiliario.'},
@@ -177,7 +217,7 @@ $('#modal').classList.remove('hidden')
 function demoTaskAction(action){
 $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción actualizaría la tarea y su relación con el cliente y la obra.</p><p class="muted">La demo web no guarda cambios permanentes.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
 }
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -205,6 +245,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
