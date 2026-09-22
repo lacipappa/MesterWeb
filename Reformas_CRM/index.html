@@ -14,6 +14,13 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .costgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.costgrid .detail b{font-size:18px}
 .thumbrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.thumbrow img{width:100%;height:95px;object-fit:cover;border-radius:9px}
 @media(max-width:650px){.project-hero{display:block}.project-progress{text-align:left;margin-top:10px}.costgrid,.thumbrow{grid-template-columns:1fr}}
+
+.quote-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}
+.quote-total{text-align:right}.quote-total strong{display:block;font-size:29px;color:var(--navy)}
+.items{width:100%;border-collapse:collapse;margin-top:10px}.items th,.items td{padding:10px;border-bottom:1px solid var(--line);font-size:12px}.items th{background:#f7f9fc}
+.totals{margin-left:auto;width:min(300px,100%);margin-top:14px}.totalrow{display:flex;justify-content:space-between;padding:7px 0}.totalrow.final{border-top:2px solid var(--line);font-size:18px;font-weight:800}
+.quote-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.printbtn{border:1px solid #cfd8e6;background:#f8fafc;color:#24344d;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer}
+@media(max-width:650px){.quote-head{display:block}.quote-total{text-align:left;margin-top:12px}.items{min-width:560px}.quote-items-wrap{overflow:auto}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
 <button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
@@ -62,6 +69,35 @@ if(tab==='costes')box.innerHTML=`<div class="costgrid"><div class="detail"><smal
 if(tab==='documentos')box.innerHTML=d.length?`<div class="mini-list">${d.map(x=>`<div class="mini-item"><b>📄 ${x[0]}</b><div class="muted">${x[2]} · ${x[3]}</div></div>`).join('')}</div>`:'<p class="muted">No hay documentos asociados todavía.</p>';
 if(tab==='fotos')box.innerHTML=`<div class="thumbrow">${projectImgs.map((src,n)=>`<img src="${src}" alt="Foto de obra ${n+1}" loading="lazy">`).join('')}</div><p class="muted">Fotos demostrativas de Unsplash. Consulta la página de fuentes de imágenes.</p>`;
 }
+
+const quoteDetails=[
+{date:'18/09/2026',valid:'18/10/2026',work:'Casa Martínez',items:[['Demolición y retirada','1','350 €','350 €'],['Fontanería','1','620 €','620 €'],['Alicatado','22 m²','38 €','836 €'],['Instalación sanitarios','1','219 €','219 €']],base:'2.025 €',iva:'425,25 €',total:'2.450,25 €'},
+{date:'20/09/2026',valid:'20/10/2026',work:'Piso López',items:[['Desmontaje cocina','1','480 €','480 €'],['Instalaciones','1','1.050 €','1.050 €'],['Mobiliario','1','1.900 €','1.900 €'],['Encimera y montaje','1','685 €','685 €']],base:'4.115 €',iva:'864,15 €',total:'4.979,15 €'},
+{date:'21/09/2026',valid:'21/10/2026',work:'Pintura Sánchez',items:[['Preparación paredes','1','250 €','250 €'],['Pintura interior','95 m²','6,10 €','579,50 €'],['Materiales','1','145 €','145 €']],base:'974,50 €',iva:'204,65 €',total:'1.179,15 €'},
+{date:'22/09/2026',valid:'22/10/2026',work:'Villa Moreno',items:[['Demolición','1','2.400 €','2.400 €'],['Instalaciones','1','5.100 €','5.100 €'],['Albañilería y acabados','1','6.250 €','6.250 €'],['Carpintería y remates','1','1.745 €','1.745 €']],base:'15.495 €',iva:'3.253,95 €',total:'18.748,95 €'}];
+
+function quotesView(){
+title.textContent='Presupuestos';
+content.innerHTML=`<div class="toolbar"><input class="filter" placeholder="Buscar presupuesto, cliente…"><button class="primary" onclick="demoAdd('Presupuesto')">+ Nuevo presupuesto</button></div>
+<div class="tablewrap"><table><thead><tr><th>Nº</th><th>Cliente</th><th>Trabajo</th><th>Importe</th><th>Estado</th></tr></thead><tbody>
+${quotes.map((q,i)=>`<tr class="click" onclick="showQuote(${i})"><td><b>${q[0]}</b></td><td>${q[1]}</td><td>${q[2]}</td><td><b>${q[3]}</b></td><td>${pill(q[4])}</td></tr>`).join('')}
+</tbody></table></div>`;
+$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+
+function showQuote(i){
+const q=quotes[i],d=quoteDetails[i];
+$('#modalContent').innerHTML=`<div class="quote-head"><div><div class="muted">PRESUPUESTO · DEMO</div><h2 style="margin:4px 0">${q[0]}</h2><div>${q[1]} · ${pill(q[4])}</div></div><div class="quote-total"><small class="muted">TOTAL CON IVA</small><strong>${d.total}</strong></div></div>
+<div class="detailgrid"><div class="detail"><small>Cliente</small><b>${q[1]}</b></div><div class="detail"><small>Obra</small><b>${d.work}</b></div><div class="detail"><small>Fecha</small><b>${d.date}</b></div><div class="detail"><small>Válido hasta</small><b>${d.valid}</b></div></div>
+<h3 style="margin:20px 0 8px">Partidas</h3><div class="quote-items-wrap"><table class="items"><thead><tr><th>Concepto</th><th>Cantidad</th><th>Precio</th><th>Importe</th></tr></thead><tbody>${d.items.map(x=>`<tr>${x.map(y=>`<td>${y}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+<div class="totals"><div class="totalrow"><span>Base imponible</span><b>${d.base}</b></div><div class="totalrow"><span>IVA 21%</span><b>${d.iva}</b></div><div class="totalrow final"><span>Total</span><span>${d.total}</span></div></div>
+<div class="mini-item" style="margin-top:16px"><b>Condiciones</b><div class="muted">Validez 30 días. Forma de pago y condiciones definitivas según acuerdo con el cliente. Datos ficticios para demostración.</div></div>
+<div class="quote-actions"><button class="primary" onclick="demoQuoteAction('Enviar al cliente')">✉ Enviar</button><button class="printbtn" onclick="demoQuoteAction('Vista de impresión / PDF')">▤ Vista PDF</button><button class="printbtn" onclick="demoQuoteAction('Duplicar presupuesto')">⧉ Duplicar</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoQuoteAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción trabajaría con el presupuesto seleccionado.</p><p class="muted">En esta demo web no se envían mensajes ni se generan documentos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1768321902156-9358b5373d0a?auto=format&fit=crop&w=1200&q=82','Reforma interior'],
 ['https://images.unsplash.com/photo-1741121647933-10714e7b13d3?auto=format&fit=crop&w=1200&q=82','Estructura y obra'],
@@ -70,7 +106,7 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1780849327888-cb6e5e6b9cc7?auto=format&fit=crop&w=1200&q=82','Reforma exterior'],
 ['https://images.unsplash.com/photo-1659031158304-5c0c54fb3592?auto=format&fit=crop&w=1200&q=82','Cocina en reforma']];content.innerHTML=`<div class="toolbar"><button class="primary" onclick="demoAdd('Foto')">+ Añadir foto</button><a href="fuentes-imagenes.html" style="align-self:center;color:#1478ff;font-weight:700;text-decoration:none">Fuentes de imágenes →</a></div><div class="photos">${imgs.map((x,i)=>`<div class="photo" title="${x[1]}"><img src="${x[0]}" alt="${x[1]}" loading="lazy"></div>`).join('')}</div>`}
 function agenda(){title.textContent='Agenda';let ev={23:'Visita · Guardamar',24:'Enviar presupuesto',25:'Inicio · Torrevieja',28:'Llamar cliente'};content.innerHTML=`<div class="panel"><h2>Septiembre 2026</h2><div class="calendar">${['L','M','X','J','V','S','D'].map(x=>`<b>${x}</b>`).join('')}${Array.from({length:35},(_,i)=>{let d=i-1;return `<div class="day">${d>0&&d<=30?`<b>${d}</b>${ev[d]?`<div class="event">${ev[d]}</div>`:''}`:''}</div>`}).join('')}</div></div>`}
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')tableView('Presupuestos',['Nº','Cliente','Trabajo','Importe','Estado'],quotes);if(v==='documentos')tableView('Documentos',['Archivo','Cliente','Tipo','Fecha'],docs);if(v==='fotos')photos();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')tableView('Documentos',['Archivo','Cliente','Tipo','Fecha'],docs);if(v==='fotos')photos();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -98,6 +134,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
