@@ -51,9 +51,16 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .quicklist{display:grid;gap:8px}.quickitem{display:flex;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:9px;cursor:pointer}.quickitem:hover{background:#f8fbff}
 .quickicon{width:34px;height:34px;border-radius:8px;background:#eef4ff;display:grid;place-items:center}
 @media(max-width:950px){.dash-finance{grid-template-columns:1fr 1fr}}@media(max-width:520px){.dash-finance{grid-template-columns:1fr}}
+
+.supplier-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.supplier-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px}.supplier-card b{display:block;font-size:22px;margin-top:5px}
+.contact-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.cost-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.costline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+@media(max-width:800px){.supplier-summary,.cost-summary{grid-template-columns:1fr 1fr}}@media(max-width:500px){.supplier-summary,.cost-summary{grid-template-columns:1fr}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -202,6 +209,34 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1659031158304-5c0c54fb3592?auto=format&fit=crop&w=1200&q=82','Cocina en reforma']];content.innerHTML=`<div class="toolbar"><button class="primary" onclick="demoAdd('Foto')">+ Añadir foto</button><a href="fuentes-imagenes.html" style="align-self:center;color:#1478ff;font-weight:700;text-decoration:none">Fuentes de imágenes →</a></div><div class="photos">${imgs.map((x,i)=>`<div class="photo" title="${x[1]}"><img src="${x[0]}" alt="${x[1]}" loading="lazy"></div>`).join('')}</div>`}
 
 
+
+const suppliers=[
+{name:'Materiales Costa Sur S.L.',type:'Materiales de construcción',city:'Torrevieja',phone:'+34 965 000 121',email:'ventas@costasur.demo',contact:'Laura Gómez',status:'Activo',works:['Casa Martínez','Piso López'],spent:'3.480,00 €',note:'Azulejos, cemento, adhesivos y material general.'},
+{name:'Fontanería Levante',type:'Subcontrata · Fontanería',city:'Guardamar',phone:'+34 966 000 245',email:'info@fontanerialevante.demo',contact:'Miguel Torres',status:'Activo',works:['Casa Martínez','Villa Moreno'],spent:'2.150,00 €',note:'Instalaciones y reparaciones de fontanería.'},
+{name:'Electricidad Vega Baja',type:'Subcontrata · Electricidad',city:'Orihuela',phone:'+34 965 000 387',email:'obras@vegabaja.demo',contact:'Sergio Ruiz',status:'Activo',works:['Villa Moreno'],spent:'1.890,00 €',note:'Instalaciones eléctricas y cuadros.'},
+{name:'Cerámicas Mediterráneo',type:'Proveedor · Cerámica',city:'Alicante',phone:'+34 965 000 412',email:'pedidos@ceramicasmed.demo',contact:'Elena Pérez',status:'Activo',works:['Casa Martínez','Terraza Ruiz'],spent:'2.760,00 €',note:'Pavimentos, revestimientos y muestras.'},
+{name:'Carpintería Sol',type:'Subcontrata · Carpintería',city:'Santa Pola',phone:'+34 966 000 530',email:'taller@carpinteriasol.demo',contact:'Antonio Soler',status:'Pendiente',works:['Piso López'],spent:'1.240,00 €',note:'Mobiliario y remates de carpintería.'}
+];
+function suppliersView(){
+title.textContent='Proveedores';
+content.innerHTML=`<div class="supplier-summary"><div class="supplier-card"><span class="muted">PROVEEDORES</span><b>${suppliers.length}</b></div><div class="supplier-card"><span class="muted">ACTIVOS</span><b>${suppliers.filter(x=>x.status==='Activo').length}</b></div><div class="supplier-card"><span class="muted">SUBCONTRATAS</span><b>${suppliers.filter(x=>x.type.includes('Subcontrata')).length}</b></div><div class="supplier-card"><span class="muted">GASTO REGISTRADO</span><b>11.520 €</b></div></div>
+<div class="toolbar"><input class="filter" placeholder="Buscar proveedor, oficio, ciudad…"><button class="primary" onclick="demoAdd('Proveedor')">+ Nuevo proveedor</button></div>
+<div class="tablewrap"><table><thead><tr><th>Proveedor</th><th>Tipo</th><th>Ciudad</th><th>Contacto</th><th>Obras</th><th>Estado</th></tr></thead><tbody>${suppliers.map((s,i)=>`<tr class="click" onclick="showSupplier(${i})"><td><b>${s.name}</b></td><td>${s.type}</td><td>${s.city}</td><td>${s.contact}<div class="muted">${s.phone}</div></td><td>${s.works.length}</td><td>${pill(s.status)}</td></tr>`).join('')}</tbody></table></div>`;
+$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+function showSupplier(i){
+const s=suppliers[i];
+$('#modalContent').innerHTML=`<div class="dochead"><div class="doc-icon">🏗</div><div><div class="muted">PROVEEDOR / SUBCONTRATA · DEMO</div><h2 style="margin:2px 0">${s.name}</h2><div>${s.type} · ${pill(s.status)}</div></div></div>
+<div class="detailgrid"><div class="detail"><small>Contacto</small><b>${s.contact}</b></div><div class="detail"><small>Ciudad</small><b>${s.city}</b></div><div class="detail"><small>Teléfono</small><b>${s.phone}</b></div><div class="detail"><small>Email</small><b>${s.email}</b></div></div>
+<div class="mini-item" style="margin-top:14px"><b>Notas</b><div class="muted">${s.note}</div></div>
+<h3 style="margin:18px 0 8px">Obras relacionadas</h3><div class="mini-list">${s.works.map(w=>`<div class="mini-item"><b>${w}</b><div class="muted">Proveedor / subcontrata vinculado a esta obra</div></div>`).join('')}</div>
+<div class="cost-summary"><div class="detail"><small>Gasto registrado</small><b>${s.spent}</b></div><div class="detail"><small>Obras vinculadas</small><b>${s.works.length}</b></div></div>
+<div class="contact-actions"><button class="primary" onclick="demoSupplierAction('Registrar gasto')">+ Registrar gasto</button><button class="printbtn" onclick="demoSupplierAction('Nuevo pedido')">Nuevo pedido</button><button class="printbtn" onclick="demoSupplierAction('Contactar proveedor')">Contactar</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoSupplierAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción quedaría vinculada al proveedor y, cuando corresponda, a una obra concreta.</p><p class="muted">Los datos de esta demostración son ficticios.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 const payments=[
 {ref:'COB-2026-031',client:'José Martínez',work:'Casa Martínez',total:2450.25,paid:1225.00,due:1225.25,date:'30/09/2026',status:'Pendiente',method:'Transferencia',history:[['18/09/2026','Anticipo recibido','1.225,00 €','paid'],['30/09/2026','Pago final','1.225,25 €','pending']]},
 {ref:'COB-2026-032',client:'Ana López',work:'Piso López',total:4979.15,paid:1500.00,due:3479.15,date:'10/10/2026',status:'Pendiente',method:'Transferencia',history:[['20/09/2026','Anticipo recibido','1.500,00 €','paid'],['10/10/2026','Saldo previsto','3.479,15 €','pending']]},
@@ -259,7 +294,7 @@ $('#modal').classList.remove('hidden')
 function demoTaskAction(action){
 $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción actualizaría la tarea y su relación con el cliente y la obra.</p><p class="muted">La demo web no guarda cambios permanentes.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
 }
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='proveedores')suppliersView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -287,6 +322,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.suppliersView=suppliersView;window.showSupplier=showSupplier;window.demoSupplierAction=demoSupplierAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
