@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    if (!location.pathname.endsWith('/') && !location.pathname.split('/').pop().includes('.')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
+  <meta name="description" content="Masajes personalizados y rituales de bienestar en un espacio sereno.">
+  <title>Alma Serena | Masajes y bienestar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#inicio"><span>ALMA</span><b>SERENA</b></a>
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav"><a href="#servicios" data-i18n="navServices">Tratamientos</a><a href="#nosotros" data-i18n="navAbout">El estudio</a><a href="#precios" data-i18n="navPrices">Precios</a><a href="#contacto" data-i18n="navContact">Contacto</a></nav>
+    <div class="languages"><button class="lang active" data-lang="es">ES</button><button class="lang" data-lang="hu">HU</button><button class="lang" data-lang="en">EN</button></div>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal"><p class="eyebrow" data-i18n="heroKicker">MASAJE · CALMA · BIENESTAR</p><h1 data-i18n="heroTitle">Un refugio para volver a sentirte bien</h1><p data-i18n="heroText">Masajes personalizados que liberan tensión, calman el ritmo y convierten un momento para ti en un verdadero ritual de bienestar.</p><div class="actions"><a class="button primary" href="#contacto" data-i18n="heroCta">Reservar una sesión</a><a class="text-link" href="#servicios" data-i18n="heroLink">Descubrir tratamientos →</a></div></div>
+      <div class="hero-image"><img src="https://unsplash.com/photos/7yeqemd-p90/download?force=true&amp;w=1800" alt="Masaje relajante de espalda"><div class="floating"><strong data-i18n="floatTitle">Tu pausa empieza aquí</strong><span data-i18n="floatText">Atención cercana y tratamientos a tu medida</span></div></div>
+    </section>
+
+    <section class="numbers"><div><strong>50–75</strong><span data-i18n="numMinutes">minutos de calma</span></div><div><strong>4</strong><span data-i18n="numTreatments">rituales personalizados</span></div><div><strong>100%</strong><span data-i18n="numCare">atención individual</span></div></section>
+
+    <section class="section intro" id="nosotros">
+      <div class="intro-image reveal"><img src="https://unsplash.com/photos/EpKT9rdinCA/download?force=true&amp;w=1400" alt="Ambiente tranquilo preparado para un tratamiento de bienestar" loading="lazy"></div>
+      <div class="intro-copy reveal"><p class="eyebrow dark" data-i18n="aboutKicker">UN ESPACIO PARA RESPIRAR</p><h2 data-i18n="aboutTitle">Escuchamos a tu cuerpo antes de empezar</h2><p class="lead" data-i18n="aboutLead">Cada sesión comienza con una conversación breve para conocer cómo te sientes y qué zonas necesitan más atención.</p><p data-i18n="aboutText">Adaptamos la presión, el ritmo y la duración para que disfrutes de una experiencia cómoda, respetuosa y profundamente relajante.</p><div class="signature">Alma Serena</div></div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="section-heading reveal"><p class="eyebrow" data-i18n="servicesKicker">NUESTROS RITUALES</p><h2 data-i18n="servicesTitle">Elige el cuidado que necesitas hoy</h2><p data-i18n="servicesText">Propuestas pensadas para bajar el ritmo, aliviar la sobrecarga cotidiana y recuperar una agradable sensación de equilibrio.</p></div>
+      <div class="service-grid">
+        <article class="service-card reveal"><span>01</span><h3 data-i18n="s1Title">Masaje relajante</h3><p data-i18n="s1Text">Movimientos fluidos y envolventes para soltar tensión y favorecer un descanso profundo.</p><b data-i18n="s1Time">50 min · desde 45 €</b></article>
+        <article class="service-card featured reveal"><span>02</span><h3 data-i18n="s2Title">Masaje descontracturante</h3><p data-i18n="s2Text">Trabajo localizado y progresivo en las zonas que acumulan mayor rigidez o cansancio.</p><b data-i18n="s2Time">60 min · desde 58 €</b></article>
+        <article class="service-card reveal"><span>03</span><h3 data-i18n="s3Title">Piedras calientes</h3><p data-i18n="s3Text">Calor suave y maniobras pausadas para crear una experiencia reconfortante de cuerpo completo.</p><b data-i18n="s3Time">75 min · desde 70 €</b></article>
+        <article class="service-card reveal"><span>04</span><h3 data-i18n="s4Title">Reflexología</h3><p data-i18n="s4Text">Un tratamiento centrado en pies y piernas para descansar, desconectar y recuperar ligereza.</p><b data-i18n="s4Time">45 min · desde 40 €</b></article>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="experience-copy reveal"><p class="eyebrow" data-i18n="whyKicker">CUIDADO CONSCIENTE</p><h2 data-i18n="whyTitle">Una experiencia sencilla, serena y totalmente tuya</h2><div class="benefits"><div><i>✦</i><p><strong data-i18n="b1Title">Tratamiento personalizado</strong><span data-i18n="b1Text">La sesión se adapta a tus preferencias y a cómo llegas ese día.</span></p></div><div><i>◌</i><p><strong data-i18n="b2Title">Ambiente tranquilo</strong><span data-i18n="b2Text">Luz suave, aromas delicados y tiempo suficiente para desconectar.</span></p></div><div><i>◇</i><p><strong data-i18n="b3Title">Ritmo sin prisas</strong><span data-i18n="b3Text">Cuidamos cada detalle desde la bienvenida hasta el final.</span></p></div></div></div>
+      <div class="experience-images reveal"><img class="large" src="https://unsplash.com/photos/3aGV2ViCzrM/download?force=true&amp;w=1500" alt="Terapeuta realizando un masaje de espalda" loading="lazy"><img class="small" src="https://unsplash.com/photos/tO0Q29dqRvo/download?force=true&amp;w=900" alt="Sesión profesional de masaje" loading="lazy"></div>
+    </section>
+
+    <section class="pricing section" id="precios"><div class="pricing-head reveal"><p class="eyebrow dark" data-i18n="priceKicker">PRECIOS ORIENTATIVOS</p><h2 data-i18n="priceTitle">Tiempo para cuidarte</h2><p data-i18n="priceNote">La duración y el precio final pueden variar según el tratamiento elegido y las necesidades de cada persona.</p></div><div class="price-list reveal"><div><span><b data-i18n="p1">Sesión esencial</b><small data-i18n="p1d">Masaje personalizado · 50 min</small></span><strong>45 €</strong></div><div><span><b data-i18n="p2">Ritual profundo</b><small data-i18n="p2d">Tratamiento corporal · 60 min</small></span><strong>58 €</strong></div><div><span><b data-i18n="p3">Experiencia serena</b><small data-i18n="p3d">Ritual completo · 75 min</small></span><strong>70 €</strong></div></div></section>
+
+    <section class="testimonial"><p class="eyebrow" data-i18n="testimonialKicker">LO QUE SE SIENTE</p><blockquote data-i18n="quote">“Desde el primer minuto sentí que podía parar. La atención fue delicada, profesional y exactamente como la necesitaba.”</blockquote><span data-i18n="quoteAuthor">— Laura, clienta habitual</span></section>
+
+    <section class="contact" id="contacto"><div class="reveal"><p class="eyebrow" data-i18n="contactKicker">RESERVAS</p><h2 data-i18n="contactTitle">Regálate un momento de calma</h2><p data-i18n="contactText">Escríbenos indicando el tratamiento que te interesa y tu horario preferido. Te responderemos para confirmar la disponibilidad.</p></div><div class="contact-card reveal"><a href="mailto:info@example.com">info@example.com</a><span data-i18n="contactSmall">Atención únicamente con cita previa</span><a class="button light" href="mailto:info@example.com" data-i18n="contactButton">Solicitar cita</a></div></section>
+
+    <section class="mesterweb"><div><p class="eyebrow" data-i18n="mwKicker">¿TIENE UN CENTRO DE BIENESTAR?</p><h2 data-i18n="mwTitle">Su trabajo también merece una presencia online que transmita confianza</h2><p data-i18n="mwText">ALMA SERENA es una web de demostración. MesterWeb crea páginas únicas para masajistas, terapeutas y centros de bienestar, adaptadas a sus servicios, imágenes, precios e identidad.</p></div><a href="https://lnkr.es/" target="_blank" rel="noopener" data-i18n="mwButton">Abrir MesterWeb →</a></section>
+  </main>
+  <footer><a class="logo" href="#inicio"><span>ALMA</span><b>SERENA</b></a><p data-i18n="footerText">Masajes personalizados y rituales de bienestar.</p><div><a href="#servicios" data-i18n="navServices">Tratamientos</a><a href="#contacto" data-i18n="navContact">Contacto</a><a href="kepforrasok.html" data-i18n="sources">Fuentes de las imágenes</a></div><small>© <span id="year"></span> Alma Serena</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
