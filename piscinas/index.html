@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    if (!location.pathname.endsWith('/') && !location.pathname.split('/').pop().includes('.')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
+  <meta name="description" content="Diseño, construcción, renovación y mantenimiento de piscinas en España.">
+  <title>AquaViva Piscinas | Diseño, construcción y mantenimiento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="AquaViva inicio"><span class="brand-mark">A</span><span><strong>AquaViva</strong><small data-i18n="brandSmall">PISCINAS</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav"><a href="#servicios" data-i18n="navServices">Servicios</a><a href="#proceso" data-i18n="navProcess">Proceso</a><a href="#proyectos" data-i18n="navProjects">Proyectos</a><a href="#preguntas" data-i18n="navFaq">Preguntas</a><a href="#contacto" data-i18n="navContact">Contacto</a></nav>
+    <div class="languages" aria-label="Selector de idioma"><button class="lang active" data-lang="es">ES</button><button class="lang" data-lang="hu">HU</button><button class="lang" data-lang="en">EN</button></div>
+    <a class="header-cta" href="#contacto" data-i18n="headerCta">Pedir presupuesto</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img class="hero-bg" src="https://unsplash.com/photos/eoMSMXXNT5E/download?force=true&amp;w=2000" alt="Piscina mediterránea con vistas al mar">
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal"><p class="kicker" data-i18n="heroKicker">DISEÑO · CONSTRUCCIÓN · CUIDADO</p><h1 data-i18n="heroTitle">Una piscina creada para su forma de vivir</h1><p data-i18n="heroText">Diseñamos, construimos y renovamos piscinas que se integran en su vivienda, su jardín y el clima mediterráneo.</p><div class="hero-actions"><a class="button light" href="#contacto" data-i18n="heroCta">Cuéntenos su proyecto</a><a class="button outline" href="#proyectos" data-i18n="heroMore">Ver proyectos</a></div></div>
+      <div class="hero-note"><span>01</span><p data-i18n="heroNote">Soluciones completas, desde la primera idea hasta la puesta en marcha.</p></div>
+    </section>
+
+    <section class="intro section"><div class="section-label reveal"><span>01</span><p data-i18n="aboutKicker">PISCINAS PENSADAS PARA DURAR</p></div><div class="intro-main reveal"><h2 data-i18n="aboutTitle">Mucho más que agua: un nuevo espacio para disfrutar</h2><p data-i18n="aboutText">Estudiamos el terreno, los accesos, la orientación y el uso previsto antes de proponer cada solución. Así conseguimos una piscina proporcionada, eficiente y coherente con la vivienda.</p></div><div class="stats reveal"><div><strong>10+</strong><span data-i18n="statYears">años de experiencia</span></div><div><strong>100%</strong><span data-i18n="statPlan">proyecto personalizado</span></div><div><strong>4</strong><span data-i18n="statSteps">fases bien definidas</span></div></div></section>
+
+    <section class="services" id="servicios"><div class="section service-heading"><div class="section-label light-label reveal"><span>02</span><p data-i18n="servicesKicker">SERVICIOS</p></div><div class="reveal"><h2 data-i18n="servicesTitle">Todo lo necesario para disfrutar de su piscina</h2><p data-i18n="servicesText">Un único equipo para planificar, ejecutar y cuidar cada detalle del proyecto.</p></div></div><div class="service-grid">
+      <article class="service-card reveal"><span>01</span><h3 data-i18n="s1Title">Diseño y planificación</h3><p data-i18n="s1Text">Distribución, dimensiones, acabados, iluminación y equipamiento adaptados al espacio y al presupuesto.</p></article>
+      <article class="service-card image-card reveal"><img src="https://unsplash.com/photos/KH9mddFZ7eE/download?force=true&amp;w=1200" alt="Piscina en proceso de construcción" loading="lazy"><div><span>02</span><h3 data-i18n="s2Title">Construcción de piscinas</h3><p data-i18n="s2Text">Ejecución coordinada de excavación, estructura, impermeabilización, filtración y terminaciones.</p></div></article>
+      <article class="service-card reveal"><span>03</span><h3 data-i18n="s3Title">Reforma y modernización</h3><p data-i18n="s3Text">Renovación de revestimientos, coronación, iluminación, escaleras y sistemas técnicos.</p></article>
+      <article class="service-card image-card reveal"><img src="https://unsplash.com/photos/z183EqFxuTw/download?force=true&amp;w=1200" alt="Profesional realizando el mantenimiento de una piscina" loading="lazy"><div><span>04</span><h3 data-i18n="s4Title">Mantenimiento</h3><p data-i18n="s4Text">Limpieza, revisión del agua, filtración y controles periódicos para una piscina siempre preparada.</p></div></article>
+    </div></section>
+
+    <section class="promise"><div class="promise-image reveal"><img src="https://unsplash.com/photos/yVC5NMPgE-4/download?force=true&amp;w=1500" alt="Piscina junto a una vivienda moderna" loading="lazy"></div><div class="promise-copy reveal"><p class="kicker dark" data-i18n="whyKicker">NUESTRO COMPROMISO</p><h2 data-i18n="whyTitle">Decisiones claras y trabajo bien coordinado</h2><p data-i18n="whyText">Explicamos las opciones, los materiales y las fases antes de comenzar. El objetivo es que pueda tomar decisiones con información y seguir la evolución del proyecto sin incertidumbre.</p><ul><li data-i18n="why1">Diseño adaptado a cada parcela</li><li data-i18n="why2">Presupuesto detallado antes del inicio</li><li data-i18n="why3">Materiales adecuados para exterior</li><li data-i18n="why4">Comprobación final y puesta en marcha</li></ul></div></section>
+
+    <section class="process section" id="proceso"><div class="process-head reveal"><div class="section-label"><span>03</span><p data-i18n="processKicker">CÓMO TRABAJAMOS</p></div><h2 data-i18n="processTitle">De la primera conversación al primer baño</h2></div><div class="steps"><article class="reveal"><b>01</b><h3 data-i18n="step1Title">Conocemos la idea</h3><p data-i18n="step1Text">Hablamos del espacio, el uso, el estilo y el presupuesto orientativo.</p></article><article class="reveal"><b>02</b><h3 data-i18n="step2Title">Diseñamos la solución</h3><p data-i18n="step2Text">Definimos forma, tamaño, equipamiento, acabados y planificación.</p></article><article class="reveal"><b>03</b><h3 data-i18n="step3Title">Construimos</h3><p data-i18n="step3Text">Coordinamos la ejecución y comprobamos cada fase del trabajo.</p></article><article class="reveal"><b>04</b><h3 data-i18n="step4Title">Entregamos y explicamos</h3><p data-i18n="step4Text">Ponemos el sistema en marcha y explicamos su funcionamiento y cuidado.</p></article></div></section>
+
+    <section class="projects" id="proyectos"><div class="projects-head section reveal"><div><p class="kicker" data-i18n="projectsKicker">PROYECTOS</p><h2 data-i18n="projectsTitle">Espacios que invitan a quedarse</h2></div><p data-i18n="projectsText">Cada vivienda necesita una respuesta diferente. Estas imágenes muestran algunos de los ambientes que pueden inspirar su proyecto.</p></div><div class="project-grid"><figure class="wide reveal"><img src="https://unsplash.com/photos/Ntdvds91U2U/download?force=true&amp;w=1700" alt="Piscina privada en un jardín" loading="lazy"><figcaption><b data-i18n="project1">Piscina familiar</b><span data-i18n="project1Tag">Diseño · Jardín · Zona de descanso</span></figcaption></figure><figure class="reveal"><img src="https://unsplash.com/photos/ZVJqmMpqPiY/download?force=true&amp;w=1200" alt="Piscina iluminada por la noche" loading="lazy"><figcaption><b data-i18n="project2">Ambiente nocturno</b><span data-i18n="project2Tag">Iluminación · Reforma</span></figcaption></figure><figure class="reveal"><img src="https://unsplash.com/photos/f7BefbPScR0/download?force=true&amp;w=1200" alt="Agua azul de piscina junto a la terraza" loading="lazy"><figcaption><b data-i18n="project3">Terraza mediterránea</b><span data-i18n="project3Tag">Acabados · Exterior</span></figcaption></figure></div></section>
+
+    <section class="faq section" id="preguntas"><div class="faq-title reveal"><div class="section-label"><span>04</span><p data-i18n="faqKicker">PREGUNTAS FRECUENTES</p></div><h2 data-i18n="faqTitle">Respuestas claras antes de empezar</h2><p data-i18n="faqIntro">Cada proyecto es distinto, pero estas son algunas de las dudas más habituales.</p></div><div class="faq-list reveal"><details open><summary><span data-i18n="q1">¿Cuánto cuesta construir una piscina?</span><b>+</b></summary><p data-i18n="a1">Depende del terreno, las dimensiones, el acceso, la estructura, el equipamiento y los acabados. Tras estudiar el proyecto preparamos un presupuesto detallado.</p></details><details><summary><span data-i18n="q2">¿Cuánto tiempo dura la obra?</span><b>+</b></summary><p data-i18n="a2">El plazo depende del tipo de piscina, los trabajos previos, los permisos y la complejidad del espacio. La planificación se concreta antes del inicio.</p></details><details><summary><span data-i18n="q3">¿También reforman piscinas existentes?</span><b>+</b></summary><p data-i18n="a3">Sí. Podemos renovar revestimientos, bordes, iluminación, equipos de filtración, accesos y otros elementos.</p></details><details><summary><span data-i18n="q4">¿Ofrecen mantenimiento periódico?</span><b>+</b></summary><p data-i18n="a4">Sí. El servicio puede adaptarse a la temporada, el uso y las características de la instalación.</p></details></div></section>
+
+    <section class="contact" id="contacto"><div class="contact-copy reveal"><p class="kicker" data-i18n="contactKicker">HABLEMOS DE SU PISCINA</p><h2 data-i18n="contactTitle">Convierta su exterior en el lugar favorito de la casa</h2><p data-i18n="contactText">Cuéntenos qué necesita, dónde se encuentra el proyecto y qué idea tiene en mente. Le responderemos con una primera orientación.</p></div><div class="contact-card reveal"><a href="mailto:info@example.com">info@example.com</a><span data-i18n="contactNote">Atención para proyectos de construcción, reforma y mantenimiento</span><a class="button dark-button" href="mailto:info@example.com" data-i18n="contactButton">Solicitar información</a></div></section>
+
+    <section class="mesterweb"><div><p class="kicker" data-i18n="mwKicker">¿TIENE UNA EMPRESA DE PISCINAS?</p><h2 data-i18n="mwTitle">Muestre la calidad de su trabajo con una web profesional</h2><p data-i18n="mwText">AQUAVIVA es una web de demostración. MesterWeb crea páginas únicas para constructores, reformistas y empresas de mantenimiento de piscinas, adaptadas a sus servicios, proyectos, imágenes y zona de trabajo.</p></div><a href="https://lnkr.es/" target="_blank" rel="noopener" data-i18n="mwButton">Abrir MesterWeb →</a></section>
+  </main>
+
+  <footer><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark">A</span><span><strong>AquaViva</strong><small data-i18n="brandSmall">PISCINAS</small></span></a><p data-i18n="footerText">Diseño, construcción, reforma y cuidado de piscinas.</p></div><div><h3 data-i18n="footerNav">Navegación</h3><a href="#servicios" data-i18n="navServices">Servicios</a><a href="#proceso" data-i18n="navProcess">Proceso</a><a href="#contacto" data-i18n="navContact">Contacto</a></div><div><h3 data-i18n="footerInfo">Información</h3><a href="kepforrasok.html" data-i18n="sources">Fuentes de las imágenes</a><a href="mailto:info@example.com">info@example.com</a></div><small>© <span id="year"></span> AquaViva Piscinas</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
