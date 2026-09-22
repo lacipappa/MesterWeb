@@ -80,6 +80,13 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .phase-detail-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
 .phase-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.phase-links span{font-size:11px;background:#eef4ff;color:#176dd0;border-radius:6px;padding:5px 7px}
 @media(max-width:700px){.linked-grid{grid-template-columns:1fr}}
+
+.profit-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.profit-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+.profit-card small{display:block;color:#7b8798;margin-bottom:5px}.profit-card b{font-size:18px}
+.budget-table{width:100%;border-collapse:collapse;margin-top:10px}.budget-table th,.budget-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}.budget-table th{font-size:11px;color:#7b8798}
+.variance-ok{color:#14845c}.variance-bad{color:#b63b41}.profit-note{padding:11px 13px;border-radius:9px;background:#f5f8fc;margin-top:12px}
+@media(max-width:700px){.profit-summary{grid-template-columns:1fr 1fr}}@media(max-width:460px){.profit-summary{grid-template-columns:1fr}.budget-table{font-size:12px}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
 <button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
@@ -151,7 +158,7 @@ function showProject(i){
 const w=works[i],m=projectMeta[i]; const q=quotes.find(x=>x[1]===m.client); const d=docs.filter(x=>x[1]===m.client);
 $('#modalContent').innerHTML=`<div class="project-hero"><div><div class="muted">OBRA · DEMO</div><h2 style="margin:4px 0">${w[0]}</h2><div>${m.client} · ${w[1]} · ${pill(w[4])}</div></div><div class="project-progress"><strong>${w[3]}%</strong><div class="muted">completado</div></div></div>
 <div class="detailgrid"><div class="detail"><small>Dirección</small><b>${m.address}</b></div><div class="detail"><small>Tipo de trabajo</small><b>${w[2]}</b></div><div class="detail"><small>Inicio</small><b>${m.start}</b></div><div class="detail"><small>Final previsto</small><b>${m.end}</b></div></div>
-<div class="tabs"><button class="tabbtn active" onclick="projectTab(${i},'resumen',this)">Resumen</button><button class="tabbtn" onclick="projectTab(${i},'fases',this)">Fases</button><button class="tabbtn" onclick="projectTab(${i},'costes',this)">Costes</button><button class="tabbtn" onclick="projectTab(${i},'documentos',this)">Documentos</button><button class="tabbtn" onclick="projectTab(${i},'fotos',this)">Fotos</button><button class="tabbtn" onclick="projectTab(${i},'conexiones',this)">Conexiones</button></div><div id="projectTab"></div>
+<div class="tabs"><button class="tabbtn active" onclick="projectTab(${i},'resumen',this)">Resumen</button><button class="tabbtn" onclick="projectTab(${i},'fases',this)">Fases</button><button class="tabbtn" onclick="projectTab(${i},'costes',this)">Costes</button><button class="tabbtn" onclick="projectTab(${i},'documentos',this)">Documentos</button><button class="tabbtn" onclick="projectTab(${i},'fotos',this)">Fotos</button><button class="tabbtn" onclick="projectTab(${i},'conexiones',this)">Conexiones</button><button class="tabbtn" onclick="projectTab(${i},'rentabilidad',this)">Rentabilidad</button></div><div id="projectTab"></div>
 <div class="actionrow"><button class="primary" onclick="demoAdd('Tarea de obra')">+ Añadir tarea</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
 projectTab(i,'resumen');$('#modal').classList.remove('hidden')}
 function projectTab(i,tab,btn){
@@ -178,6 +185,33 @@ if(tab==='conexiones'){
  <div class="linked-card" onclick="closeModal();goView('pagos')"><small>COBROS</small><b>${(typeof payments!=='undefined'?payments:[]).filter(p=>p.work===w[0]).length}</b><div class="muted">Seguimiento financiero de la obra</div></div>
  <div class="linked-card" onclick="closeModal();goView('agenda')"><small>TAREAS</small><b>${(typeof tasks!=='undefined'?tasks:[]).filter(t=>t.work===w[0]).length}</b><div class="muted">Agenda y próximos pasos</div></div>
  </div>`;
+}
+if(tab==='rentabilidad'){
+ const c=(typeof projectCosts!=='undefined'?projectCosts:[]).find(x=>x.work===w[0]);
+ const pay=(typeof payments!=='undefined'?payments:[]).find(x=>x.work===w[0]);
+ const income=c?c.income:(pay?pay.total:0);
+ const planned=c?c.budgetCost:0;
+ const actual=c?c.actual:0;
+ const plannedProfit=income-planned;
+ const currentProfit=income-actual;
+ const costPct=planned?Math.round(actual/planned*100):0;
+ const marginPct=income?Math.round(currentProfit/income*100):0;
+ const rows=c?c.expenses.map(e=>{
+   let val=parseFloat(e[2].replace(/\./g,'').replace(',','.').replace(' €',''))||0;
+   return [e[0], e[1], val];
+ }):[];
+ box.innerHTML=`<div class="mini-item"><b>Rentabilidad de la obra</b><div class="muted">Comparación entre ingreso previsto, coste presupuestado y coste real registrado.</div></div>
+ <div class="profit-summary">
+ <div class="profit-card"><small>INGRESO PREVISTO</small><b>${eur(income)}</b></div>
+ <div class="profit-card"><small>COSTE PREVISTO</small><b>${eur(planned)}</b></div>
+ <div class="profit-card"><small>COSTE REAL</small><b>${eur(actual)}</b></div>
+ <div class="profit-card"><small>MARGEN ACTUAL</small><b class="${currentProfit>=plannedProfit?'variance-ok':'variance-bad'}">${eur(currentProfit)}</b></div>
+ </div>
+ <div class="mini-item"><b>Consumo del presupuesto de costes · ${costPct}%</b><div class="bar"><i style="width:${Math.min(costPct,100)}%"></i></div><div class="muted" style="margin-top:6px">Margen actual sobre ingresos: ${marginPct}%</div></div>
+ <h3 style="margin:18px 0 8px">Desglose de costes reales</h3>
+ <div style="overflow:auto"><table class="budget-table"><thead><tr><th>Concepto</th><th>Proveedor / origen</th><th>Coste real</th></tr></thead><tbody>${rows.length?rows.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${eur(r[2])}</td></tr>`).join(''):'<tr><td colspan="3" class="muted">Sin gastos registrados</td></tr>'}</tbody></table></div>
+ <div class="profit-note"><b>${actual<=planned?'✓ Costes dentro del presupuesto previsto':'⚠ Costes por encima del presupuesto previsto'}</b><div class="muted">${actual<=planned?eur(planned-actual)+' disponibles dentro del coste previsto.':eur(actual-planned)+' por encima del coste previsto.'}</div></div>
+ <div class="quote-actions"><button class="primary" onclick="closeModal();goView('gastos')">Ver todos los costes</button><button class="printbtn" onclick="demoCostAction('Exportar rentabilidad')">Exportar informe</button></div>`;
 }
 }
 
