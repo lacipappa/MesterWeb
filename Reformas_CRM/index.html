@@ -58,9 +58,17 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .cost-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
 .costline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
 @media(max-width:800px){.supplier-summary,.cost-summary{grid-template-columns:1fr 1fr}}@media(max-width:500px){.supplier-summary,.cost-summary{grid-template-columns:1fr}}
+
+.cost-summary-v12{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.cost-card-v12{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px}.cost-card-v12 b{display:block;font-size:22px;margin-top:5px}
+.cost-detail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.expense-list{display:grid;gap:8px}.expense-item{display:grid;grid-template-columns:1.4fr .9fr .9fr .8fr;gap:10px;align-items:center;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.profit-good{color:#14845c}.profit-warn{color:#b9690e}
+@media(max-width:950px){.cost-summary-v12{grid-template-columns:1fr 1fr}.cost-detail-grid{grid-template-columns:1fr 1fr}.expense-item{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cost-summary-v12,.cost-detail-grid,.expense-item{grid-template-columns:1fr}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -210,6 +218,50 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 
 
 
+
+const projectCosts=[
+{work:'Casa Martínez',client:'José Martínez',income:2450.25,budgetCost:1800,actual:1680,expenses:[
+['Materiales','Materiales Costa Sur S.L.','980,00 €','18/09/2026'],
+['Fontanería','Fontanería Levante','520,00 €','19/09/2026'],
+['Transporte','Otros','180,00 €','20/09/2026']]},
+{work:'Piso López',client:'Ana López',income:4979.15,budgetCost:3500,actual:2890,expenses:[
+['Materiales','Materiales Costa Sur S.L.','1.250,00 €','20/09/2026'],
+['Carpintería','Carpintería Sol','1.240,00 €','21/09/2026'],
+['Otros materiales','Proveedor local','400,00 €','22/09/2026']]},
+{work:'Terraza Ruiz',client:'Carlos Ruiz',income:3750, budgetCost:2750,actual:2460,expenses:[
+['Cerámica','Cerámicas Mediterráneo','1.360,00 €','12/09/2026'],
+['Impermeabilización','Proveedor local','740,00 €','14/09/2026'],
+['Otros','Varios','360,00 €','18/09/2026']]},
+{work:'Villa Moreno',client:'David Moreno',income:18748.95,budgetCost:13500,actual:4490,expenses:[
+['Electricidad','Electricidad Vega Baja','1.890,00 €','22/09/2026'],
+['Materiales','Materiales Costa Sur S.L.','1.250,00 €','22/09/2026'],
+['Demolición','Subcontrata local','1.350,00 €','23/09/2026']]}
+];
+function costsView(){
+title.textContent='Gastos / Costes';
+const income=projectCosts.reduce((a,x)=>a+x.income,0),budget=projectCosts.reduce((a,x)=>a+x.budgetCost,0),actual=projectCosts.reduce((a,x)=>a+x.actual,0),profit=income-actual,remaining=budget-actual;
+content.innerHTML=`<div class="cost-summary-v12">
+<div class="cost-card-v12"><span class="muted">INGRESOS PREVISTOS</span><b>${eur(income)}</b></div>
+<div class="cost-card-v12"><span class="muted">COSTE PREVISTO</span><b>${eur(budget)}</b></div>
+<div class="cost-card-v12"><span class="muted">COSTE REAL</span><b class="money-warning">${eur(actual)}</b></div>
+<div class="cost-card-v12"><span class="muted">MARGEN ACTUAL</span><b class="profit-good">${eur(profit)}</b></div>
+<div class="cost-card-v12"><span class="muted">PRESUPUESTO DISPONIBLE</span><b>${eur(remaining)}</b></div></div>
+<div class="toolbar"><input class="filter" placeholder="Buscar obra, cliente…"><button class="primary" onclick="demoAdd('Gasto')">+ Registrar gasto</button></div>
+<div class="tablewrap"><table><thead><tr><th>Obra</th><th>Cliente</th><th>Ingreso</th><th>Coste previsto</th><th>Coste real</th><th>Margen actual</th><th>Consumo</th></tr></thead><tbody>${projectCosts.map((x,i)=>{let margin=x.income-x.actual,pct=Math.round(x.actual/x.budgetCost*100);return `<tr class="click" onclick="showCostProject(${i})"><td><b>${x.work}</b></td><td>${x.client}</td><td>${eur(x.income)}</td><td>${eur(x.budgetCost)}</td><td>${eur(x.actual)}</td><td class="profit-good"><b>${eur(margin)}</b></td><td><div style="min-width:110px">${pct}%<div class="bar"><i style="width:${Math.min(pct,100)}%"></i></div></div></td></tr>`}).join('')}</tbody></table></div>`;
+$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+function showCostProject(i){
+const x=projectCosts[i],margin=x.income-x.actual,pct=Math.round(x.actual/x.budgetCost*100),plannedMargin=x.income-x.budgetCost;
+$('#modalContent').innerHTML=`<div class="payment-detail-head"><div><div class="muted">CONTROL DE COSTES · DEMO</div><h2 style="margin:4px 0">${x.work}</h2><div>${x.client}</div></div><div class="payment-amount"><small class="muted">MARGEN ACTUAL</small><strong class="profit-good">${eur(margin)}</strong></div></div>
+<div class="cost-detail-grid"><div class="detail"><small>Ingreso previsto</small><b>${eur(x.income)}</b></div><div class="detail"><small>Coste previsto</small><b>${eur(x.budgetCost)}</b></div><div class="detail"><small>Coste real</small><b>${eur(x.actual)}</b></div><div class="detail"><small>Margen previsto</small><b>${eur(plannedMargin)}</b></div></div>
+<div class="mini-item"><b>Consumo del presupuesto de costes · ${pct}%</b><div class="bar"><i style="width:${Math.min(pct,100)}%"></i></div><div class="muted" style="margin-top:6px">${eur(x.budgetCost-x.actual)} todavía disponibles dentro del coste previsto</div></div>
+<h3 style="margin:18px 0 8px">Gastos registrados</h3><div class="expense-list">${x.expenses.map(e=>`<div class="expense-item"><div><b>${e[0]}</b></div><div>${e[1]}</div><div><b>${e[2]}</b></div><div class="muted">${e[3]}</div></div>`).join('')}</div>
+<div class="quote-actions"><button class="primary" onclick="demoCostAction('Registrar gasto')">+ Registrar gasto</button><button class="printbtn" onclick="demoCostAction('Añadir factura de proveedor')">Añadir factura</button><button class="printbtn" onclick="demoCostAction('Exportar costes')">Exportar</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoCostAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final el movimiento quedaría vinculado a la obra, al proveedor y a su documento o factura correspondiente.</p><p class="muted">Esta versión web utiliza únicamente datos ficticios de demostración.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 const suppliers=[
 {name:'Materiales Costa Sur S.L.',type:'Materiales de construcción',city:'Torrevieja',phone:'+34 965 000 121',email:'ventas@costasur.demo',contact:'Laura Gómez',status:'Activo',works:['Casa Martínez','Piso López'],spent:'3.480,00 €',note:'Azulejos, cemento, adhesivos y material general.'},
 {name:'Fontanería Levante',type:'Subcontrata · Fontanería',city:'Guardamar',phone:'+34 966 000 245',email:'info@fontanerialevante.demo',contact:'Miguel Torres',status:'Activo',works:['Casa Martínez','Villa Moreno'],spent:'2.150,00 €',note:'Instalaciones y reparaciones de fontanería.'},
@@ -294,7 +346,7 @@ $('#modal').classList.remove('hidden')
 function demoTaskAction(action){
 $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción actualizaría la tarea y su relación con el cliente y la obra.</p><p class="muted">La demo web no guarda cambios permanentes.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
 }
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='proveedores')suppliersView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -322,6 +374,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.suppliersView=suppliersView;window.showSupplier=showSupplier;window.demoSupplierAction=demoSupplierAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.costsView=costsView;window.showCostProject=showCostProject;window.demoCostAction=demoCostAction;window.suppliersView=suppliersView;window.showSupplier=showSupplier;window.demoSupplierAction=demoSupplierAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
