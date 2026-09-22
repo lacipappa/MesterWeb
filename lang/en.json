@@ -163,5 +163,17 @@
   "example_dog_template_text": "A fully customisable demo with name, images, services, prices and colours.",
   "tag_cosmetic": "COSMETIC STUDIO • SKINCARE",
   "example_cosmetic_title": "Eurelia cosmetic studio",
-  "example_cosmetic_text": "An elegant multi-page presentation with treatments, prices, gallery and appointment enquiries."
+  "example_cosmetic_text": "An elegant multi-page presentation with treatments, prices, gallery and appointment enquiries.",
+  "nav_crm": "Client management",
+  "examples_note": "The templates can be adapted to any profession with the necessary changes. Since it is impossible to create a separate example for every type of business, each website is tailored to the client’s ideas, taste and real needs. These demos are here for inspiration—the final result can go as far as your imagination.",
+  "tag_carpentry": "CARPENTRY • BESPOKE FURNITURE", "example_carpentry_title": "Carpentry workshop website", "example_carpentry_text": "Bespoke furniture, repairs, projects and quote requests.",
+  "tag_climate": "AIR CONDITIONING", "example_climate_title": "Modern air-conditioning website", "example_climate_text": "Installation, repairs, maintenance and quick quotes.",
+  "tag_massage": "MASSAGE • WELLNESS", "example_massage_title": "Calm massage studio website", "example_massage_text": "Treatments, prices, studio introduction and bookings.",
+  "tag_pool": "POOLS • MAINTENANCE", "example_pool_title": "Professional pool services website", "example_pool_text": "Design, construction, renovation and maintenance.",
+  "tag_locksmith": "LOCKSMITH • EMERGENCY", "example_locksmith_title": "Fast locksmith service website", "example_locksmith_text": "Door opening, lock replacement, emergencies and contact.",
+  "tag_yoga": "YOGA • MOVEMENT", "example_yoga_title": "Welcoming yoga studio website", "example_yoga_text": "Classes, instructors, passes and registration in one place.",
+  "tag_roofing": "ROOFING • REPAIRS", "example_roofing_title": "Professional roofing website", "example_roofing_text": "Roofing, repairs, waterproofing and inspections.",
+  "tag_garden": "GARDENING • LANDSCAPING", "example_garden_title": "Mediterranean gardening website", "example_garden_text": "Design, planting, irrigation and maintenance.",
+  "tag_cafe": "CAFÉ • BREAKFAST", "example_cafe_title": "Website for a charming small café", "example_cafe_text": "Menu, story, gallery, opening hours and location.",
+  "tag_hairsalon": "HAIR SALON • STYLE", "example_hairsalon_title": "Modern hair salon website", "example_hairsalon_text": "Services, prices, portfolio and appointment requests."
 }

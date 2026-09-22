@@ -163,5 +163,17 @@
   "example_dog_template_text": "Demo totalmente personalizable con nombre, imágenes, servicios, precios y colores.",
   "tag_cosmetic": "CENTRO DE ESTÉTICA • CUIDADO DE LA PIEL",
   "example_cosmetic_title": "Centro de estética Eurelia",
-  "example_cosmetic_text": "Una presentación elegante de varias páginas con tratamientos, precios, galería y solicitud de cita."
+  "example_cosmetic_text": "Una presentación elegante de varias páginas con tratamientos, precios, galería y solicitud de cita.",
+  "nav_crm": "Gestión de clientes",
+  "examples_note": "Las plantillas pueden adaptarse a cualquier profesión con las modificaciones necesarias. Como no es posible crear un ejemplo para cada actividad existente, diseñamos cada web según las ideas, el estilo y las necesidades reales de cada cliente. Estas demos sirven como inspiración: el resultado final puede llegar tan lejos como su imaginación.",
+  "tag_carpentry": "CARPINTERÍA • MUEBLES A MEDIDA", "example_carpentry_title": "Web para un taller de carpintería", "example_carpentry_text": "Muebles a medida, reparaciones, proyectos y solicitud de presupuesto.",
+  "tag_climate": "CLIMATIZACIÓN", "example_climate_title": "Web moderna de climatización", "example_climate_text": "Instalación, reparación, mantenimiento y presupuesto rápido.",
+  "tag_massage": "MASAJE • BIENESTAR", "example_massage_title": "Centro de masajes con ambiente sereno", "example_massage_text": "Tratamientos, precios, presentación del estudio y reservas.",
+  "tag_pool": "PISCINAS • MANTENIMIENTO", "example_pool_title": "Web profesional para piscinas", "example_pool_text": "Diseño, construcción, reforma y mantenimiento.",
+  "tag_locksmith": "CERRAJERÍA • URGENCIAS", "example_locksmith_title": "Web de cerrajería rápida", "example_locksmith_text": "Apertura de puertas, cambio de cerraduras, urgencias y contacto.",
+  "tag_yoga": "YOGA • MOVIMIENTO", "example_yoga_title": "Web acogedora para un estudio de yoga", "example_yoga_text": "Clases, profesores, bonos e inscripciones en un solo lugar.",
+  "tag_roofing": "TEJADOS • REPARACIÓN", "example_roofing_title": "Web profesional para tejados", "example_roofing_text": "Cubiertas, reparaciones, impermeabilización e inspecciones.",
+  "tag_garden": "JARDINERÍA • PAISAJISMO", "example_garden_title": "Web de jardinería mediterránea", "example_garden_text": "Diseño, plantación, riego y mantenimiento.",
+  "tag_cafe": "CAFETERÍA • DESAYUNOS", "example_cafe_title": "Web para una cafetería con encanto", "example_cafe_text": "Carta, historia, galería, horario y ubicación.",
+  "tag_hairsalon": "PELUQUERÍA • ESTILO", "example_hairsalon_title": "Web moderna para una peluquería", "example_hairsalon_text": "Servicios, precios, trabajos realizados y reservas."
 }

@@ -163,5 +163,17 @@
   "example_dog_template_text": "Teljesen személyre szabható bemutató névvel, képekkel, szolgáltatásokkal, árakkal és színekkel.",
   "tag_cosmetic": "KOZMETIKAI STÚDIÓ • BŐRÁPOLÁS",
   "example_cosmetic_title": "Eurelia kozmetikai stúdió",
-  "example_cosmetic_text": "Elegáns többoldalas bemutatkozás kezelésekkel, árakkal, galériával és időpontkéréssel."
+  "example_cosmetic_text": "Elegáns többoldalas bemutatkozás kezelésekkel, árakkal, galériával és időpontkéréssel.",
+  "nav_crm": "Ügyfélkezelés",
+  "examples_note": "A minták a szükséges módosításokkal bármely szakmához igazíthatók. Mivel lehetetlen minden létező tevékenységhez külön mintát készíteni, minden weboldalt az ügyfél elképzeléseihez, ízléséhez és vállalkozásához szabunk. Ezek a bemutatók inspirációként szolgálnak – a végső lehetőségeknek szinte csak a képzelet szab határt.",
+  "tag_carpentry": "ASZTALOS • EGYEDI BÚTOR", "example_carpentry_title": "Asztalosműhely bemutatkozó oldal", "example_carpentry_text": "Egyedi bútorok, javítások, referenciák és ajánlatkérés.",
+  "tag_climate": "KLÍMATECHNIKA", "example_climate_title": "Modern klímaszerelő oldal", "example_climate_text": "Telepítés, javítás, karbantartás és gyors ajánlatkérés.",
+  "tag_massage": "MASSZÁZS • WELLNESS", "example_massage_title": "Nyugodt hangulatú masszázsstúdió", "example_massage_text": "Kezelések, árak, stúdióbemutató és időpontkérés.",
+  "tag_pool": "MEDENCE • KARBANTARTÁS", "example_pool_title": "Prémium medencés weboldal", "example_pool_text": "Tervezés, kivitelezés, felújítás és karbantartás.",
+  "tag_locksmith": "ZÁRSZERELŐ • SOS", "example_locksmith_title": "Gyors zárszerviz oldal", "example_locksmith_text": "Ajtónyitás, zárcsere, sürgősségi segítség és kapcsolat.",
+  "tag_yoga": "JÓGA • MOZGÁS", "example_yoga_title": "Barátságos jógastúdió oldal", "example_yoga_text": "Órák, oktatók, bérletek és jelentkezés egy helyen.",
+  "tag_roofing": "TETŐFEDÉS • JAVÍTÁS", "example_roofing_title": "Megbízható tetőfedő oldal", "example_roofing_text": "Tetőépítés, javítás, szigetelés és felmérés.",
+  "tag_garden": "KERTÉSZET • KERTÉPÍTÉS", "example_garden_title": "Mediterrán kertészeti oldal", "example_garden_text": "Tervezés, növénytelepítés, öntözés és fenntartás.",
+  "tag_cafe": "KÁVÉZÓ • REGGELIZŐ", "example_cafe_title": "Hangulatos kis kávézó oldala", "example_cafe_text": "Kínálat, történet, galéria, nyitvatartás és helyszín.",
+  "tag_hairsalon": "FODRÁSZAT • STÍLUS", "example_hairsalon_title": "Modern fodrászszalon oldal", "example_hairsalon_text": "Szolgáltatások, árak, munkák és időpontkérés."
 }
