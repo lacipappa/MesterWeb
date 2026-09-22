@@ -21,6 +21,13 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .totals{margin-left:auto;width:min(300px,100%);margin-top:14px}.totalrow{display:flex;justify-content:space-between;padding:7px 0}.totalrow.final{border-top:2px solid var(--line);font-size:18px;font-weight:800}
 .quote-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.printbtn{border:1px solid #cfd8e6;background:#f8fafc;color:#24344d;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer}
 @media(max-width:650px){.quote-head{display:block}.quote-total{text-align:left;margin-top:12px}.items{min-width:560px}.quote-items-wrap{overflow:auto}}
+
+.doc-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.doc-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px}.doc-card b{font-size:22px;display:block;margin-top:5px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.filterbtn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 12px;cursor:pointer;font-weight:700;color:#5d6b7e}.filterbtn.active{background:#e8f2ff;color:#176dd0;border-color:#cfe2ff}
+.doc-icon{width:42px;height:42px;border-radius:10px;background:#eef4ff;display:grid;place-items:center;font-size:20px}.dochead{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.preview{background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px}.preview-paper{background:#fff;border:1px solid #dfe5ee;border-radius:7px;min-height:210px;padding:24px;box-shadow:0 6px 18px #20304a0c}.preview-line{height:8px;background:#edf1f6;border-radius:5px;margin:10px 0}.preview-line.short{width:55%}.preview-line.mid{width:78%}
+@media(max-width:800px){.doc-summary{grid-template-columns:1fr 1fr}}@media(max-width:500px){.doc-summary{grid-template-columns:1fr}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
 <button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
@@ -98,6 +105,36 @@ $('#modal').classList.remove('hidden')
 function demoQuoteAction(action){
 $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción trabajaría con el presupuesto seleccionado.</p><p class="muted">En esta demo web no se envían mensajes ni se generan documentos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
 }
+
+const extraDocs=[
+['Certificado_materiales.pdf','Carlos Ruiz','Certificado','21/09/2026'],
+['Fotos_entrega_Ruiz.zip','Carlos Ruiz','Fotos','22/09/2026'],
+['Contrato_reforma_Moreno.pdf','David Moreno','Contrato','22/09/2026'],
+['Mediciones_Villa_Moreno.xlsx','David Moreno','Mediciones','22/09/2026']
+];
+const allDocs=[...docs,...extraDocs];
+
+function documentsView(filter='Todos'){
+title.textContent='Documentos';
+const shown=filter==='Todos'?allDocs:allDocs.filter(d=>d[2]===filter);
+const types=['Todos',...new Set(allDocs.map(d=>d[2]))];
+content.innerHTML=`<div class="doc-summary"><div class="doc-card"><span class="muted">DOCUMENTOS</span><b>${allDocs.length}</b></div><div class="doc-card"><span class="muted">CONTRATOS</span><b>${allDocs.filter(x=>x[2]==='Contrato').length}</b></div><div class="doc-card"><span class="muted">PRESUPUESTOS</span><b>${allDocs.filter(x=>x[2]==='Presupuesto').length}</b></div><div class="doc-card"><span class="muted">OTROS ARCHIVOS</span><b>${allDocs.filter(x=>!['Contrato','Presupuesto'].includes(x[2])).length}</b></div></div>
+<div class="toolbar"><input id="docSearch" placeholder="Buscar archivo, cliente, tipo…"><button class="primary" onclick="demoAdd('Documento')">+ Subir documento</button></div>
+<div class="filters">${types.map(t=>`<button class="filterbtn ${t===filter?'active':''}" onclick="documentsView('${t}')">${t}</button>`).join('')}</div>
+<div class="tablewrap"><table><thead><tr><th>Archivo</th><th>Cliente</th><th>Tipo</th><th>Fecha</th><th>Acción</th></tr></thead><tbody>${shown.map(d=>{let i=allDocs.findIndex(x=>x[0]===d[0]);return `<tr class="click" onclick="showDocument(${i})"><td><b>📄 ${d[0]}</b></td><td>${d[1]}</td><td><span class="pill">${d[2]}</span></td><td>${d[3]}</td><td><button class="secondary" onclick="event.stopPropagation();showDocument(${i})">Ver</button></td></tr>`}).join('')}</tbody></table></div>`;
+$('#docSearch').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+function showDocument(i){
+const d=allDocs[i]; const relatedWork=works.find(w=>w[1]===clients.find(c=>c[0]===d[1])?.[1]);
+$('#modalContent').innerHTML=`<div class="dochead"><div class="doc-icon">📄</div><div><div class="muted">${d[2].toUpperCase()} · DEMO</div><h2 style="margin:2px 0">${d[0]}</h2></div></div>
+<div class="detailgrid"><div class="detail"><small>Cliente</small><b>${d[1]}</b></div><div class="detail"><small>Tipo</small><b>${d[2]}</b></div><div class="detail"><small>Fecha</small><b>${d[3]}</b></div><div class="detail"><small>Obra relacionada</small><b>${relatedWork?relatedWork[0]:'Sin asignar'}</b></div></div>
+<div class="preview"><div class="muted" style="margin-bottom:8px">VISTA PREVIA DEL DOCUMENTO</div><div class="preview-paper"><b>MesterCRM · ${d[2]}</b><div class="preview-line mid"></div><div class="preview-line"></div><div class="preview-line"></div><div class="preview-line short"></div><br><div class="preview-line mid"></div><div class="preview-line"></div><p class="muted">Vista previa simulada. El archivo real permanecería guardado localmente en la aplicación.</p></div></div>
+<div class="quote-actions"><button class="primary" onclick="demoDocumentAction('Abrir documento')">Abrir</button><button class="printbtn" onclick="demoDocumentAction('Descargar / exportar')">Descargar</button><button class="printbtn" onclick="demoDocumentAction('Cambiar asociación')">Vincular</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoDocumentAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta función trabajaría con el archivo guardado localmente y su ficha de cliente/obra.</p><p class="muted">La demo web no almacena ni descarga documentos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1768321902156-9358b5373d0a?auto=format&fit=crop&w=1200&q=82','Reforma interior'],
 ['https://images.unsplash.com/photo-1741121647933-10714e7b13d3?auto=format&fit=crop&w=1200&q=82','Estructura y obra'],
@@ -106,7 +143,7 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 ['https://images.unsplash.com/photo-1780849327888-cb6e5e6b9cc7?auto=format&fit=crop&w=1200&q=82','Reforma exterior'],
 ['https://images.unsplash.com/photo-1659031158304-5c0c54fb3592?auto=format&fit=crop&w=1200&q=82','Cocina en reforma']];content.innerHTML=`<div class="toolbar"><button class="primary" onclick="demoAdd('Foto')">+ Añadir foto</button><a href="fuentes-imagenes.html" style="align-self:center;color:#1478ff;font-weight:700;text-decoration:none">Fuentes de imágenes →</a></div><div class="photos">${imgs.map((x,i)=>`<div class="photo" title="${x[1]}"><img src="${x[0]}" alt="${x[1]}" loading="lazy"></div>`).join('')}</div>`}
 function agenda(){title.textContent='Agenda';let ev={23:'Visita · Guardamar',24:'Enviar presupuesto',25:'Inicio · Torrevieja',28:'Llamar cliente'};content.innerHTML=`<div class="panel"><h2>Septiembre 2026</h2><div class="calendar">${['L','M','X','J','V','S','D'].map(x=>`<b>${x}</b>`).join('')}${Array.from({length:35},(_,i)=>{let d=i-1;return `<div class="day">${d>0&&d<=30?`<b>${d}</b>${ev[d]?`<div class="event">${ev[d]}</div>`:''}`:''}</div>`}).join('')}</div></div>`}
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')tableView('Documentos',['Archivo','Cliente','Tipo','Fecha'],docs);if(v==='fotos')photos();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -134,6 +171,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
