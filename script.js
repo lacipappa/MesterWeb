@@ -1,6 +1,12 @@
 const LANGS = ['hu', 'en', 'es'];
 let currentLang = localStorage.getItem('mesterweb_lang') || 'es';
 
+const digitalSystemsLabel = {
+  hu: 'Digitális rendszerek',
+  en: 'Digital systems',
+  es: 'Sistemas digitales'
+};
+
 async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
@@ -12,6 +18,10 @@ async function loadLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
       if (t[key] !== undefined) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n="nav_crm"]').forEach((el) => {
+      el.textContent = digitalSystemsLabel[lang];
     });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
