@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    if (!location.pathname.endsWith('/') && !location.pathname.split('/').pop().includes('.')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
+  <meta name="description" content="Clases de yoga en un estudio cálido y cercano: movimiento, respiración y descanso para todos los niveles.">
+  <title>Alma Tierra Yoga | Movimiento, respiración y calma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Alma Tierra Yoga inicio"><span class="brand-symbol">◒</span><span>ALMA TIERRA<small>YOGA STUDIO</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav"><a href="#estudio" data-i18n="navStudio">El estudio</a><a href="#clases" data-i18n="navClasses">Clases</a><a href="#horarios" data-i18n="navSchedule">Horarios</a><a href="#preguntas" data-i18n="navFaq">Preguntas</a><a href="#contacto" data-i18n="navContact">Contacto</a></nav>
+    <div class="languages" aria-label="Selector de idioma"><button class="lang active" data-lang="es">ES</button><button class="lang" data-lang="hu">HU</button><button class="lang" data-lang="en">EN</button></div>
+    <a class="header-cta" href="#contacto" data-i18n="book">Reservar clase</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal"><p class="eyebrow" data-i18n="heroEyebrow">YOGA · RESPIRACIÓN · BIENESTAR</p><h1 data-i18n="heroTitle">Un espacio para volver a ti</h1><p data-i18n="heroText">Movimiento consciente, respiración y calma en clases cercanas, adaptadas a tu ritmo y abiertas a todos los niveles.</p><div class="actions"><a class="button primary" href="#horarios" data-i18n="heroCta">Ver horarios</a><a class="text-link" href="#estudio" data-i18n="discover">Conoce el estudio →</a></div></div>
+      <div class="hero-image reveal"><span class="sun"></span><img src="https://unsplash.com/photos/9wts8yKWPnI/download?force=true&amp;w=1500" alt="Profesora guiando una clase de yoga en un estudio"><div class="hero-tag"><b data-i18n="heroTagTitle">Tu práctica, tu momento</b><span data-i18n="heroTagText">Grupos reducidos · Atención cercana</span></div></div>
+    </section>
+
+    <section class="marquee" aria-label="Valores del estudio"><div><span data-i18n="value1">RESPIRA CON CALMA</span><i>✦</i><span data-i18n="value2">MUÉVETE CON INTENCIÓN</span><i>✦</i><span data-i18n="value3">ESCUCHA TU CUERPO</span><i>✦</i><span data-i18n="value4">ENCUENTRA TU EQUILIBRIO</span></div></section>
+
+    <section class="philosophy section" id="estudio"><div class="section-no">01</div><div class="philosophy-copy reveal"><p class="eyebrow" data-i18n="aboutEyebrow">NUESTRA FORMA DE PRACTICAR</p><h2 data-i18n="aboutTitle">Sin prisas, sin exigencias, con espacio para sentir</h2><p data-i18n="aboutText">En Alma Tierra entendemos el yoga como una práctica personal, no como una meta. Creamos un ambiente acogedor donde cada persona puede explorar el movimiento, descansar y reconectar consigo misma.</p><div class="mini-points"><span data-i18n="point1">Todos los niveles</span><span data-i18n="point2">Atención personalizada</span><span data-i18n="point3">Material disponible</span></div></div><div class="philosophy-image reveal"><img src="https://unsplash.com/photos/AvRCo6U-T6U/download?force=true&amp;w=1300" alt="Mujer sentada tranquilamente sobre una esterilla de yoga" loading="lazy"></div></section>
+
+    <section class="classes" id="clases"><div class="section classes-head"><div><p class="eyebrow light" data-i18n="classesEyebrow">ENCUENTRA TU PRÁCTICA</p><h2 data-i18n="classesTitle">Clases para cada momento</h2></div><p data-i18n="classesIntro">Elige una práctica dinámica, suave o restaurativa. Te ayudamos a encontrar la clase que mejor encaja contigo.</p></div><div class="class-grid section">
+      <article class="class-card reveal"><img src="https://unsplash.com/photos/AkOBmbw8NQ8/download?force=true&amp;w=1000" alt="Práctica de yoga fluido" loading="lazy"><div><span>01 · 60 MIN</span><h3 data-i18n="class1Title">Flow esencial</h3><p data-i18n="class1Text">Secuencias fluidas para activar el cuerpo, mejorar la movilidad y acompañar el movimiento con la respiración.</p><b data-i18n="class1Level">Nivel abierto</b></div></article>
+      <article class="class-card feature reveal"><img src="https://unsplash.com/photos/8Z8V3XRXTvk/download?force=true&amp;w=1000" alt="Postura de yoga restaurativo" loading="lazy"><div><span>02 · 75 MIN</span><h3 data-i18n="class2Title">Yin y calma</h3><p data-i18n="class2Text">Posturas sostenidas, apoyos y quietud para liberar tensión y dar al sistema nervioso un descanso profundo.</p><b data-i18n="class2Level">Todos los niveles</b></div></article>
+      <article class="class-card reveal"><img src="https://unsplash.com/photos/vWUcZsQr0EA/download?force=true&amp;w=1000" alt="Yoga suave en una sala luminosa" loading="lazy"><div><span>03 · 50 MIN</span><h3 data-i18n="class3Title">Movilidad suave</h3><p data-i18n="class3Text">Una clase accesible para mover articulaciones, aliviar rigidez y recuperar comodidad en el día a día.</p><b data-i18n="class3Level">Ideal para empezar</b></div></article>
+    </div></section>
+
+    <section class="schedule section" id="horarios"><div class="schedule-title reveal"><div class="section-no">02</div><p class="eyebrow" data-i18n="scheduleEyebrow">ESTA SEMANA</p><h2 data-i18n="scheduleTitle">Haz espacio en tu agenda para ti</h2><p data-i18n="scheduleText">Las plazas son limitadas. Escríbenos para confirmar disponibilidad y reservar tu esterilla.</p></div><div class="schedule-list reveal"><div><b data-i18n="mon">Lunes</b><span>09:30</span><strong data-i18n="class1Title">Flow esencial</strong></div><div><b data-i18n="tue">Martes</b><span>18:30</span><strong data-i18n="class2Title">Yin y calma</strong></div><div><b data-i18n="thu">Jueves</b><span>10:00</span><strong data-i18n="class3Title">Movilidad suave</strong></div><div><b data-i18n="sat">Sábado</b><span>11:00</span><strong data-i18n="weekend">Práctica de fin de semana</strong></div><a class="button secondary" href="#contacto" data-i18n="reserve">Consultar plaza</a></div></section>
+
+    <section class="community"><div class="community-image reveal"><img src="https://unsplash.com/photos/p1Fcf20MiD0/download?force=true&amp;w=1500" alt="Grupo de personas practicando yoga" loading="lazy"></div><div class="community-copy reveal"><p class="eyebrow light" data-i18n="communityEyebrow">UNA COMUNIDAD CERCANA</p><h2 data-i18n="communityTitle">Practicar en compañía también transforma</h2><p data-i18n="communityText">Cuidamos el ambiente, los grupos y cada detalle para que te sientas bienvenida desde el primer día. Aquí no tienes que demostrar nada: solo llegar como eres.</p><blockquote data-i18n="quote">“La práctica empieza cuando dejamos de compararnos.”</blockquote></div></section>
+
+    <section class="faq section" id="preguntas"><div class="faq-title reveal"><div class="section-no">03</div><p class="eyebrow" data-i18n="faqEyebrow">ANTES DE VENIR</p><h2 data-i18n="faqTitle">Preguntas frecuentes</h2></div><div class="faq-list reveal"><details open><summary><span data-i18n="q1">¿Necesito experiencia previa?</span><b>+</b></summary><p data-i18n="a1">No. Hay clases adecuadas para personas que empiezan y ofrecemos variaciones para adaptar cada postura.</p></details><details><summary><span data-i18n="q2">¿Tengo que llevar esterilla?</span><b>+</b></summary><p data-i18n="a2">Puedes traer la tuya, pero el estudio dispone de esterillas, bloques, mantas y otros apoyos.</p></details><details><summary><span data-i18n="q3">¿Cómo reservo una clase?</span><b>+</b></summary><p data-i18n="a3">Escríbenos indicando la clase y el horario que prefieres. Te confirmaremos la disponibilidad.</p></details><details><summary><span data-i18n="q4">¿Qué ropa es recomendable?</span><b>+</b></summary><p data-i18n="a4">Ropa cómoda que permita moverte con libertad. No hace falta calzado para practicar.</p></details></div></section>
+
+    <section class="contact section" id="contacto"><div class="contact-card reveal"><p class="eyebrow" data-i18n="contactEyebrow">EMPIEZA CUANDO QUIERAS</p><h2 data-i18n="contactTitle">Tu esterilla te está esperando</h2><p data-i18n="contactText">Cuéntanos qué buscas y te orientaremos sobre la clase más adecuada para ti.</p><a class="button primary" href="mailto:hola@example.com" data-i18n="contactButton">Escribir al estudio</a><small data-i18n="demoNote">Datos de contacto ficticios para esta web de demostración.</small></div><div class="contact-details reveal"><div><span data-i18n="phoneLabel">Teléfono</span><b>+34 600 00 00 00</b></div><div><span data-i18n="emailLabel">Correo</span><b>hola@example.com</b></div><div><span data-i18n="addressLabel">Estudio</span><b data-i18n="address">Costa Mediterránea, España</b></div></div></section>
+
+    <section class="mesterweb"><div><p class="eyebrow light" data-i18n="mwEyebrow">¿TIENES UN ESTUDIO DE YOGA?</p><h2 data-i18n="mwTitle">Una web que transmita la esencia de tu espacio</h2><p data-i18n="mwText">ALMA TIERRA es una web de demostración. MesterWeb crea páginas personalizadas para estudios, profesionales del bienestar y negocios locales, adaptadas a sus clases, horarios, imágenes e identidad.</p></div><a href="https://lnkr.es/" target="_blank" rel="noopener" data-i18n="mwButton">Abrir MesterWeb →</a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-symbol">◒</span><span>ALMA TIERRA<small>YOGA STUDIO</small></span></a><p data-i18n="footerText">Movimiento, respiración y calma a tu ritmo.</p><div><a href="#clases" data-i18n="navClasses">Clases</a><a href="#horarios" data-i18n="navSchedule">Horarios</a><a href="kepforrasok.html" data-i18n="sources">Fuentes de las imágenes</a></div><small>© <span id="year"></span> Alma Tierra Yoga · Demo</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
