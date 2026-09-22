@@ -66,9 +66,15 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .profit-good{color:#14845c}.profit-warn{color:#b9690e}
 @media(max-width:950px){.cost-summary-v12{grid-template-columns:1fr 1fr}.cost-detail-grid{grid-template-columns:1fr 1fr}.expense-item{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.cost-summary-v12,.cost-detail-grid,.expense-item{grid-template-columns:1fr}}
+
+.order-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.order-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px}.order-card b{display:block;font-size:22px;margin-top:5px}
+.order-items{display:grid;gap:8px;margin-top:10px}.order-item{display:grid;grid-template-columns:1.4fr .55fr .7fr .75fr;gap:10px;padding:11px;border:1px solid var(--line);border-radius:9px;align-items:center}
+.delivery{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:12px}.delivery-icon{width:36px;height:36px;border-radius:9px;background:#eef4ff;display:grid;place-items:center}
+@media(max-width:800px){.order-summary{grid-template-columns:1fr 1fr}.order-item{grid-template-columns:1fr 1fr}}@media(max-width:500px){.order-summary,.order-item{grid-template-columns:1fr}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -219,6 +225,34 @@ function photos(){title.textContent='Fotos de obras';const imgs=[
 
 
 
+
+const orders=[
+{ref:'PED-2026-041',supplier:'Materiales Costa Sur S.L.',work:'Casa Martínez',date:'18/09/2026',delivery:'23/09/2026',total:980,status:'En camino',items:[['Azulejo baño 60×30','22 m²','28,00 €','616,00 €'],['Adhesivo cerámico','8 ud.','18,00 €','144,00 €'],['Material auxiliar','1 lote','220,00 €','220,00 €']]},
+{ref:'PED-2026-042',supplier:'Cerámicas Mediterráneo',work:'Terraza Ruiz',date:'12/09/2026',delivery:'14/09/2026',total:1360,status:'Recibido',items:[['Pavimento exterior','34 m²','32,00 €','1.088,00 €'],['Rodapié exterior','20 ml','8,00 €','160,00 €'],['Material auxiliar','1 lote','112,00 €','112,00 €']]},
+{ref:'PED-2026-043',supplier:'Carpintería Sol',work:'Piso López',date:'21/09/2026',delivery:'02/10/2026',total:1240,status:'Pedido',items:[['Módulos cocina','1 lote','980,00 €','980,00 €'],['Herrajes','1 lote','160,00 €','160,00 €'],['Transporte','1','100,00 €','100,00 €']]},
+{ref:'PED-2026-044',supplier:'Electricidad Vega Baja',work:'Villa Moreno',date:'22/09/2026',delivery:'29/09/2026',total:1890,status:'Confirmado',items:[['Material eléctrico','1 lote','1.240,00 €','1.240,00 €'],['Cuadro eléctrico','1','420,00 €','420,00 €'],['Accesorios','1 lote','230,00 €','230,00 €']]}
+];
+function orderPill(s){return `<span class="pill ${s==='Recibido'?'green':s==='En camino'?'orange':''}">${s}</span>`}
+function ordersView(){
+title.textContent='Pedidos';
+const total=orders.reduce((a,x)=>a+x.total,0),received=orders.filter(x=>x.status==='Recibido').length,transit=orders.filter(x=>x.status==='En camino').length,pending=orders.filter(x=>x.status!=='Recibido').length;
+content.innerHTML=`<div class="order-summary"><div class="order-card"><span class="muted">PEDIDOS</span><b>${orders.length}</b></div><div class="order-card"><span class="muted">IMPORTE</span><b>${eur(total)}</b></div><div class="order-card"><span class="muted">PENDIENTES / EN CURSO</span><b>${pending}</b></div><div class="order-card"><span class="muted">RECIBIDOS</span><b>${received}</b></div></div>
+<div class="toolbar"><input class="filter" placeholder="Buscar pedido, proveedor, obra…"><button class="primary" onclick="demoAdd('Pedido')">+ Nuevo pedido</button></div>
+<div class="tablewrap"><table><thead><tr><th>Pedido</th><th>Proveedor</th><th>Obra</th><th>Fecha</th><th>Entrega</th><th>Importe</th><th>Estado</th></tr></thead><tbody>${orders.map((o,i)=>`<tr class="click" onclick="showOrder(${i})"><td><b>${o.ref}</b></td><td>${o.supplier}</td><td>${o.work}</td><td>${o.date}</td><td>${o.delivery}</td><td><b>${eur(o.total)}</b></td><td>${orderPill(o.status)}</td></tr>`).join('')}</tbody></table></div>`;
+$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}
+}
+function showOrder(i){
+const o=orders[i];
+$('#modalContent').innerHTML=`<div class="payment-detail-head"><div><div class="muted">PEDIDO · DEMO</div><h2 style="margin:4px 0">${o.ref}</h2><div>${o.supplier} · ${orderPill(o.status)}</div></div><div class="payment-amount"><small class="muted">IMPORTE</small><strong>${eur(o.total)}</strong></div></div>
+<div class="detailgrid"><div class="detail"><small>Obra</small><b>${o.work}</b></div><div class="detail"><small>Fecha pedido</small><b>${o.date}</b></div><div class="detail"><small>Entrega prevista</small><b>${o.delivery}</b></div><div class="detail"><small>Proveedor</small><b>${o.supplier}</b></div></div>
+<h3 style="margin:18px 0 8px">Materiales / partidas</h3><div class="order-items">${o.items.map(x=>`<div class="order-item"><div><b>${x[0]}</b></div><div>${x[1]}</div><div>${x[2]}</div><div><b>${x[3]}</b></div></div>`).join('')}</div>
+<div class="delivery"><span class="delivery-icon">🚚</span><div><b>Seguimiento de entrega</b><div class="muted">${o.status==='Recibido'?'Pedido recibido y disponible para la obra.':'Entrega prevista: '+o.delivery+' · Estado: '+o.status}</div></div></div>
+<div class="quote-actions"><button class="primary" onclick="demoOrderAction('Marcar como recibido')">✓ Recibido</button><button class="printbtn" onclick="demoOrderAction('Añadir factura')">Añadir factura</button><button class="printbtn" onclick="demoOrderAction('Contactar proveedor')">Contactar</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+$('#modal').classList.remove('hidden')
+}
+function demoOrderAction(action){
+$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final el pedido quedaría conectado con el proveedor, la obra, los costes y la factura correspondiente.</p><p class="muted">Esta demo web no realiza pedidos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+}
 const projectCosts=[
 {work:'Casa Martínez',client:'José Martínez',income:2450.25,budgetCost:1800,actual:1680,expenses:[
 ['Materiales','Materiales Costa Sur S.L.','980,00 €','18/09/2026'],
@@ -346,7 +380,7 @@ $('#modal').classList.remove('hidden')
 function demoTaskAction(action){
 $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción actualizaría la tarea y su relación con el cliente y la obra.</p><p class="muted">La demo web no guarda cambios permanentes.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
 }
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
@@ -374,6 +408,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.costsView=costsView;window.showCostProject=showCostProject;window.demoCostAction=demoCostAction;window.suppliersView=suppliersView;window.showSupplier=showSupplier;window.demoSupplierAction=demoSupplierAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.ordersView=ordersView;window.showOrder=showOrder;window.demoOrderAction=demoOrderAction;window.costsView=costsView;window.showCostProject=showCostProject;window.demoCostAction=demoCostAction;window.suppliersView=suppliersView;window.showSupplier=showSupplier;window.demoSupplierAction=demoSupplierAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
