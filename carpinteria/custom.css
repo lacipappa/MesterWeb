@@ -1,0 +1,65 @@
+.hero {
+  background-image: url("https://unsplash.com/photos/dQyi9-yObiM/download?force=true&w=2200");
+  background-position: center;
+  background-size: cover;
+}
+
+.mesterweb-cta {
+  background: #c95f3c;
+  color: #fffaf4;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(40px, 8vw, 120px);
+  padding: 90px max(20px, calc((100% - 1200px) / 2));
+}
+
+.mesterweb-cta > div {
+  max-width: 850px;
+}
+
+.mesterweb-cta .eyebrow {
+  color: #f4d8c8;
+  margin-bottom: 14px;
+}
+
+.mesterweb-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.mesterweb-cta p:not(.eyebrow) {
+  max-width: 800px;
+  margin: 20px 0 0;
+  color: rgba(255, 250, 244, .9);
+}
+
+.mesterweb-button {
+  background: #fffaf4;
+  color: #28211e;
+  padding: 17px 24px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.mesterweb-button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  .mesterweb-cta {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .mesterweb-button {
+    justify-self: start;
+  }
+}
