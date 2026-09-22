@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    if (!location.pathname.endsWith('/') && !location.pathname.split('/').pop().includes('.')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
   <meta name="description" content="Carpintería artesanal y soluciones de madera a medida para hogares y negocios.">
   <title>Roble & Alma | Carpintería a medida</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
