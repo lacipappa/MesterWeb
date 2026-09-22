@@ -44,6 +44,13 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .timeline{display:grid;gap:9px;margin-top:12px}.timeline-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}
 .timeline-dot{width:12px;height:12px;border-radius:50%;background:#1da56f;margin-top:4px;flex:0 0 auto}.timeline-dot.pending{background:#f49a38}.timeline-dot.late{background:#e35c61}
 @media(max-width:850px){.payment-summary{grid-template-columns:1fr 1fr}}@media(max-width:520px){.payment-summary{grid-template-columns:1fr}.payment-detail-head{display:block}.payment-amount{text-align:left;margin-top:10px}}
+
+.dash-finance{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.dash-click{cursor:pointer;transition:.18s ease}.dash-click:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(15,23,42,.09)}
+.alertbox{border-left:4px solid var(--red);background:#fff7f7;padding:12px 14px;border-radius:8px;margin-bottom:10px;cursor:pointer}
+.quicklist{display:grid;gap:8px}.quickitem{display:flex;align-items:center;gap:10px;padding:11px;border:1px solid var(--line);border-radius:9px;cursor:pointer}.quickitem:hover{background:#f8fbff}
+.quickicon{width:34px;height:34px;border-radius:8px;background:#eef4ff;display:grid;place-items:center}
+@media(max-width:950px){.dash-finance{grid-template-columns:1fr 1fr}}@media(max-width:520px){.dash-finance{grid-template-columns:1fr}}
 </style></head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
 <button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
@@ -63,7 +70,42 @@ const clientMeta=[
 
 const $=s=>document.querySelector(s), content=$('#content'), title=$('#title');
 function pill(s){let c=s.includes('Acept')||s.includes('Activo')||s.includes('terminado')?'green':s.includes('Pend')||s.includes('curso')?'orange':'';return `<span class="pill ${c}">${s}</span>`}
-function dashboard(){title.textContent='Resumen';content.innerHTML=`<div class="cards"><div class="card"><div class="muted">CLIENTES ACTIVOS</div><div class="metric">12</div><div class="delta">+3 este mes</div></div><div class="card"><div class="muted">OBRAS EN CURSO</div><div class="metric">5</div><div class="delta">2 próximas a finalizar</div></div><div class="card"><div class="muted">PRESUPUESTOS ABIERTOS</div><div class="metric">3</div><div class="delta">8.610 € pendientes</div></div><div class="card"><div class="muted">PRÓXIMAS TAREAS</div><div class="metric">6</div><div class="delta">2 para hoy</div></div></div><div class="grid2"><div class="panel"><h2>Obras en curso</h2>${works.slice(0,3).map(w=>`<div class="row"><div class="grow"><div class="strong">${w[0]}</div><div class="muted">${w[1]} · ${w[2]}</div><div class="bar"><i style="width:${w[3]}%"></i></div></div><b>${w[3]}%</b></div>`).join('')}</div><div class="panel"><h2>Próximas tareas</h2><div class="row"><div class="grow"><b>09:30 · Llamar a José</b><div class="muted">Confirmar azulejos</div></div></div><div class="row"><div class="grow"><b>12:00 · Visita de obra</b><div class="muted">Guardamar</div></div></div><div class="row"><div class="grow"><b>17:00 · Enviar presupuesto</b><div class="muted">María Sánchez</div></div></div></div></div>`}
+
+function dashboard(){
+title.textContent='Resumen';
+const total=payments.reduce((a,x)=>a+x.total,0),paid=payments.reduce((a,x)=>a+x.paid,0),due=payments.reduce((a,x)=>a+x.due,0),late=payments.filter(x=>x.status==='Vencido').reduce((a,x)=>a+x.due,0);
+content.innerHTML=`<div class="cards">
+<div class="card dash-click" onclick="goView('clientes')"><div class="muted">CLIENTES ACTIVOS</div><div class="metric">12</div><div class="delta">+3 este mes</div></div>
+<div class="card dash-click" onclick="goView('obras')"><div class="muted">OBRAS EN CURSO</div><div class="metric">${works.length}</div><div class="delta">2 próximas a finalizar</div></div>
+<div class="card dash-click" onclick="goView('presupuestos')"><div class="muted">PRESUPUESTOS ABIERTOS</div><div class="metric">3</div><div class="delta">8.610 € pendientes</div></div>
+<div class="card dash-click" onclick="goView('agenda')"><div class="muted">TAREAS PENDIENTES</div><div class="metric">${tasks.filter(t=>t.status==='Pendiente').length}</div><div class="delta">${tasks.filter(t=>t.status==='Vencida').length} vencida</div></div></div>
+
+<div class="dash-finance">
+<div class="payment-card dash-click" onclick="goView('pagos')"><span class="muted">PREVISTO</span><b>${eur(total)}</b></div>
+<div class="payment-card dash-click" onclick="goView('pagos')"><span class="muted">COBRADO</span><b class="money-positive">${eur(paid)}</b></div>
+<div class="payment-card dash-click" onclick="goView('pagos')"><span class="muted">PENDIENTE</span><b class="money-warning">${eur(due)}</b></div>
+<div class="payment-card dash-click" onclick="showPayment(3)"><span class="muted">VENCIDO</span><b class="money-danger">${eur(late)}</b></div></div>
+
+<div class="grid2">
+<div class="panel"><h2>Obras en curso</h2>${works.map((w,i)=>`<div class="row dash-click" onclick="showProject(${i})"><div class="grow"><div class="strong">${w[0]}</div><div class="muted">${w[1]} · ${w[2]}</div><div class="bar"><i style="width:${w[3]}%"></i></div></div><b>${w[3]}%</b></div>`).join('')}</div>
+<div class="panel"><h2>Próximas tareas</h2>${tasks.filter(t=>t.status!=='Completada').slice(0,4).map((t,i)=>{let idx=tasks.indexOf(t);return `<div class="row dash-click" onclick="showTask(${idx})"><div class="grow"><b>${t.date} · ${t.time}</b><div>${t.title}</div><div class="muted">${t.client} · ${t.work}</div></div>${t.status==='Vencida'?'<span class="pill red">Vencida</span>':''}</div>`}).join('')}</div></div>
+
+<div class="grid2">
+<div class="panel"><h2>Atención necesaria</h2>
+<div class="alertbox" onclick="showPayment(3)"><b>⚠ Cobro vencido · María Sánchez</b><div class="muted">1.179,15 € · vencimiento 20/09/2026</div></div>
+<div class="alertbox" onclick="showTask(4)"><b>⚠ Tarea vencida · David Moreno</b><div class="muted">Llamar al cliente · Villa Moreno</div></div>
+</div>
+<div class="panel"><h2>Accesos rápidos</h2><div class="quicklist">
+<div class="quickitem" onclick="goView('documentos')"><span class="quickicon">📄</span><div><b>Últimos documentos</b><div class="muted">${allDocs.length} archivos registrados</div></div></div>
+<div class="quickitem" onclick="goView('presupuestos')"><span class="quickicon">€</span><div><b>Presupuestos</b><div class="muted">Revisar pendientes y enviados</div></div></div>
+<div class="quickitem" onclick="goView('agenda')"><span class="quickicon">✓</span><div><b>Agenda</b><div class="muted">Tareas y recordatorios</div></div></div>
+</div></div></div>`;
+}
+function goView(v){
+const b=document.querySelector(`[data-view="${v}"]`);
+if(b){document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+render(v);
+}
 function tableView(name,heads,rows){title.textContent=name;content.innerHTML=`<div class="toolbar"><input class="filter" placeholder="Buscar en ${name.toLowerCase()}…"><button class="primary" onclick="demoAdd('${name}')">+ Nuevo</button></div><div class="tablewrap"><table><thead><tr>${heads.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map((r,i)=>`<tr class="click" onclick="showDetail('${name}',${i})">${r.map((x,j)=>`<td>${j===r.length-1&&['Clientes','Obras','Presupuestos'].includes(name)?pill(String(x)):x}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}}
 
 function worksView(){title.textContent='Obras';content.innerHTML=`<div class="toolbar"><input class="filter" placeholder="Buscar en obras…"><button class="primary" onclick="demoAdd('Obra')">+ Nueva obra</button></div><div class="tablewrap"><table><thead><tr><th>Obra</th><th>Ciudad</th><th>Trabajo</th><th>Progreso</th><th>Estado</th></tr></thead><tbody>${works.map((w,i)=>`<tr class="click" onclick="showProject(${i})"><td><b>${w[0]}</b></td><td>${w[1]}</td><td>${w[2]}</td><td><div style="min-width:120px">${w[3]}%<div class="bar"><i style="width:${w[3]}%"></i></div></div></td><td>${pill(w[4])}</td></tr>`).join('')}</tbody></table></div>`;$('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')}}
@@ -245,6 +287,6 @@ if(tab==='documentos')box.innerHTML=rd.length?`<div class="mini-list">${rd.map(d
 if(tab==='pagos')box.innerHTML=`<div class="paybox"><div class="detail"><small>Pagado</small><b>${m.paid}</b></div><div class="detail"><small>Pendiente</small><b>${m.pending}</b></div><div class="detail"><small>Estado</small><b>${m.pending==='0 €'?'Pagado':'En seguimiento'}</b></div></div>`;
 }
 function demoAdd(type){$('#modalContent').innerHTML=`<h2>Nuevo · ${type}</h2><p>En la versión final, desde aquí se podría crear un nuevo registro y guardarlo en la base de datos local.</p><p class="muted">Esta versión web es una demostración visual y no almacena datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
-function closeModal(){$('#modal').classList.add('hidden')}window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
+function closeModal(){$('#modal').classList.add('hidden')}window.goView=goView;window.closeModal=closeModal;window.showDetail=showDetail;window.showClient=showClient;window.clientTab=clientTab;window.showProject=showProject;window.projectTab=projectTab;window.showQuote=showQuote;window.demoQuoteAction=demoQuoteAction;window.documentsView=documentsView;window.showDocument=showDocument;window.demoDocumentAction=demoDocumentAction;window.showTask=showTask;window.demoTaskAction=demoTaskAction;window.paymentsView=paymentsView;window.showPayment=showPayment;window.demoPaymentAction=demoPaymentAction;window.demoAdd=demoAdd;render('dashboard');
 
 </script></body></html>
