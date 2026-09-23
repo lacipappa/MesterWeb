@@ -273,6 +273,12 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .signature-line{font-family:cursive;font-size:30px;margin:12px auto 5px;max-width:330px;border-bottom:1px solid #718096;padding-bottom:6px}
 .accept-list{background:#f7f9fc;border-radius:10px;padding:11px 13px;margin:7px 0;display:flex;justify-content:space-between;gap:12px}
 @media(max-width:800px){.sign-summary{grid-template-columns:1fr 1fr}.accept-list{display:block}}
+
+/* V50 - mejora de legibilidad en filas etiqueta/valor */
+.mini-item{display:grid !important;grid-template-columns:minmax(170px,42%) 1fr;gap:16px;align-items:center}
+.mini-item b,.mini-item span{display:block;min-width:0}
+@media(max-width:700px){.mini-item{grid-template-columns:1fr;gap:5px}}
+
 </style>
 <style id="v47-sidebar-fix">
 aside{
@@ -320,7 +326,7 @@ aside nav{padding-bottom:22px}
 
 </head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="incidencias">⚠ <span>Incidencias</span></button><button class="nav" data-view="visitas">⌖ <span>Visitas de obra</span></button><button class="nav" data-view="garantias">◇ <span>Garantías / Postventa</span></button><button class="nav" data-view="entregas">✓ <span>Entregas / Cierre</span></button><button class="nav" data-view="certificaciones">▥ <span>Certificaciones</span></button><button class="nav" data-view="almacen">▦ <span>Almacén / Materiales</span></button><button class="nav" data-view="herramientas">🛠 <span>Herramientas / Equipos</span></button><button class="nav" data-view="vehiculos">🚐 <span>Vehículos / Flota</span></button><button class="nav" data-view="prl">⚠ <span>Seguridad / PRL</span></button><button class="nav" data-view="permisos">▤ <span>Permisos / Licencias</span></button><button class="nav" data-view="extras">± <span>Extras / Cambios</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="equipo">♟ <span>Equipo</span></button><button class="nav" data-view="partes">◷ <span>Partes de trabajo</span></button><button class="nav" data-view="horario">⏱ <span>Control horario</span></button><button class="nav" data-view="ausencias">◫ <span>Ausencias / Vacaciones</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="albaranes">▧ <span>Albaranes / Recepciones</span></button><button class="nav" data-view="compras">€ <span>Compras / Facturas proveedor</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="facturas">▤ <span>Facturas</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><button class="nav" data-view="planificacion">▦ <span>Planificación de obras</span></button><button class="nav" data-view="carga">▤ <span>Carga de trabajo</span></button><button class="nav" data-view="diario">▥ <span>Diario de obra</span></button><button class="nav" data-view="calidad">✓ <span>Control de calidad</span></button><button class="nav" data-view="firmas">✎ <span>Firmas / aceptación</span></button><button class="nav" data-view="retenciones">€ <span>Retenciones / garantías</span></button><button class="nav" data-view="subcontratos">▤ <span>Subcontratos</span></button><button class="nav" data-view="cae">✓ <span>Documentación / CAE</span></button><button class="nav" data-view="actas">▤ <span>Actas / Reuniones</span></button><button class="nav" data-view="tareas">✓ <span>Tareas / Pendientes</span></button><button class="nav" data-view="alertas">⚑ <span>Alertas / Vencimientos</span></button><button class="nav" data-view="mensajes">✉ <span>Comunicaciones / Mensajes</span></button><button class="nav" data-view="informes">▥ <span>Informes / Reportes</span></button><button class="nav" data-view="actividad">◴ <span>Actividad / Historial</span></button><button class="nav" data-view="usuarios">♙ <span>Usuarios / Permisos</span></button><button class="nav" data-view="configuracion">⚙ <span>Configuración / Empresa</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="incidencias">⚠ <span>Incidencias</span></button><button class="nav" data-view="visitas">⌖ <span>Visitas de obra</span></button><button class="nav" data-view="garantias">◇ <span>Garantías / Postventa</span></button><button class="nav" data-view="entregas">✓ <span>Entregas / Cierre</span></button><button class="nav" data-view="certificaciones">▥ <span>Certificaciones</span></button><button class="nav" data-view="almacen">▦ <span>Almacén / Materiales</span></button><button class="nav" data-view="herramientas">🛠 <span>Herramientas / Equipos</span></button><button class="nav" data-view="vehiculos">🚐 <span>Vehículos / Flota</span></button><button class="nav" data-view="prl">⚠ <span>Seguridad / PRL</span></button><button class="nav" data-view="permisos">▤ <span>Permisos / Licencias</span></button><button class="nav" data-view="extras">± <span>Extras / Cambios</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="equipo">♟ <span>Equipo</span></button><button class="nav" data-view="partes">◷ <span>Partes de trabajo</span></button><button class="nav" data-view="horario">⏱ <span>Control horario</span></button><button class="nav" data-view="ausencias">◫ <span>Ausencias / Vacaciones</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="albaranes">▧ <span>Albaranes / Recepciones</span></button><button class="nav" data-view="compras">€ <span>Compras / Facturas proveedor</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="facturas">▤ <span>Facturas</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><button class="nav" data-view="planificacion">▦ <span>Planificación de obras</span></button><button class="nav" data-view="carga">▤ <span>Carga de trabajo</span></button><button class="nav" data-view="diario">▥ <span>Diario de obra</span></button><button class="nav" data-view="calidad">✓ <span>Control de calidad</span></button><button class="nav" data-view="firmas">✎ <span>Firmas / aceptación</span></button><button class="nav" data-view="retenciones">€ <span>Retenciones / garantías</span></button><button class="nav" data-view="subcontratos">▤ <span>Subcontratos</span></button><button class="nav" data-view="cae">✓ <span>Documentación / CAE</span></button><button class="nav" data-view="actas">▤ <span>Actas / Reuniones</span></button><button class="nav" data-view="tareas">✓ <span>Tareas / Pendientes</span></button><button class="nav" data-view="alertas">⚑ <span>Alertas / Vencimientos</span></button><button class="nav" data-view="mensajes">✉ <span>Comunicaciones / Mensajes</span></button><button class="nav" data-view="informes">▥ <span>Informes / Reportes</span></button><button class="nav" data-view="actividad">◴ <span>Actividad / Historial</span></button><button class="nav" data-view="usuarios">♙ <span>Usuarios / Permisos</span></button><button class="nav" data-view="configuracion">⚙ <span>Configuración / Empresa</span></button><button class="nav" data-view="busqueda">⌕ <span>Búsqueda global</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -1802,7 +1808,87 @@ function configDemo(action){
  $('#modal').classList.remove('hidden');
 }
 
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='actividad')activityView();if(v==='usuarios')usersView();if(v==='configuracion')configuracionView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+
+const globalSearchRows=[
+ {tipo:'Cliente',ref:'José Martínez',detalle:'Casa Martínez · +34 600 123 410',modulo:'Clientes',estado:'Activo'},
+ {tipo:'Obra',ref:'Casa Martínez',detalle:'Sanitarios · revisión final 25/09/2026',modulo:'Obras',estado:'En curso'},
+ {tipo:'Documento',ref:'F-2026-031',detalle:'Factura · Casa Martínez · 1.225,25 €',modulo:'Facturas',estado:'Registrado'},
+ {tipo:'Tarea',ref:'TAR-2026-084',detalle:'Preparar revisión final con cliente',modulo:'Tareas / Pendientes',estado:'Programada'},
+ {tipo:'Acta',ref:'ACT-2026-071',detalle:'Reunión de seguimiento · Casa Martínez',modulo:'Actas / Reuniones',estado:'Firmada'},
+ {tipo:'Proveedor',ref:'Cerámicas Mediterráneo',detalle:'Material cerámico · Elena Pérez',modulo:'Proveedores',estado:'Activo'},
+ {tipo:'Albarán',ref:'ALB-2026-062',detalle:'2 cajas dañadas · Piso López',modulo:'Albaranes / Recepciones',estado:'Incidencia'},
+ {tipo:'CAE',ref:'CAE-2026-062',detalle:'Seguro RC próximo a vencer · 27/09/2026',modulo:'Documentación / CAE',estado:'Revisar'},
+ {tipo:'Planificación',ref:'PLAN-2026-072',detalle:'Terraza Ruiz · impermeabilización',modulo:'Planificación de obras',estado:'Con aviso'},
+ {tipo:'Trabajador',ref:'Sergio Ruiz',detalle:'Especialista · Terraza Ruiz',modulo:'Equipo',estado:'Ausencia'},
+ {tipo:'Factura proveedor',ref:'FP-2026-051',detalle:'Materiales Costa Sur S.L. · 1.185,80 €',modulo:'Compras / Facturas proveedor',estado:'Pendiente'},
+ {tipo:'Informe',ref:'INF-2026-144',detalle:'Vencimientos y documentación · próximos 30 días',modulo:'Informes / Reportes',estado:'Revisar'}
+];
+
+function busquedaView(){
+ title.textContent='Búsqueda global';
+ content.innerHTML=`
+ <div class="agenda-stats">
+   <div class="doc-card"><span class="muted">RESULTADOS DEMO</span><b>${globalSearchRows.length}</b></div>
+   <div class="doc-card"><span class="muted">CLIENTES / OBRAS</span><b>2</b></div>
+   <div class="doc-card"><span class="muted">DOCUMENTOS</span><b>5</b></div>
+   <div class="doc-card"><span class="muted">SEGUIMIENTOS</span><b>5</b></div>
+ </div>
+ <div class="toolbar">
+   <input id="globalSearchInput" style="min-width:360px;max-width:620px;flex:1" placeholder="Buscar cliente, obra, factura, documento, tarea, proveedor..." oninput="filterGlobalSearch()">
+   <select id="globalSearchType" onchange="filterGlobalSearch()">
+     <option value="">Todos los tipos</option>
+     <option>Cliente</option><option>Obra</option><option>Documento</option><option>Tarea</option>
+     <option>Acta</option><option>Proveedor</option><option>Albarán</option><option>CAE</option>
+     <option>Planificación</option><option>Trabajador</option><option>Factura proveedor</option><option>Informe</option>
+   </select>
+   <button class="primary" onclick="filterGlobalSearch()">⌕ Buscar</button>
+ </div>
+ <div id="globalSearchCount" class="muted" style="margin:8px 0 12px">${globalSearchRows.length} resultados encontrados</div>
+ <div class="tablewrap"><table>
+   <thead><tr><th>TIPO</th><th>REFERENCIA / NOMBRE</th><th>DETALLE</th><th>MÓDULO</th><th>ESTADO</th></tr></thead>
+   <tbody id="globalSearchBody"></tbody>
+ </table></div>`;
+ renderGlobalSearch(globalSearchRows);
+ setTimeout(()=>{const i=document.getElementById('globalSearchInput'); if(i) i.focus();},50);
+}
+function renderGlobalSearch(rows){
+ const body=document.getElementById('globalSearchBody');
+ if(!body)return;
+ body.innerHTML=rows.map((r,i)=>`<tr class="click" onclick="showGlobalResult(${globalSearchRows.indexOf(r)})">
+   <td><b>${r.tipo}</b></td><td><b>${r.ref}</b></td><td>${r.detalle}</td><td>${r.modulo}</td>
+   <td><span class="pill ${['Activo','Registrado','Firmada'].includes(r.estado)?'green':''}">${r.estado}</span></td>
+ </tr>`).join('') || `<tr><td colspan="5" style="padding:28px;text-align:center" class="muted">No se encontraron resultados.</td></tr>`;
+ const c=document.getElementById('globalSearchCount'); if(c)c.textContent=`${rows.length} resultados encontrados`;
+}
+function filterGlobalSearch(){
+ const q=(document.getElementById('globalSearchInput')?.value||'').toLowerCase().trim();
+ const t=document.getElementById('globalSearchType')?.value||'';
+ const rows=globalSearchRows.filter(r=>(!t||r.tipo===t)&&(!q||Object.values(r).join(' ').toLowerCase().includes(q)));
+ renderGlobalSearch(rows);
+}
+function showGlobalResult(i){
+ const r=globalSearchRows[i]; if(!r)return;
+ $('#modalContent').innerHTML=`
+ <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start">
+   <div><div class="muted">BÚSQUEDA GLOBAL · DEMO</div><h2 style="margin:4px 0">${r.ref}</h2><div>${r.tipo} · <span class="pill">${r.estado}</span></div></div>
+   <div style="text-align:right"><small class="muted">MÓDULO</small><h3 style="margin:3px 0">${r.modulo}</h3></div>
+ </div>
+ <div class="detail" style="margin-top:16px"><small>Detalle</small><b>${r.detalle}</b></div>
+ <h3 style="margin:18px 0 8px">Acceso rápido</h3>
+ <div class="mini-list">
+   <div class="mini-item"><b>Referencia</b><span>${r.ref}</span></div>
+   <div class="mini-item"><b>Tipo</b><span>${r.tipo}</span></div>
+   <div class="mini-item"><b>Estado</b><span>${r.estado}</span></div>
+ </div>
+ <div class="quote-actions"><button class="primary" onclick="globalSearchDemo('${r.modulo.replace(/'/g,"\\'")}')">↗ Abrir relacionado</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;
+ $('#modal').classList.remove('hidden');
+}
+function globalSearchDemo(modulo){
+ $('#modalContent').innerHTML=`<h2>Abrir relacionado</h2><p>En la aplicación final se abrirá directamente el registro seleccionado dentro de <b>${modulo}</b>.</p><p class="muted">La búsqueda global permitirá localizar clientes, obras, documentos y referencias desde un único lugar.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+ $('#modal').classList.remove('hidden');
+}
+
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='actividad')activityView();if(v==='usuarios')usersView();if(v==='configuracion')configuracionView();if(v==='busqueda')busquedaView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
