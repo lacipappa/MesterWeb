@@ -1,0 +1,1 @@
+Mandala Yoga Santa Pola – bemutató weboldal. Nyisd meg az index.html fájlt; a nyelvváltáshoz helyi szerver szükséges (például: python -m http.server). A kapott képek az images mappában vannak. A közzétett órarend aktualitása és a pontos cím nem ellenőrzött; a látogatók telefonon egyeztethetnek. Ez nem hivatalos oldal.
