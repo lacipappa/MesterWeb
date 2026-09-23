@@ -3899,7 +3899,7 @@ const travelRows69=[
 ];
 function dietsView69(){
  title.textContent='Dietas / Desplazamientos';
- subtitle.textContent='Clientes, obras, presupuestos y documentos en un solo lugar';
+ document.querySelector('header p').textContent='Clientes, obras, presupuestos y documentos en un solo lugar';
  const total='55,75 €';
  content.innerHTML=`<div class="cards"><div class="card"><span>GASTOS REGISTRADOS</span><b>${total}</b></div><div class="card"><span>KILÓMETROS</span><b>90 km</b></div><div class="card"><span>PENDIENTES / REVISAR</span><b>2</b></div><div class="card"><span>OBRAS CON GASTOS</span><b>4</b></div></div>
  <div class="toolbar"><input id="travelSearch69" class="filter" placeholder="Buscar trabajador, obra, concepto..."><select id="travelType69"><option value="">Todos los tipos</option><option>Kilometraje</option><option>Dieta</option><option>Peaje</option><option>Aparcamiento</option></select><button class="primary" onclick="demoAdd('Nuevo gasto / desplazamiento')">+ Nuevo gasto</button></div>
@@ -3922,7 +3922,7 @@ const personnelCosts70=[
 ];
 function personnelCostView70(){
  title.textContent='Coste de personal / Imputación';
- subtitle.textContent='Horas, extras, dietas y coste laboral imputado a cada obra';
+ document.querySelector('header p').textContent='Horas, extras, dietas y coste laboral imputado a cada obra';
  const total='1.005,70 €';
  content.innerHTML=`<div class="stats"><div class="stat"><span>HORAS IMPUTADAS</span><b>47,5 h</b></div><div class="stat"><span>COSTE ORDINARIO</span><b>844,00 €</b></div><div class="stat"><span>EXTRAS / DIETAS</span><b>161,70 €</b></div><div class="stat"><span>COSTE TOTAL</span><b>${total}</b></div></div>
  <div class="toolbar"><input id="pcSearch70" class="filter" placeholder="Buscar trabajador, obra..."><select id="pcState70"><option value="">Todos los estados</option><option>Revisado</option><option>Revisar</option><option>Validado</option></select><button class="primary" onclick="demoAdd('Resumen de coste laboral')">€ Resumen laboral</button></div>
@@ -3942,7 +3942,7 @@ const hourlyRates71=[
 ];
 function hourlyRatesView71(){
  title.textContent='Tarifas / Coste hora';
- subtitle.textContent='Tarifas laborales para calcular el coste real de horas, extras y trabajos';
+ document.querySelector('header p').textContent='Tarifas laborales para calcular el coste real de horas, extras y trabajos';
  content.innerHTML=`<div class="stats"><div class="stat"><span>TARIFAS ACTIVAS</span><b>5</b></div><div class="stat"><span>COSTE HORA MEDIO</span><b>21,90 €</b></div><div class="stat"><span>HORA EXTRA MEDIA</span><b>30,00 €</b></div><div class="stat"><span>PENDIENTES DE REVISAR</span><b>1</b></div></div>
  <div class="toolbar"><input id="rateSearch71" class="filter" placeholder="Buscar trabajador, categoría..."><select id="rateState71"><option value="">Todos los estados</option><option>Activa</option><option>Revisar</option></select><button class="primary" onclick="demoAdd('Nueva tarifa laboral')">+ Nueva tarifa</button></div>
  <div class="split"><div><h3>Tarifas laborales</h3><div class="muted">Coste por hora utilizado en partes, horas extra e imputación de personal</div><div id="rateTable71"></div></div><div><h3>Puntos de control</h3><div class="side-list"><div><b>Sergio Ruiz</b><span>Tarifa pendiente de revisión</span></div><div><b>Horas extra</b><span>Recargo configurado por trabajador</span></div><div><b>Festivos</b><span>Tarifa diferenciada disponible</span></div></div><h3>Conexiones</h3><div class="side-list"><div><b>Partes / Horas</b><span>Calcula coste ordinario</span></div><div><b>Horas extra</b><span>Aplica tarifa extraordinaria</span></div><div><b>Coste de personal</b><span>Consolida la imputación</span></div></div></div></div>`;
@@ -3961,7 +3961,7 @@ const payrollRows72=[
 ];
 function payrollView72(){
  title.textContent='Nóminas / Seguridad Social';
- subtitle.textContent='Control orientativo del coste laboral mensual y cargas de personal';
+ document.querySelector('header p').textContent='Control orientativo del coste laboral mensual y cargas de personal';
  content.innerHTML=`<div class="stats"><div class="stat"><span>COSTE BRUTO</span><b>8.130,00 €</b></div><div class="stat"><span>SEGURIDAD SOCIAL</span><b>2.601,60 €</b></div><div class="stat"><span>OTROS COSTES</span><b>361,00 €</b></div><div class="stat"><span>COSTE EMPRESA</span><b>11.092,60 €</b></div></div>
  <div class="toolbar"><input id="paySearch72" class="filter" placeholder="Buscar trabajador, periodo..."><select id="payState72"><option value="">Todos los estados</option><option>Calculada</option><option>Revisar</option><option>Pendiente</option></select><button class="primary" onclick="demoAdd('Nueva previsión de nómina')">+ Nueva previsión</button></div>
  <div class="split"><div><h3>Coste laboral mensual</h3><div class="muted">Previsión de nómina, Seguridad Social y otros costes asociados</div><div id="payTable72"></div></div><div><h3>Puntos de control</h3><div class="side-list"><div><b>Antonio Soler</b><span>Revisar variables del periodo</span></div><div><b>Luis García</b><span>Previsión pendiente de confirmar</span></div><div><b>Septiembre 2026</b><span>4 trabajadores incluidos</span></div></div><h3>Conexiones</h3><div class="side-list"><div><b>Tarifas / Coste hora</b><span>Referencia para coste horario</span></div><div><b>Partes / Horas</b><span>Horas registradas del periodo</span></div><div><b>Coste de personal</b><span>Imputación del coste a las obras</span></div></div></div></div>`;
@@ -3980,7 +3980,7 @@ const laborContracts73=[
 ];
 function laborContractsView73(){
  title.textContent='Contratos laborales / Vencimientos';
- subtitle.textContent='Control interno de contratos, jornadas, altas y fechas de revisión del personal';
+ document.querySelector('header p').textContent='Control interno de contratos, jornadas, altas y fechas de revisión del personal';
  content.innerHTML=`<div class="stats"><div class="stat"><span>CONTRATOS ACTIVOS</span><b>4</b></div><div class="stat"><span>INDEFINIDOS</span><b>2</b></div><div class="stat"><span>TEMPORALES</span><b>2</b></div><div class="stat"><span>PRÓXIMOS A REVISAR</span><b>1</b></div></div>
  <div class="toolbar"><input id="lcSearch73" class="filter" placeholder="Buscar trabajador, contrato, categoría..."><select id="lcState73"><option value="">Todos los estados</option><option>Activo</option><option>Revisar</option></select><button class="primary" onclick="demoAdd('Nuevo contrato laboral')">+ Nuevo contrato</button></div>
  <div class="split"><div><h3>Situación contractual</h3><div class="muted">Fechas, tipo de contrato, jornada y categoría profesional</div><div id="lcTable73"></div></div><div><h3>Próximos controles</h3><div class="side-list"><div><b>30/09 · Sergio Ruiz</b><span>Revisar continuidad / renovación</span></div><div><b>15/12 · Luis García</b><span>Fin previsto de contrato</span></div><div><b>Documentación</b><span>Comprobar anexos y firmas</span></div></div><h3>Conexiones</h3><div class="side-list"><div><b>Nóminas / Seguridad Social</b><span>Periodo y situación laboral</span></div><div><b>Tarifas / Coste hora</b><span>Categoría y coste de referencia</span></div><div><b>Ausencias / Vacaciones</b><span>Jornada y disponibilidad</span></div></div></div></div>`;
@@ -4000,7 +4000,7 @@ const laborMoves74=[
 ];
 function laborMovesView74(){
  title.textContent='Altas / Bajas laborales';
- subtitle.textContent='Movimientos de personal, situación laboral y seguimiento documental';
+ document.querySelector('header p').textContent='Movimientos de personal, situación laboral y seguimiento documental';
  content.innerHTML=`<div class="stats"><div class="stat"><span>TRABAJADORES ACTIVOS</span><b>4</b></div><div class="stat"><span>ALTAS ESTE MES</span><b>2</b></div><div class="stat"><span>BAJAS ESTE MES</span><b>1</b></div><div class="stat"><span>PENDIENTES / REVISAR</span><b>2</b></div></div>
  <div class="toolbar"><input id="lmSearch74" class="filter" placeholder="Buscar trabajador, referencia..."><select id="lmType74"><option value="">Todos los movimientos</option><option>Alta</option><option>Baja</option><option>Variación</option><option>Revisión</option></select><button class="primary" onclick="demoAdd('Nuevo movimiento laboral')">+ Nuevo movimiento</button></div>
  <div class="split"><div><h3>Movimientos laborales</h3><div class="muted">Control interno de altas, bajas, variaciones y revisiones</div><div id="lmTable74"></div></div><div><h3>Atención</h3><div class="side-list"><div><b>Sergio Ruiz</b><span>Revisar continuidad · 30/09</span></div><div><b>Miguel Torres</b><span>Variación prevista · 01/10</span></div><div><b>Documentación</b><span>Comprobar justificantes pendientes</span></div></div><h3>Conexiones</h3><div class="side-list"><div><b>Contratos laborales</b><span>Vigencia y tipo de contrato</span></div><div><b>Nóminas / Seguridad Social</b><span>Periodo y coste laboral</span></div><div><b>Ausencias / Vacaciones</b><span>Disponibilidad del trabajador</span></div></div></div></div>`;
@@ -4021,7 +4021,7 @@ const trainingRows75=[
 ];
 function trainingView75(){
  title.textContent='Formación / Certificados';
- subtitle.textContent='Control de formación, acreditaciones y certificados del personal';
+ document.querySelector('header p').textContent='Control de formación, acreditaciones y certificados del personal';
  content.innerHTML=`<div class="stats"><div class="stat"><span>CERTIFICADOS ACTIVOS</span><b>5</b></div><div class="stat"><span>TRABAJADORES CUBIERTOS</span><b>4</b></div><div class="stat"><span>PRÓXIMOS A REVISAR</span><b>1</b></div><div class="stat"><span>DOCUMENTACIÓN PENDIENTE</span><b>1</b></div></div>
  <div class="toolbar"><input id="trSearch75" class="filter" placeholder="Buscar trabajador, curso, certificado..."><select id="trState75"><option value="">Todos los estados</option><option>Vigente</option><option>Revisar</option><option>Pendiente doc.</option></select><button class="primary" onclick="demoAdd('Nueva formación / certificado')">+ Nueva formación</button></div>
  <div class="split"><div><h3>Formación y acreditaciones</h3><div class="muted">Seguimiento interno de cursos, certificados y fechas de revisión</div><div id="trTable75"></div></div><div><h3>Atención</h3><div class="side-list"><div><b>Antonio Soler</b><span>Trabajos en altura · revisar 09/10</span></div><div><b>Luis García</b><span>Adjuntar certificado PRL</span></div><div><b>Documentación</b><span>1 justificante pendiente</span></div></div><h3>Por tipo</h3><div class="side-list"><div><b>PRL</b><span>2 registros</span></div><div><b>Seguridad / maquinaria</b><span>2 registros</span></div><div><b>Emergencias</b><span>1 registro</span></div></div></div></div>`;
@@ -4065,7 +4065,7 @@ const healthRows77=[
 function healthPill77(s){return `<span class="pill ${s==='Vigente'?'green':(s==='Próximo'||s==='Seguimiento'||s==='Pendiente cita')?'orange':''}">${s}</span>`}
 function healthView77(){
  title.textContent='Vigilancia de salud / Aptitud';
- subtitle.textContent='Control preventivo de reconocimientos, aptitud y próximos vencimientos';
+ document.querySelector('header p').textContent='Control preventivo de reconocimientos, aptitud y próximos vencimientos';
  const vig=healthRows77.filter(x=>x.estado==='Vigente').length;
  content.innerHTML=`<div class="abs-summary"><div class="abs-card"><span class="muted">TRABAJADORES CONTROLADOS</span><b>${healthRows77.length}</b></div><div class="abs-card"><span class="muted">VIGENTES</span><b>${vig}</b></div><div class="abs-card"><span class="muted">PRÓXIMOS / SEGUIMIENTO</span><b>2</b></div><div class="abs-card"><span class="muted">PENDIENTES</span><b>1</b></div></div>
  <div class="toolbar"><input id="hsSearch77" class="filter" placeholder="Buscar trabajador, puesto, referencia…"><select id="hsState77"><option value="">Todos los estados</option><option>Vigente</option><option>Próximo</option><option>Seguimiento</option><option>Pendiente cita</option></select><button class="primary" onclick="demoAdd('Control de vigilancia de salud')">+ Nuevo control</button></div>
