@@ -333,6 +333,20 @@ aside nav{padding-bottom:22px}
   aside{padding-left:8px !important;padding-right:8px !important}
   .brand{margin-left:-8px;margin-right:-8px}
 }
+
+/* V88 · cierre visual / consistencia de módulos PRL */
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 18px}
+.info-grid>div{background:#f6f8fb;border-radius:10px;padding:11px 12px;min-width:0}
+.info-grid small,.info-grid span{display:block;color:#6b7280;font-size:12px;margin-bottom:3px}
+.info-grid b{display:block;color:#182235;font-size:14px;line-height:1.25;overflow-wrap:anywhere}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.modal-actions button{min-height:38px}
+.note{background:#f6f8fb;border-radius:10px;padding:12px;margin:8px 0 12px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.stat{background:#fff;border:1px solid #e7eaf0;border-radius:12px;padding:16px;min-width:0}
+.stat small{display:block;color:#6b7280;margin-bottom:7px}.stat b{font-size:24px;color:#182235}
+@media(max-width:850px){.info-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.stats{grid-template-columns:1fr}.modal-actions button{width:100%}}
 </style>
 
 </head><body>
