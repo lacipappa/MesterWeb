@@ -273,9 +273,54 @@ body{background:#f5f7fb} main{min-width:0} header{background:rgba(255,255,255,.9
 .signature-line{font-family:cursive;font-size:30px;margin:12px auto 5px;max-width:330px;border-bottom:1px solid #718096;padding-bottom:6px}
 .accept-list{background:#f7f9fc;border-radius:10px;padding:11px 13px;margin:7px 0;display:flex;justify-content:space-between;gap:12px}
 @media(max-width:800px){.sign-summary{grid-template-columns:1fr 1fr}.accept-list{display:block}}
-</style></head><body>
+</style>
+<style id="v47-sidebar-fix">
+aside{
+  background:#10233f !important;
+  color:#fff !important;
+  height:100vh !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  padding:20px 12px 34px !important;
+  scrollbar-width:thin;
+  scrollbar-color:#55708f #10233f;
+}
+aside::-webkit-scrollbar{width:8px}
+aside::-webkit-scrollbar-track{background:#10233f}
+aside::-webkit-scrollbar-thumb{background:#55708f;border-radius:10px}
+aside nav{padding-bottom:22px}
+.brand{
+  position:sticky;top:-20px;z-index:2;
+  background:#10233f;
+  padding:18px 12px 20px !important;
+  margin:-20px -12px 8px;
+}
+.nav{
+  color:#e7eef8 !important;
+  padding:10px 12px !important;
+  margin:2px 0 !important;
+  line-height:1.2;
+  opacity:1 !important;
+}
+.nav:hover{
+  background:#23466f !important;
+  color:#fff !important;
+}
+.nav.active{
+  background:#1478ff !important;
+  color:#fff !important;
+  box-shadow:0 4px 12px rgba(20,120,255,.28);
+}
+.demo-note{position:static !important;margin:20px 12px 0;color:#aebed2 !important}
+@media(max-width:950px) and (min-width:651px){
+  aside{padding-left:8px !important;padding-right:8px !important}
+  .brand{margin-left:-8px;margin-right:-8px}
+}
+</style>
+
+</head><body>
 <div class="app"><aside id="side"><div class="brand">Mester<span>CRM</span><small>REFORMAS · DEMO INTERACTIVA</small></div><nav>
-<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="incidencias">⚠ <span>Incidencias</span></button><button class="nav" data-view="visitas">⌖ <span>Visitas de obra</span></button><button class="nav" data-view="garantias">◇ <span>Garantías / Postventa</span></button><button class="nav" data-view="entregas">✓ <span>Entregas / Cierre</span></button><button class="nav" data-view="certificaciones">▥ <span>Certificaciones</span></button><button class="nav" data-view="almacen">▦ <span>Almacén / Materiales</span></button><button class="nav" data-view="herramientas">🛠 <span>Herramientas / Equipos</span></button><button class="nav" data-view="vehiculos">🚐 <span>Vehículos / Flota</span></button><button class="nav" data-view="prl">⚠ <span>Seguridad / PRL</span></button><button class="nav" data-view="permisos">▤ <span>Permisos / Licencias</span></button><button class="nav" data-view="extras">± <span>Extras / Cambios</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="equipo">♟ <span>Equipo</span></button><button class="nav" data-view="partes">◷ <span>Partes de trabajo</span></button><button class="nav" data-view="horario">⏱ <span>Control horario</span></button><button class="nav" data-view="ausencias">◫ <span>Ausencias / Vacaciones</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="albaranes">▧ <span>Albaranes / Recepciones</span></button><button class="nav" data-view="compras">€ <span>Compras / Facturas proveedor</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="facturas">▤ <span>Facturas</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><button class="nav" data-view="planificacion">▦ <span>Planificación de obras</span></button><button class="nav" data-view="carga">▤ <span>Carga de trabajo</span></button><button class="nav" data-view="diario">▥ <span>Diario de obra</span></button><button class="nav" data-view="calidad">✓ <span>Control de calidad</span></button><button class="nav" data-view="firmas">✎ <span>Firmas / aceptación</span></button><button class="nav" data-view="retenciones">€ <span>Retenciones / garantías</span></button><button class="nav" data-view="subcontratos">▤ <span>Subcontratos</span></button><button class="nav" data-view="cae">✓ <span>Documentación / CAE</span></button><button class="nav" data-view="actas">▤ <span>Actas / Reuniones</span></button><button class="nav" data-view="tareas">✓ <span>Tareas / Pendientes</span></button><button class="nav" data-view="alertas">⚑ <span>Alertas / Vencimientos</span></button><button class="nav" data-view="mensajes">✉ <span>Comunicaciones / Mensajes</span></button><button class="nav" data-view="informes">▥ <span>Informes / Reportes</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
+<button class="nav active" data-view="dashboard">▦ <span>Resumen</span></button><button class="nav" data-view="clientes">👥 <span>Clientes</span></button><button class="nav" data-view="obras">🏗 <span>Obras</span></button><button class="nav" data-view="incidencias">⚠ <span>Incidencias</span></button><button class="nav" data-view="visitas">⌖ <span>Visitas de obra</span></button><button class="nav" data-view="garantias">◇ <span>Garantías / Postventa</span></button><button class="nav" data-view="entregas">✓ <span>Entregas / Cierre</span></button><button class="nav" data-view="certificaciones">▥ <span>Certificaciones</span></button><button class="nav" data-view="almacen">▦ <span>Almacén / Materiales</span></button><button class="nav" data-view="herramientas">🛠 <span>Herramientas / Equipos</span></button><button class="nav" data-view="vehiculos">🚐 <span>Vehículos / Flota</span></button><button class="nav" data-view="prl">⚠ <span>Seguridad / PRL</span></button><button class="nav" data-view="permisos">▤ <span>Permisos / Licencias</span></button><button class="nav" data-view="extras">± <span>Extras / Cambios</span></button><button class="nav" data-view="presupuestos">€ <span>Presupuestos</span></button><button class="nav" data-view="documentos">▤ <span>Documentos</span></button><button class="nav" data-view="fotos">▣ <span>Fotos</span></button><button class="nav" data-view="equipo">♟ <span>Equipo</span></button><button class="nav" data-view="partes">◷ <span>Partes de trabajo</span></button><button class="nav" data-view="horario">⏱ <span>Control horario</span></button><button class="nav" data-view="ausencias">◫ <span>Ausencias / Vacaciones</span></button><button class="nav" data-view="pedidos">▣ <span>Pedidos</span></button><button class="nav" data-view="albaranes">▧ <span>Albaranes / Recepciones</span></button><button class="nav" data-view="compras">€ <span>Compras / Facturas proveedor</span></button><button class="nav" data-view="gastos">▤ <span>Gastos / Costes</span></button><button class="nav" data-view="proveedores">♟ <span>Proveedores</span></button><button class="nav" data-view="facturas">▤ <span>Facturas</span></button><button class="nav" data-view="pagos">€ <span>Pagos / Cobros</span></button><button class="nav" data-view="agenda">▢ <span>Agenda</span></button><button class="nav" data-view="planificacion">▦ <span>Planificación de obras</span></button><button class="nav" data-view="carga">▤ <span>Carga de trabajo</span></button><button class="nav" data-view="diario">▥ <span>Diario de obra</span></button><button class="nav" data-view="calidad">✓ <span>Control de calidad</span></button><button class="nav" data-view="firmas">✎ <span>Firmas / aceptación</span></button><button class="nav" data-view="retenciones">€ <span>Retenciones / garantías</span></button><button class="nav" data-view="subcontratos">▤ <span>Subcontratos</span></button><button class="nav" data-view="cae">✓ <span>Documentación / CAE</span></button><button class="nav" data-view="actas">▤ <span>Actas / Reuniones</span></button><button class="nav" data-view="tareas">✓ <span>Tareas / Pendientes</span></button><button class="nav" data-view="alertas">⚑ <span>Alertas / Vencimientos</span></button><button class="nav" data-view="mensajes">✉ <span>Comunicaciones / Mensajes</span></button><button class="nav" data-view="informes">▥ <span>Informes / Reportes</span></button><button class="nav" data-view="actividad">◴ <span>Actividad / Historial</span></button><a class="nav" href="fuentes-imagenes.html" style="display:block;text-decoration:none">ⓘ <span>Fuentes de imágenes</span></a></nav><div class="demo-note">Datos ficticios<br>para demostración</div></aside>
 <main><header><button id="menu">☰</button><div><h1 id="title">Resumen</h1><p>Clientes, obras, presupuestos y documentos en un solo lugar</p></div><div class="top"><input id="globalSearch" placeholder="Buscar cliente, obra…"><div class="avatar">LM</div></div></header><section id="content"></section></main></div>
 <div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 <script>
@@ -1515,7 +1560,80 @@ function reportsView(){title.textContent='Informes / Reportes';content.innerHTML
 function showReport(i){const x=reportRecords[i];$('#modalContent').innerHTML=`<div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start"><div><div class="muted">INFORME / REPORTE · DEMO</div><h2 style="margin:4px 0">${x.ref}</h2><div>${x.work} · ${reportPill(x.status)}</div></div><div style="text-align:right"><small class="muted">FECHA</small><h2 style="margin:3px 0">${x.date}</h2></div></div><div class="detailgrid" style="margin-top:14px"><div class="detail"><small>Tipo</small><b>${x.type}</b></div><div class="detail"><small>Periodo</small><b>${x.period}</b></div><div class="detail"><small>Responsable</small><b>${x.responsible}</b></div><div class="detail"><small>Ámbito</small><b>${x.work}</b></div></div><div class="mini-item" style="margin-top:14px"><b>${x.title}</b><div class="muted">${x.summary}</div></div><h3 style="margin:18px 0 8px">Indicadores</h3><div class="agenda-stats">${x.metrics.map(m=>`<div class="doc-card"><span class="muted">${m[0].toUpperCase()}</span><b>${m[1]}</b></div>`).join('')}</div><h3 style="margin:18px 0 8px">Resumen / puntos de control</h3><div class="mini-list">${x.notes.map(n=>`<div class="mini-item">✓ ${n}</div>`).join('')}</div><div class="quote-actions"><button class="primary" onclick="demoReportAction('Generar PDF')">▤ Generar PDF</button><button class="printbtn" onclick="demoReportAction('Actualizar informe')">✓ Actualizar</button><button class="printbtn" onclick="demoReportAction('Enviar informe')">✉ Enviar</button><button class="secondary" onclick="closeModal()">Cerrar</button></div>`;$('#modal').classList.remove('hidden')}
 function demoReportAction(action){$('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción generaría o actualizaría el informe con los datos reales registrados en el CRM.</p><p class="muted">La demo no genera ni envía documentos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;$('#modal').classList.remove('hidden')}
 
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+
+const activityRecords=[
+ {ref:'HIS-2026-151',date:'24/09/2026',time:'13:18',user:'Antonio Soler',area:'Piso López',type:'Incidencia / material',action:'Actualización de incidencia',linked:'ALB-2026-062',status:'Registrado',
+  detail:'Se actualiza el seguimiento de las 2 cajas de material dañadas y se mantiene pendiente la reposición.',
+  changes:[['Estado','Con incidencia','Pendiente de reposición'],['Responsable','Antonio Soler','Antonio Soler'],['Referencia','ALB-2026-062','ALB-2026-062']]},
+ {ref:'HIS-2026-152',date:'24/09/2026',time:'12:18',user:'Administración',area:'Casa Martínez',type:'Factura proveedor',action:'Nota de seguimiento añadida',linked:'FP-2026-051',status:'Registrado',
+  detail:'Se registra una nota de seguimiento financiero sobre la factura pendiente de Materiales Costa Sur S.L.',
+  changes:[['Seguimiento','Sin nota','Pago pendiente'],['Importe pendiente','1.185,80 €','1.185,80 €'],['Responsable','Administración','Administración']]},
+ {ref:'HIS-2026-153',date:'24/09/2026',time:'11:25',user:'Administración',area:'Piso López',type:'Documentación / CAE',action:'Solicitud de renovación enviada',linked:'CAE-2026-062',status:'Enviado',
+  detail:'Se registra el envío de la solicitud de renovación del Seguro RC a Cerámicas Mediterráneo.',
+  changes:[['Seguro RC','Próximo vencimiento','Renovación solicitada'],['Canal','—','Email'],['Contacto','Elena Pérez','Elena Pérez']]},
+ {ref:'HIS-2026-154',date:'24/09/2026',time:'10:40',user:'Miguel Torres',area:'Casa Martínez',type:'Tarea / visita',action:'Revisión final confirmada',linked:'TAR-2026-084',status:'Confirmado',
+  detail:'El cliente confirma la revisión final prevista antes del cierre de Casa Martínez.',
+  changes:[['Fecha prevista','25/09/2026','25/09/2026'],['Confirmación','Pendiente','Confirmada'],['Cliente','José Martínez','José Martínez']]},
+ {ref:'HIS-2026-155',date:'24/09/2026',time:'09:05',user:'Sergio Ruiz',area:'Terraza Ruiz',type:'Planificación',action:'Reasignación pendiente',linked:'PLAN-2026-072',status:'Revisar',
+  detail:'Se detecta conflicto de planificación por ausencia activa y queda registrada la necesidad de reasignación.',
+  changes:[['Disponibilidad','Disponible','Ausencia activa'],['Trabajo','Impermeabilización','Afectado'],['Acción','—','Reasignar']]},
+];
+
+function activityPill(s){
+ let c=(s==='Confirmado'||s==='Registrado'||s==='Enviado')?'green':(s==='Revisar'?'orange':'');
+ return `<span class="pill ${c}">${s}</span>`;
+}
+function activityView(){
+ title.textContent='Actividad / Historial';
+ content.innerHTML=`
+ <div class="agenda-stats">
+   <div class="doc-card"><span class="muted">MOVIMIENTOS HOY</span><b>${activityRecords.length}</b></div>
+   <div class="doc-card"><span class="muted">OBRAS AFECTADAS</span><b>3</b></div>
+   <div class="doc-card"><span class="muted">USUARIOS</span><b>4</b></div>
+   <div class="doc-card"><span class="muted">PARA REVISAR</span><b>1</b></div>
+ </div>
+ <div class="toolbar">
+   <input class="filter" placeholder="Buscar usuario, obra, acción, referencia…">
+   <button class="primary" onclick="demoActivityAction('Exportar historial')">▤ Exportar historial</button>
+ </div>
+ <div class="tablewrap"><table>
+ <thead><tr><th>Referencia</th><th>Fecha / hora</th><th>Usuario</th><th>Obra / ámbito</th><th>Acción</th><th>Referencia relacionada</th><th>Estado</th></tr></thead>
+ <tbody>${activityRecords.map((x,i)=>`<tr class="click" onclick="showActivity(${i})">
+ <td><b>${x.ref}</b></td><td>${x.date}<div class="muted">${x.time}</div></td><td>${x.user}</td><td>${x.area}<div class="muted">${x.type}</div></td>
+ <td>${x.action}</td><td><b>${x.linked}</b></td><td>${activityPill(x.status)}</td></tr>`).join('')}</tbody>
+ </table></div>`;
+ $('.filter').oninput=e=>{[...document.querySelectorAll('tbody tr')].forEach(tr=>tr.style.display=tr.innerText.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')};
+}
+function showActivity(i){
+ const x=activityRecords[i];
+ $('#modalContent').innerHTML=`
+ <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start">
+   <div><div class="muted">ACTIVIDAD / HISTORIAL · DEMO</div><h2 style="margin:4px 0">${x.ref}</h2><div>${x.area} · ${activityPill(x.status)}</div></div>
+   <div style="text-align:right"><small class="muted">FECHA</small><h2 style="margin:3px 0">${x.date}</h2><div class="muted">${x.time}</div></div>
+ </div>
+ <div class="detailgrid" style="margin-top:14px">
+   <div class="detail"><small>Usuario</small><b>${x.user}</b></div>
+   <div class="detail"><small>Tipo</small><b>${x.type}</b></div>
+   <div class="detail"><small>Acción</small><b>${x.action}</b></div>
+   <div class="detail"><small>Referencia relacionada</small><b>${x.linked}</b></div>
+ </div>
+ <div class="mini-item" style="margin-top:14px"><b>Detalle del movimiento</b><div class="muted">${x.detail}</div></div>
+ <h3 style="margin:18px 0 8px">Cambios registrados</h3>
+ <div class="mini-list">${x.changes.map(a=>`<div class="mini-item" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"><b>${a[0]}</b><span class="muted">${a[1]}</span><b>${a[2]}</b></div>`).join('')}</div>
+ <div class="quote-actions">
+   <button class="primary" onclick="demoActivityAction('Ver registro relacionado')">▤ Ver relacionado</button>
+   <button class="printbtn" onclick="demoActivityAction('Añadir nota interna')">+ Nota interna</button>
+   <button class="printbtn" onclick="demoActivityAction('Exportar movimiento')">⇩ Exportar</button>
+   <button class="secondary" onclick="closeModal()">Cerrar</button>
+ </div>`;
+ $('#modal').classList.remove('hidden');
+}
+function demoActivityAction(action){
+ $('#modalContent').innerHTML=`<h2>${action}</h2><p>En la aplicación final esta acción trabajará sobre el historial real y mantendrá la trazabilidad de los cambios.</p><p class="muted">Esta versión es una demostración y no modifica datos reales.</p><button class="primary" onclick="closeModal()">Entendido</button>`;
+ $('#modal').classList.remove('hidden');
+}
+
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='actividad')activityView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
