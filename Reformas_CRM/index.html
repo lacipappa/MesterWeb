@@ -1833,6 +1833,133 @@ function configDemo(action){
 
 
 
+
+const certifications65=[
+ {id:'CERT-2026-071',obra:'Casa Martínez',cliente:'José Martínez',presupuesto:2450.25,avance:88,certificado:2156.22,facturado:1225,pendiente:931.22,fecha:'24/09/2026',estado:'En revisión',responsable:'Miguel Torres',concepto:'Revisión final y cierre',items:['Instalación sanitaria · 100%','Revestimientos · 90%','Remates finales · 70%']},
+ {id:'CERT-2026-072',obra:'Piso López',cliente:'Ana López',presupuesto:3180,avance:64,certificado:2035.20,facturado:1590,pendiente:445.20,fecha:'24/09/2026',estado:'Con incidencia',responsable:'Antonio Soler',concepto:'Avance de ejecución',items:['Demoliciones · 100%','Instalaciones · 75%','Acabados · 35%']},
+ {id:'CERT-2026-073',obra:'Terraza Ruiz',cliente:'Carlos Ruiz',presupuesto:4260,avance:42,certificado:1789.20,facturado:0,pendiente:1789.20,fecha:'24/09/2026',estado:'Pendiente',responsable:'Sergio Ruiz',concepto:'Impermeabilización y preparación',items:['Preparación soporte · 100%','Impermeabilización · 55%','Acabado · 10%']},
+ {id:'CERT-2026-074',obra:'Reforma recepción',cliente:'Hotel Levante',presupuesto:6840,avance:72,certificado:4924.80,facturado:3500,pendiente:1424.80,fecha:'23/09/2026',estado:'Aprobada',responsable:'Miguel Torres',concepto:'Certificación parcial nº 2',items:['Demoliciones · 100%','Electricidad · 80%','Carpintería · 55%']},
+ {id:'CERT-2026-075',obra:'Portal Miramar',cliente:'Comunidad Miramar',presupuesto:3750,avance:51,certificado:1912.50,facturado:1067,pendiente:845.50,fecha:'22/09/2026',estado:'Aprobada',responsable:'Antonio Soler',concepto:'Certificación parcial nº 1',items:['Preparación · 100%','Pintura · 60%','Remates · 20%']}
+];
+
+function certificationsView65(){
+ title.textContent='Certificaciones / Avance';
+ const total=certifications65.reduce((a,x)=>a+x.certificado,0);
+ const billed=certifications65.reduce((a,x)=>a+x.facturado,0);
+ const pending=certifications65.reduce((a,x)=>a+x.pendiente,0);
+ const review=certifications65.filter(x=>x.estado==='En revisión'||x.estado==='Pendiente'||x.estado==='Con incidencia').length;
+ content.innerHTML=`
+ <div class="agenda-stats">
+  <div class="doc-card"><span class="muted">IMPORTE CERTIFICADO</span><b>${money57(total)}</b></div>
+  <div class="doc-card"><span class="muted">YA FACTURADO</span><b>${money57(billed)}</b></div>
+  <div class="doc-card"><span class="muted">PENDIENTE DE FACTURAR</span><b>${money57(pending)}</b></div>
+  <div class="doc-card"><span class="muted">A REVISAR</span><b>${review}</b></div>
+ </div>
+ <div class="toolbar">
+  <input id="certSearch65" style="min-width:340px;max-width:620px;flex:1" placeholder="Buscar obra, cliente, certificación..." oninput="filterCert65()">
+  <select id="certState65" onchange="filterCert65()"><option value="">Todos los estados</option><option>Aprobada</option><option>En revisión</option><option>Pendiente</option><option>Con incidencia</option></select>
+  <button class="primary" onclick="newCert65()">+ Nueva certificación</button>
+ </div>
+ <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(330px,1fr);gap:16px;margin-top:14px">
+  <div>
+   <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:8px">
+    <div><b style="font-size:18px">Control de certificaciones</b><div class="muted">Avance ejecutado, importe certificado y facturación</div></div>
+    <span id="certCount65" class="muted">5 certificaciones</span>
+   </div>
+   <div class="tablewrap"><table>
+    <thead><tr><th>OBRA / CLIENTE</th><th>CERTIFICACIÓN</th><th>AVANCE</th><th>CERTIFICADO</th><th>FACTURADO</th><th>PENDIENTE</th><th>ESTADO</th></tr></thead>
+    <tbody id="certBody65"></tbody>
+   </table></div>
+  </div>
+  <div>
+   <b style="font-size:18px">Pendiente de facturar</b>
+   <div class="mini-list" style="margin-top:8px">
+    <div class="mini-item click" onclick="showCert65('CERT-2026-073')"><div><b>Terraza Ruiz</b><div class="muted">42% certificado</div></div><span>1.789,20 €</span></div>
+    <div class="mini-item click" onclick="showCert65('CERT-2026-074')"><div><b>Hotel Levante</b><div class="muted">Certificación aprobada</div></div><span>1.424,80 €</span></div>
+    <div class="mini-item click" onclick="showCert65('CERT-2026-071')"><div><b>Casa Martínez</b><div class="muted">Revisión final</div></div><span>931,22 €</span></div>
+   </div>
+   <b style="font-size:18px;display:block;margin-top:18px">Situación</b>
+   <div class="mini-list" style="margin-top:8px">
+    <div class="mini-item"><b>Aprobadas</b><span>2</span></div>
+    <div class="mini-item"><b>En revisión / pendientes</b><span>2</span></div>
+    <div class="mini-item"><b>Con incidencia</b><span>1</span></div>
+   </div>
+  </div>
+ </div>`;
+ renderCert65(certifications65);
+}
+function renderCert65(rows){
+ const b=document.getElementById('certBody65'); if(!b)return;
+ b.innerHTML=rows.map(x=>`<tr class="click" onclick="showCert65('${x.id}')">
+ <td><b>${x.obra}</b><div class="muted">${x.cliente}</div></td>
+ <td><b>${x.id}</b><div class="muted">${x.fecha}</div></td>
+ <td><b>${x.avance}%</b><div style="height:6px;background:#e9eef5;border-radius:12px;width:110px;margin-top:5px"><div style="height:6px;width:${x.avance}%;background:#2d86f7;border-radius:12px"></div></div></td>
+ <td><b>${money57(x.certificado)}</b></td><td>${money57(x.facturado)}</td><td><b>${money57(x.pendiente)}</b></td><td><span class="pill">${x.estado}</span></td></tr>`).join('');
+ const c=document.getElementById('certCount65'); if(c)c.textContent=`${rows.length} certificaciones`;
+}
+function filterCert65(){
+ const q=(document.getElementById('certSearch65')?.value||'').toLowerCase().trim();
+ const st=document.getElementById('certState65')?.value||'';
+ renderCert65(certifications65.filter(x=>(!st||x.estado===st)&&(!q||Object.values(x).join(' ').toLowerCase().includes(q))));
+}
+function showCert65(id){
+ const x=certifications65.find(v=>v.id===id); if(!x)return;
+ $('#modalContent').innerHTML=`
+ <div style="display:flex;justify-content:space-between;gap:18px">
+  <div><div class="muted">CERTIFICACIÓN DE OBRA · DEMO</div><h2 style="margin:4px 0">${x.obra}</h2><div>${x.cliente} · <span class="pill">${x.estado}</span></div></div>
+  <div style="text-align:right"><small class="muted">AVANCE CERTIFICADO</small><h2 style="margin:4px 0">${x.avance}%</h2><div>${x.fecha}</div></div>
+ </div>
+ <div class="details-grid" style="margin-top:16px">
+  <div class="detail"><small>Certificación</small><b>${x.id}</b></div>
+  <div class="detail"><small>Responsable</small><b>${x.responsable}</b></div>
+  <div class="detail"><small>Presupuesto obra</small><b>${money57(x.presupuesto)}</b></div>
+  <div class="detail"><small>Importe certificado</small><b>${money57(x.certificado)}</b></div>
+ </div>
+ <h3 style="margin:18px 0 8px">Avance por partidas</h3>
+ <div class="mini-list">${x.items.map(v=>`<div class="mini-item"><b>${v.split(' · ')[0]}</b><span>${v.split(' · ')[1]}</span></div>`).join('')}</div>
+ <h3 style="margin:18px 0 8px">Facturación</h3>
+ <div class="details-grid">
+  <div class="detail"><small>Ya facturado</small><b>${money57(x.facturado)}</b></div>
+  <div class="detail"><small>Pendiente de facturar</small><b>${money57(x.pendiente)}</b></div>
+ </div>
+ <div class="detail" style="margin-top:10px"><small>Concepto</small><b>${x.concepto}</b></div>
+ <div class="quote-actions">
+  <button class="primary" onclick="updateCert65('${x.id}')">✓ Actualizar avance</button>
+  <button class="secondary" onclick="invoiceCert65('${x.id}')">€ Preparar factura</button>
+  <button class="secondary" onclick="closeModal()">Cerrar</button>
+ </div>`;
+ $('#modal').classList.remove('hidden');
+}
+function newCert65(){
+ $('#modalContent').innerHTML=`
+ <div class="muted">NUEVA CERTIFICACIÓN · DEMO</div><h2>Registrar avance de obra</h2>
+ <div class="details-grid">
+  <div class="detail"><small>Obra</small><b>Seleccionar obra</b></div>
+  <div class="detail"><small>Fecha</small><b>24/09/2026</b></div>
+  <div class="detail"><small>Avance</small><b>Definir % por partidas</b></div>
+  <div class="detail"><small>Responsable</small><b>Asignar responsable</b></div>
+ </div>
+ <h3 style="margin:18px 0 8px">Cálculo</h3><div class="detail"><b>El importe certificado se calculará desde las partidas ejecutadas y el presupuesto de la obra.</b></div>
+ <div class="quote-actions"><button class="primary" onclick="saveCert65()">✓ Crear certificación</button><button class="secondary" onclick="closeModal()">Cancelar</button></div>`;
+ $('#modal').classList.remove('hidden');
+}
+function saveCert65(){
+ $('#modalContent').innerHTML=`<div class="muted">CERTIFICACIÓN CREADA · DEMO</div><h2>Avance registrado</h2><div class="detail"><b>✓ La certificación queda vinculada a la obra.</b><div class="muted">La versión funcional recalculará importes y dejará trazabilidad del avance.</div></div><div class="quote-actions"><button class="primary" onclick="closeModal()">Cerrar</button></div>`;
+}
+function updateCert65(id){
+ const x=certifications65.find(v=>v.id===id);
+ $('#modalContent').innerHTML=`<div class="muted">ACTUALIZAR AVANCE · DEMO</div><h2>${x.obra}</h2><div class="detail"><small>Avance actual</small><b>${x.avance}%</b></div><div class="detail" style="margin-top:10px"><b>Actualizar partidas ejecutadas, mediciones y porcentaje certificado.</b></div><div class="quote-actions"><button class="primary" onclick="saveCert65()">✓ Guardar avance</button><button class="secondary" onclick="closeModal()">Cancelar</button></div>`;
+}
+function invoiceCert65(id){
+ const x=certifications65.find(v=>v.id===id);
+ $('#modalContent').innerHTML=`<div class="muted">FACTURAR CERTIFICACIÓN · DEMO</div><h2>${x.id}</h2>
+ <div class="details-grid"><div class="detail"><small>Obra</small><b>${x.obra}</b></div><div class="detail"><small>Cliente</small><b>${x.cliente}</b></div><div class="detail"><small>Pendiente facturable</small><b>${money57(x.pendiente)}</b></div><div class="detail"><small>Concepto</small><b>${x.concepto}</b></div></div>
+ <div class="quote-actions"><button class="primary" onclick="saveInvoiceCert65()">€ Generar borrador</button><button class="secondary" onclick="closeModal()">Cancelar</button></div>`;
+}
+function saveInvoiceCert65(){
+ $('#modalContent').innerHTML=`<div class="muted">FACTURA PREPARADA · DEMO</div><h2>Borrador generado</h2><div class="detail"><b>✓ La certificación queda preparada para facturación.</b><div class="muted">En la versión funcional se vinculará con factura, cobro, tesorería y rentabilidad.</div></div><div class="quote-actions"><button class="primary" onclick="closeModal()">Cerrar</button></div>`;
+}
+
 const paymentAgreements64=[
  {id:'ACU-2026-041',cliente:'Inversiones Sol',obra:'Apartamento Sol',ref:'F-2026-009',total:890,cuotas:2,pagado:0,pendiente:890,proxima:'25/09/2026',importeCuota:445,estado:'Pendiente',responsable:'Administración',detalle:'Acuerdo verbal pendiente de primera cuota.',plan:['25/09/2026 · 445,00 €','10/10/2026 · 445,00 €']},
  {id:'ACU-2026-042',cliente:'Comunidad Miramar',obra:'Portal Miramar',ref:'F-2026-034',total:845.50,cuotas:2,pagado:0,pendiente:845.50,proxima:'26/09/2026',importeCuota:422.75,estado:'Por confirmar',responsable:'Administración',detalle:'Propuesta enviada por email. Pendiente aceptación.',plan:['26/09/2026 · 422,75 €','10/10/2026 · 422,75 €']},
@@ -3564,7 +3691,7 @@ function globalSearchDemo(modulo){
  $('#modal').classList.remove('hidden');
 }
 
-function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='actividad')activityView();if(v==='usuarios')usersView();if(v==='configuracion')configuracionView();if(v==='favoritos')favoritosView();if(v==='midia')miDiaView();if(v==='recordatorios')recordatoriosView();if(v==='seguimiento')seguimientoView();if(v==='riesgos')riesgosView();if(v==='rentabilidad')rentabilidadView();if(v==='desviaciones')deviationsView();if(v==='cashflow')cashflowView();if(v==='cobros')collectionsView60();if(v==='aging')agingView61();if(v==='promesas')promisesView62();if(v==='gestiones-cobro')collectionManagementView63();if(v==='acuerdos-pago')paymentAgreementsView64();if(v==='notificaciones')notificacionesView();if(v==='busqueda')busquedaView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
+function render(v){if(v==='dashboard')dashboard();if(v==='clientes')tableView('Clientes',['Cliente','Ciudad','Teléfono','Trabajo','Estado'],clients);if(v==='obras')worksView();if(v==='presupuestos')quotesView();if(v==='documentos')documentsView();if(v==='fotos')photos();if(v==='diario')diaryView();if(v==='calidad')qualityView();if(v==='firmas')signaturesView();if(v==='retenciones')retentionsView();if(v==='subcontratos')subcontractsView();if(v==='cae')caeView();if(v==='actas')meetingsView();if(v==='tareas')tasksView();if(v==='alertas')alertsView();if(v==='mensajes')messagesView();if(v==='informes')reportsView();if(v==='actividad')activityView();if(v==='usuarios')usersView();if(v==='configuracion')configuracionView();if(v==='favoritos')favoritosView();if(v==='midia')miDiaView();if(v==='recordatorios')recordatoriosView();if(v==='seguimiento')seguimientoView();if(v==='riesgos')riesgosView();if(v==='rentabilidad')rentabilidadView();if(v==='desviaciones')deviationsView();if(v==='cashflow')cashflowView();if(v==='cobros')collectionsView60();if(v==='aging')agingView61();if(v==='promesas')promisesView62();if(v==='gestiones-cobro')collectionManagementView63();if(v==='acuerdos-pago')paymentAgreementsView64();if(v==='certificaciones')certificationsView65();if(v==='notificaciones')notificacionesView();if(v==='busqueda')busquedaView();if(v==='carga')workloadView();if(v==='planificacion')planningView();if(v==='albaranes')deliveriesView();if(v==='ausencias')absencesView();if(v==='horario')timeView();if(v==='compras')supplierInvoicesView();if(v==='permisos')permitsView();if(v==='prl')prlView();if(v==='vehiculos')fleetView();if(v==='herramientas')toolsView();if(v==='almacen')stockView();if(v==='certificaciones')certificationsView();if(v==='entregas')handoversView();if(v==='garantias')warrantiesView();if(v==='visitas')visitsView();if(v==='incidencias')issuesView();if(v==='extras')extrasView();if(v==='equipo')teamView();if(v==='partes')worklogsView();if(v==='pedidos')ordersView();if(v==='gastos')costsView();if(v==='proveedores')suppliersView();if(v==='facturas')invoicesView();if(v==='pagos')paymentsView();if(v==='agenda')agenda()}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.view);document.querySelector('.app').classList.remove('open')});$('#menu').onclick=()=>document.querySelector('.app').classList.toggle('open');
 $('#globalSearch').onkeydown=e=>{if(e.key==='Enter'){document.querySelector('[data-view="clientes"]').click();setTimeout(()=>{$('.filter').value=e.target.value;$('.filter').dispatchEvent(new Event('input'))},0)}};
 function showDetail(type,i){
