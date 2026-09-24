@@ -6,3 +6,5 @@
 .schedule-poster{margin:26px 0 0}.schedule-poster img{width:100%;height:auto;object-fit:contain;background:#fff;border-radius:8px}
 
 .practice-detail{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:8vw;background:#f8f1e8}.practice-detail-heading h2{max-width:550px}.practice-detail-copy{max-width:750px}.practice-detail-copy p{margin:0 0 22px}.practice-detail-copy p:first-child{font-size:1.1rem;color:#704152}@media(max-width:760px){.practice-detail{grid-template-columns:1fr;gap:28px}}
+
+.footer-mesterweb{display:inline-flex;align-items:center;justify-content:center;justify-self:start;background:#fff;border-radius:8px;padding:8px 14px;min-width:110px;min-height:72px}.footer-mesterweb img{width:84px;height:55px;object-fit:contain}
