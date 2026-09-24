@@ -564,7 +564,26 @@ function apartmentReportsView(){title.textContent='Informes';content.innerHTML=`
 function apartmentBackupView(){title.textContent='Copias de seguridad';content.innerHTML=`<div class="hero"><div><span class="pill">DATOS LOCALES</span><h2>Copia de seguridad de MiApartamento</h2><p>La versión instalada puede guardar una copia en una carpeta, memoria USB o disco externo elegido por el usuario.</p></div></div><div class="grid2"><div class="panel"><h2>Crear copia</h2><p>Incluye apartamentos, reservas, huéspedes, tareas, gastos y configuración.</p><button class="primary" onclick="aptModalV2('Copia preparada','<div class=notice><b>MiApartamento_backup_2026-09-24.zip</b><br>Demostración: no se escribe ningún archivo real.</div>')">Preparar copia</button></div><div class="panel"><h2>Restaurar</h2><p>En la aplicación instalada se podría seleccionar una copia anterior.</p><button class="secondary" onclick="aptModalV2('Restauración · Demo','<div class=notice>La demostración web no modifica ni restaura información real.</div>')">Seleccionar copia</button></div></div>`}
 function apartmentSettingsView(){settingsView();translatePage(content)}
 
+
+// MiApartamento v13: remaining ES/EN/HU interface strings
+Object.assign(I18N.en,{
+'Añadir apartamento':'Add apartment','Nueva reserva':'New booking','Nuevo huésped':'New guest','Nueva limpieza':'New cleaning',
+'Buscar apartamento…':'Search apartment…','Buscar reserva, huésped o apartamento…':'Search booking, guest or apartment…','Buscar huésped…':'Search guest…','Buscar limpieza…':'Search cleaning…',
+'Ocupado':'Occupied','Preparación':'Preparation','Libre':'Available','Confirmada':'Confirmed','Confirmado':'Confirmed','Completada':'Completed','Programada':'Scheduled','Planificada':'Planned','Vigente':'Valid','Disponible':'Available',
+'Salida':'Check-out','Entrada':'Check-in','Próximo':'Next','Situación':'Situation','Ingresos mes':'Monthly income','Estancia':'Stay','Personas':'Guests','Total':'Total','Responsable':'Responsible','Coste':'Cost',
+'Vacacional':'Holiday rental','Uso propio / alquiler':'Private use / rental','Sin huésped':'No guest','Próximo huésped:':'Next guest:',
+'Seguro':'Insurance','Mantenimiento':'Maintenance','Certificado':'Certificate','Huéspedes':'Guests','Seguro del apartamento':'Apartment insurance','Contrato de mantenimiento A/C':'A/C maintenance contract','Certificado energético':'Energy certificate','Normas para huéspedes':'Guest rules'
+});
+Object.assign(I18N.hu,{
+'Añadir apartamento':'Apartman hozzáadása','Nueva reserva':'Új foglalás','Nuevo huésped':'Új vendég','Nueva limpieza':'Új takarítás',
+'Buscar apartamento…':'Apartman keresése…','Buscar reserva, huésped o apartamento…':'Foglalás, vendég vagy apartman keresése…','Buscar huésped…':'Vendég keresése…','Buscar limpieza…':'Takarítás keresése…',
+'Ocupado':'Foglalt','Preparación':'Előkészítés','Libre':'Szabad','Confirmada':'Visszaigazolt','Confirmado':'Visszaigazolt','Completada':'Elvégezve','Programada':'Beütemezve','Planificada':'Tervezett','Vigente':'Érvényes','Disponible':'Elérhető',
+'Salida':'Távozás','Entrada':'Érkezés','Próximo':'Következő','Situación':'Helyzet','Ingresos mes':'Havi bevétel','Estancia':'Tartózkodás','Personas':'Személyek','Total':'Összesen','Responsable':'Felelős','Coste':'Költség',
+'Vacacional':'Üdülési célú','Uso propio / alquiler':'Saját használat / kiadás','Sin huésped':'Nincs vendég','Próximo huésped:':'Következő vendég:',
+'Seguro':'Biztosítás','Mantenimiento':'Karbantartás','Certificado':'Tanúsítvány','Seguro del apartamento':'Apartman biztosítása','Contrato de mantenimiento A/C':'Légkondicionáló-karbantartási szerződés','Certificado energético':'Energetikai tanúsítvány','Normas para huéspedes':'Vendégszabályzat'
+});
+
 const views={dashboard:aptDashboard,apartamentos:apartamentosViewV1,reservas:reservasViewV1,huespedes:huespedesViewV1,entradas:entradasViewV1,limpieza:limpiezaViewV1,llaves:llavesViewV1,documentos:apartmentDocumentsView,gastos:financeView,mantenimiento:maintenanceView,agenda:apartmentAgendaView,contactos:apartmentContactsView,copias:apartmentBackupView,exportar:apartmentReportsView,ajustes:apartmentSettingsView};function go(v){document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.view===v));(views[v]||dashboard)();translatePage(content);$('#app').classList.remove('open');scrollTo(0,0)}document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));$('#menu').onclick=()=>$('#app').classList.toggle('open');$('#navClose').onclick=()=>$('#app').classList.remove('open');$('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();$('#app').classList.remove('open')}});$('#search').onkeydown=e=>{if(e.key==='Enter'&&e.target.value.trim())openModal('<h2>Resultados de búsqueda</h2><p>La versión instalada busca simultáneamente en todos los módulos.</p>')};document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLanguage(b.dataset.lang));enhanceHeaderNotifications();updateNotificationBadge();aptDashboard();translatePage();
-document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>changeTopLanguage(b.dataset.lang));
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLanguage(b.dataset.lang));
 $('#search').onkeydown=e=>{if(e.key==='Enter'&&e.target.value.trim())runGlobalSearch(e.target.value)};
 </script></body></html>
