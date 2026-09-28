@@ -197,5 +197,7 @@
   "example_hairsalon_title": "Modern fodrászszalon oldal",
   "example_hairsalon_text": "Szolgáltatások, árak, munkák és időpontkérés.",
   "meta_description": "A MesterWeb modern, gyors és mobilbarát weboldalakat készít kisvállalkozásoknak és helyi szolgáltatóknak.",
-  "nav_trial": "30 napos próba"
+  "nav_trial": "30 napos próba",
+  "trial_examples_intro": "Röviden: elkészítem az egyeztetett próbaoldalt, 30 napig használhatja a MesterWeb próbatárhelyén, majd eldönti, szeretné-e megtartani.",
+  "trial_examples_link": "Minták megtekintése →"
 }
