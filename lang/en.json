@@ -197,5 +197,7 @@
   "example_hairsalon_title": "Modern hair salon website",
   "example_hairsalon_text": "Services, prices, portfolio and appointment requests.",
   "meta_description": "MesterWeb creates modern, fast and mobile-friendly websites for small businesses and local service providers.",
-  "nav_trial": "30-day trial"
+  "nav_trial": "30-day trial",
+  "trial_examples_intro": "In short: I build the agreed trial website, you use it for 30 days on MesterWeb trial hosting, then you decide whether you want to keep it.",
+  "trial_examples_link": "View examples →"
 }
