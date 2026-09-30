@@ -1,7 +1,7 @@
-Mariann Szilágyi Makeup Studio – sminkes demo
+Mariann Szilágyi Makeup Studio – sminkes weboldal
 =====================================
 
-Ez a változat a Beauty-main alapját sminkes / makeup artist bemutatóoldallá alakítja.
+Ez a változat a Beauty-main alapját sminkes / makeup artist weboldallá alakítja.
 
 Fájlok:
 index.html
@@ -16,5 +16,5 @@ A teljes oldal HU / EN / ES nyelvváltással működik. A nyelvválasztás az in
 
 A felhasznált képek Unsplash-ről származó, ingyenesen használható képek. A kepforrasok.html oldalon minden felhasznált kép megjelenik, valamint szerepel a fotós neve, a kép címe/leírása, az Unsplash profil és az eredeti fotó oldala.
 
-A foglalási űrlap demonstrációs célú, nem küld valódi foglalást.
+A foglalási űrlap jelenleg nem küld valódi foglalást.
 A MesterWeb ajánló gomb a https://mesterweb-nco7.onrender.com oldalra mutat.
