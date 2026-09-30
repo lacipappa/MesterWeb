@@ -1,4 +1,4 @@
-LUMÉA Makeup Studio – sminkes demo
+Mariann Szilágyi Makeup Studio – sminkes demo
 =====================================
 
 Ez a változat a Beauty-main alapját sminkes / makeup artist bemutatóoldallá alakítja.
