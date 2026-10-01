@@ -1,5 +1,13 @@
 <!doctype html>
-<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="hu"><head><meta charset="utf-8"><script>
+// Normalize the directory URL before loading relative styles, scripts and translations.
+if (location.pathname === '/smink') {
+  const base = document.createElement('base');
+  base.href = '/smink/';
+  document.head.appendChild(base);
+  location.replace('/smink/' + location.search + location.hash);
+}
+</script><meta name="viewport" content="width=device-width,initial-scale=1">
 <title data-i18n="meta_title">Mariann Szilágyi Makeup Studio</title><link rel="stylesheet" href="style.css"></head>
 <body id="top">
 <header class="site-header"><div class="container nav"><a class="logo" href="#top">Mariann Szilágyi<span>•</span></a>
@@ -44,6 +52,6 @@
 <details><summary data-i18n="faq3q">Lehet online időpontot foglalni?</summary><p data-i18n="faq3a">A demo csak érdeklődő űrlapot mutat, de a végleges oldal valódi online foglalással is összeköthető.</p></details>
 </div></div></section>
 </main>
-<footer><div class="container footer-grid"><div><a class="logo footer-logo" href="#top">Mariann Szilágyi<span>•</span></a><p data-i18n="footer_desc">Makeup Artist</p><div class="maker-credit"><span>Készítette:</span><img src="images/mesterweb-logo.png" alt="MesterWeb"></div></div><div><strong data-i18n="footer_contact">Kapcsolat</strong><a href="tel:+34600123456">+34 600 123 456</a><a href="mailto:hola@mariann-szilagyi.es">hola@mariann-szilagyi.es</a><span class="footer-location">Torrevieja, España</span></div><div><strong data-i18n="footer_sources">Képforrások</strong><a class="source-link" href="kepforrasok.html" data-i18n="footer_source_link">Képforrások és fotósok megtekintése →</a></div></div>
+<footer><div class="container footer-grid"><div><a class="logo footer-logo" href="#top">Mariann Szilágyi<span>•</span></a><p data-i18n="footer_desc">Makeup Artist</p><div class="maker-credit"><span>Készítette:</span><a href="https://lnkr.es/" aria-label="MesterWeb" style="display:inline-flex;align-items:center"><img src="images/mesterweb-logo.png" alt="MesterWeb"></a></div></div><div><strong data-i18n="footer_contact">Kapcsolat</strong><a href="tel:+34600123456">+34 600 123 456</a><a href="mailto:hola@mariann-szilagyi.es">hola@mariann-szilagyi.es</a><span class="footer-location">Torrevieja, España</span></div><div><strong data-i18n="footer_sources">Képforrások</strong><a class="source-link" href="kepforrasok.html" data-i18n="footer_source_link">Képforrások és fotósok megtekintése →</a></div></div>
 <div class="container footer-bottom"><span>© 2026 Mariann Szilágyi</span></div></footer>
 <div class="mobile-book"><a href="#booking" data-i18n="mobile_book">IDŐPONTKÉRÉS</a></div><script src="script.js"></script></body></html>
