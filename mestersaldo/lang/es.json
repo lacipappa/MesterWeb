@@ -53,7 +53,7 @@
   "organization": "Organización",
   "overview": "Resumen general",
   "charts": "Gráficos mensuales",
-  "distribution": "Distribución de gastos",
+  "distribution": "Ingresos mensuales ampliados",
   "comparison": "Comparación de resultados",
   "annual": "Vista anual",
   "transactions": "Transacciones",
@@ -100,5 +100,6 @@
   "next": "Siguiente",
   "menu": "Abrir menú",
   "image": "Ampliar captura",
-  "subject": "Información sobre MesterSaldo"
+  "subject": "Información sobre MesterSaldo",
+  "settings": "Configuración"
 }

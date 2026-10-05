@@ -46,14 +46,14 @@
   "p8": "Choose where to save a backup of your data. Work across multiple years and find records using search.",
   "galleryTag": "MEET THE PROGRAM",
   "galleryTitle": "From the overview to every detail.",
-  "galleryIntro": "Actual screenshots of the Spanish test version. Click to enlarge; all displayed data is fictional.",
+  "galleryIntro": "Actual screenshots of the English test version. Click to enlarge; all displayed data is fictional.",
   "all": "All",
   "finance": "Finances",
   "planning": "Planning",
   "organization": "Organisation",
   "overview": "Overview",
   "charts": "Monthly charts",
-  "distribution": "Expense breakdown",
+  "distribution": "Enlarged monthly income chart",
   "comparison": "Results comparison",
   "annual": "Annual view",
   "transactions": "Transactions",
@@ -100,5 +100,6 @@
   "next": "Next",
   "menu": "Open menu",
   "image": "Enlarge screenshot",
-  "subject": "Information about MesterSaldo"
+  "subject": "Information about MesterSaldo",
+  "settings": "Settings"
 }

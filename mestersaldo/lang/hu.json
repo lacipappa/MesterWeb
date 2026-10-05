@@ -46,14 +46,14 @@
   "p8": "Válaszd ki a mentés helyét. Kezelj több évet, és találd meg a bejegyzéseket a keresővel.",
   "galleryTag": "ISMERD MEG A PROGRAMOT",
   "galleryTitle": "Az összképtől a részletekig.",
-  "galleryIntro": "Valódi képernyőképek a spanyol tesztverzióból. Kattints a nagyításhoz; valamennyi megjelenített adat kitalált mintaadat.",
+  "galleryIntro": "Valódi képernyőképek a magyar tesztverzióból. Kattints a nagyításhoz; valamennyi megjelenített adat mintaadat.",
   "all": "Mind",
   "finance": "Pénzügyek",
   "planning": "Tervezés",
   "organization": "Szervezés",
   "overview": "Áttekintés",
   "charts": "Havi grafikonok",
-  "distribution": "Kiadások megoszlása",
+  "distribution": "Nagyított havi bevételi grafikon",
   "comparison": "Eredmények összehasonlítása",
   "annual": "Éves nézet",
   "transactions": "Tranzakciók",
@@ -100,5 +100,6 @@
   "next": "Következő",
   "menu": "Menü megnyitása",
   "image": "Képernyőkép nagyítása",
-  "subject": "Érdeklődés a MesterSaldo programról"
+  "subject": "Érdeklődés a MesterSaldo programról",
+  "settings": "Beállítások"
 }
