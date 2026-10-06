@@ -53,9 +53,9 @@ function demoForm(event) {
   const message = form.message.value.trim();
 
   const subjects = {
-    hu: `MesterWeb érdeklődés – ${business}`,
-    en: `MesterWeb enquiry – ${business}`,
-    es: `Consulta MesterWeb – ${business}`
+    hu: `Laszlo-MesterWeb érdeklődés – ${business}`,
+    en: `Laszlo-MesterWeb enquiry – ${business}`,
+    es: `Consulta Laszlo-MesterWeb – ${business}`
   };
 
   const labels = {
