@@ -11,7 +11,7 @@ async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json?v=20261006-brand2`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261006-header3`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
 
@@ -86,4 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   loadLanguage(currentLang);
+});
+
+// Keep content and anchor targets below the fixed navigation at every width.
+function syncFixedHeaderSpacing(){
+ const header=document.querySelector('.header');if(!header)return;
+ const height=Math.ceil(header.getBoundingClientRect().height);
+ document.body.style.paddingTop=height+'px';
+ document.documentElement.style.scrollPaddingTop=(height+16)+'px';
+ document.querySelectorAll('section[id]').forEach(section=>section.style.scrollMarginTop='0px');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+ syncFixedHeaderSpacing();
+ const header=document.querySelector('.header');
+ if(header&&typeof ResizeObserver!=='undefined')new ResizeObserver(syncFixedHeaderSpacing).observe(header);
+ window.addEventListener('resize',syncFixedHeaderSpacing);
+ if(document.fonts)document.fonts.ready.then(syncFixedHeaderSpacing);
 });
