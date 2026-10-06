@@ -11,7 +11,7 @@ async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261006-brand2`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
 
