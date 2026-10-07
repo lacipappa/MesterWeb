@@ -120,5 +120,9 @@
   "vtLabel": "VirusTotal-jelentés: 0/70 észlelés · 2026. október 7.",
   "vtNote": "Az eredmény erre a telepítőverzióra és a vizsgálat időpontjára vonatkozik; nem teljes biztonsági garancia.",
   "checksumLabel": "SHA-256 ellenőrzőösszegek",
-  "releaseLabel": "Verzió és kiadási fájlok"
+  "releaseLabel": "Verzió és kiadási fájlok",
+  "manualTitle": "Felhasználói kézikönyv",
+  "manualText": "Képernyőképes, 15 oldalas útmutató a telepítéshez, aktiváláshoz és a program mindennapi használatához.",
+  "manualButton": "Magyar kézikönyv megnyitása",
+  "manualOther": "További nyelvek:"
 }

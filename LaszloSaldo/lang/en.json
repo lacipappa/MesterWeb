@@ -120,5 +120,9 @@
   "vtLabel": "VirusTotal report: 0/70 detections · 7 October 2026",
   "vtNote": "The result applies to this installer version at the time of analysis; it is not a complete safety guarantee.",
   "checksumLabel": "SHA-256 checksums",
-  "releaseLabel": "Release and files"
+  "releaseLabel": "Release and files",
+  "manualTitle": "User guide",
+  "manualText": "A 15-page illustrated guide to installing, activating and using the app every day.",
+  "manualButton": "Open English user guide",
+  "manualOther": "Other languages:"
 }

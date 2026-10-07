@@ -120,5 +120,9 @@
   "vtLabel": "Informe de VirusTotal: 0/70 detecciones · 7 de octubre de 2026",
   "vtNote": "El resultado corresponde a esta versión del instalador en el momento del análisis; no es una garantía absoluta de seguridad.",
   "checksumLabel": "Sumas de verificación SHA-256",
-  "releaseLabel": "Versión y archivos"
+  "releaseLabel": "Versión y archivos",
+  "manualTitle": "Manual de usuario",
+  "manualText": "Guía de 15 páginas con capturas para instalar, activar y utilizar el programa en el día a día.",
+  "manualButton": "Abrir manual en español",
+  "manualOther": "Otros idiomas:"
 }
