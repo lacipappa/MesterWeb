@@ -118,11 +118,21 @@
   "securityTitle": "Download information",
   "securityText": "The new installer is currently unsigned, so Windows or your browser may warn about an uncommon download and an unknown publisher. This alone is not a malware detection. Check the download source and checksum; keep Windows protection enabled.",
   "vtLabel": "VirusTotal report: 0/70 detections · 7 October 2026",
-  "vtNote": "The result applies to this installer version at the time of analysis; it is not a complete safety guarantee.",
+  "vtNote": "In the attached scan report, none of the 70 scanning engines detected malware. The result applies to the v0.18.0 installer as it was at the time of the scan. The current report is available via the VirusTotal link.",
   "checksumLabel": "SHA-256 checksums",
   "releaseLabel": "Release and files",
   "manualTitle": "User guide",
   "manualText": "A 15-page illustrated guide to installing, activating and using the app every day.",
   "manualButton": "Open English user guide",
-  "manualOther": "Other languages:"
+  "manualOther": "Other languages:",
+  "avgTitle": "AVG scan screenshots",
+  "avgIntro": "These screenshots show the results of local AVG checks on the computer. In the checks shown, AVG found no hidden threats in the named files. Click an image to enlarge it.",
+  "avgProgramTitle": "Application file · English result",
+  "avgProgramText": "LaszloSaldo.exe: AVG found no hidden threats. This screenshot does not show a version number or scan date.",
+  "avgSetupNewTitle": "v0.18.1 installer · English result",
+  "avgSetupNewText": "LaszloSaldo-Setup-0.18.1.exe: AVG found no hidden threats. This is the local AVG result for the v0.18.1 installer, separate from the v0.18.0 VirusTotal report linked above.",
+  "avgSetupOldTitle": "v0.18.0 installer · Hungarian result",
+  "avgSetupOldText": "LaszloSaldo-Setup-0.18.0.exe: AVG found no hidden threats. This is the local AVG result for the v0.18.0 installer available from this website.",
+  "avgNote": "The AVG screenshots show the result of checking each named file, rather than the verdicts of other scanning engines. We have requested vendor reviews of certain VirusTotal detections affecting v0.18.1. The download still points to v0.18.0.",
+  "avgEnlarge": "Open full-size image"
 }

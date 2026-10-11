@@ -118,11 +118,21 @@
   "securityTitle": "Letöltési tudnivalók",
   "securityText": "Az új telepítő jelenleg nincs digitálisan aláírva, ezért a Windows vagy a böngésző ritkán letöltött fájlra és ismeretlen kiadóra figyelmeztethet. Ez önmagában nem vírusészlelés. Ellenőrizd a letöltés forrását és az ellenőrzőösszeget; a Windows védelmét ne kapcsold ki.",
   "vtLabel": "VirusTotal-jelentés: 0/70 észlelés · 2026. október 7.",
-  "vtNote": "Az eredmény erre a telepítőverzióra és a vizsgálat időpontjára vonatkozik; nem teljes biztonsági garancia.",
+  "vtNote": "A mellékelt vizsgálati jelentésben a 70 ellenőrzőmotor közül egyik sem jelzett kártevőt. Az eredmény a v0.18.0-s telepítő vizsgálatkori állapotára vonatkozik. Az aktuális jelentés a VirusTotal-linken tekinthető meg.",
   "checksumLabel": "SHA-256 ellenőrzőösszegek",
   "releaseLabel": "Verzió és kiadási fájlok",
   "manualTitle": "Felhasználói kézikönyv",
   "manualText": "Képernyőképes, 15 oldalas útmutató a telepítéshez, aktiváláshoz és a program mindennapi használatához.",
   "manualButton": "Magyar kézikönyv megnyitása",
-  "manualOther": "További nyelvek:"
+  "manualOther": "További nyelvek:",
+  "avgTitle": "AVG-ellenőrzések képernyőképei",
+  "avgIntro": "Az alábbi képek a számítógépen végzett AVG-ellenőrzések eredményét mutatják. Az AVG a képeken szereplő vizsgálatok során nem talált rejtett fenyegetést a megnevezett fájlokban. Kattints a képekre a nagyításhoz.",
+  "avgProgramTitle": "Programfájl · angol eredmény",
+  "avgProgramText": "LaszloSaldo.exe: az AVG nem talált rejtett fenyegetést. Ezen a képen verziószám és vizsgálati dátum nem látható.",
+  "avgSetupNewTitle": "v0.18.1 telepítő · angol eredmény",
+  "avgSetupNewText": "LaszloSaldo-Setup-0.18.1.exe: az AVG nem talált rejtett fenyegetést. Ez a v0.18.1 telepítő helyi AVG-eredménye, külön a fent hivatkozott v0.18.0 VirusTotal-jelentéstől.",
+  "avgSetupOldTitle": "v0.18.0 telepítő · magyar eredmény",
+  "avgSetupOldText": "LaszloSaldo-Setup-0.18.0.exe: az AVG nem talált rejtett fenyegetést. Ez a weboldalról letölthető v0.18.0 telepítő helyi AVG-eredménye.",
+  "avgNote": "Az AVG-képek az adott fájl ellenőrzésének eredményét mutatják; nem a többi ellenőrzőmotor értékelését. A v0.18.1 kiadás egyes VirusTotal-jelzéseinek gyártói felülvizsgálatát kértük. A letöltés továbbra is a v0.18.0 kiadásra mutat.",
+  "avgEnlarge": "Kép megnyitása nagy méretben"
 }

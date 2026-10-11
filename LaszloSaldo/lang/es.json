@@ -118,11 +118,21 @@
   "securityTitle": "Información sobre la descarga",
   "securityText": "El nuevo instalador aún no tiene firma digital, por lo que Windows o el navegador pueden advertir sobre una descarga poco frecuente y un editor desconocido. Esto por sí solo no es una detección de malware. Comprueba el origen y la suma de verificación; mantén activada la protección de Windows.",
   "vtLabel": "Informe de VirusTotal: 0/70 detecciones · 7 de octubre de 2026",
-  "vtNote": "El resultado corresponde a esta versión del instalador en el momento del análisis; no es una garantía absoluta de seguridad.",
+  "vtNote": "En el informe de análisis adjunto, ninguno de los 70 motores de análisis detectó malware. El resultado corresponde al estado del instalador v0.18.0 en el momento del análisis. El informe actual puede consultarse mediante el enlace de VirusTotal.",
   "checksumLabel": "Sumas de verificación SHA-256",
   "releaseLabel": "Versión y archivos",
   "manualTitle": "Manual de usuario",
   "manualText": "Guía de 15 páginas con capturas para instalar, activar y utilizar el programa en el día a día.",
   "manualButton": "Abrir manual en español",
-  "manualOther": "Otros idiomas:"
+  "manualOther": "Otros idiomas:",
+  "avgTitle": "Capturas de los análisis de AVG",
+  "avgIntro": "Estas capturas muestran los resultados de comprobaciones locales de AVG en el ordenador. En los análisis mostrados, AVG no encontró amenazas ocultas en los archivos indicados. Haz clic en una imagen para ampliarla.",
+  "avgProgramTitle": "Archivo del programa · resultado en inglés",
+  "avgProgramText": "LaszloSaldo.exe: AVG no encontró amenazas ocultas. Esta captura no muestra el número de versión ni la fecha del análisis.",
+  "avgSetupNewTitle": "Instalador v0.18.1 · resultado en inglés",
+  "avgSetupNewText": "LaszloSaldo-Setup-0.18.1.exe: AVG no encontró amenazas ocultas. Este es el resultado local de AVG para el instalador v0.18.1, independiente del informe de VirusTotal de v0.18.0 enlazado arriba.",
+  "avgSetupOldTitle": "Instalador v0.18.0 · resultado en húngaro",
+  "avgSetupOldText": "LaszloSaldo-Setup-0.18.0.exe: AVG no encontró amenazas ocultas. Este es el resultado local de AVG para el instalador v0.18.0 disponible en esta web.",
+  "avgNote": "Las capturas de AVG muestran el resultado de la comprobación de cada archivo indicado, no las valoraciones de otros motores. Hemos solicitado a los fabricantes la revisión de algunas detecciones de VirusTotal relativas a v0.18.1. La descarga sigue apuntando a v0.18.0.",
+  "avgEnlarge": "Abrir imagen a tamaño completo"
 }
