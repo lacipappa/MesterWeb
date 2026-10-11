@@ -107,5 +107,9 @@
   "checksumLabel": "SHA-256 checksum",
   "releaseLabel": "Version and release files",
   "vtNote": "In the attached scan report, none of the 68 scanning engines detected malware. The result applies to the version 2.1.11 installer at the time of analysis. View the current report through the VirusTotal link.",
-  "testImageLabel": "Open VirusTotal test screenshot"
+  "testImageLabel": "Open VirusTotal test screenshot",
+  "avgTitle": "AVG scan on a computer",
+  "avgNote": "According to the attached screenshots, AVG found no threats at the end of its scan of the LaszloApartman 2.1.11 installer and the application EXE file. The images show the scan results for those files at the time of analysis. The original AVG messages are in English.",
+  "avgInstaller": "Installer: AVG scan result",
+  "avgProgram": "Application: AVG scan result"
 }

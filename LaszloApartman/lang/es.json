@@ -107,5 +107,9 @@
   "checksumLabel": "Suma de verificación SHA-256",
   "releaseLabel": "Versión y archivos",
   "vtNote": "En el informe de análisis adjunto, ninguno de los 68 motores de análisis detectó malware. El resultado corresponde al instalador de la versión 2.1.11 en el momento del análisis. El informe actual está disponible mediante el enlace de VirusTotal.",
-  "testImageLabel": "Abrir captura de VirusTotal"
+  "testImageLabel": "Abrir captura de VirusTotal",
+  "avgTitle": "Análisis de AVG en un ordenador",
+  "avgNote": "Según las capturas adjuntas, AVG no encontró amenazas al finalizar el análisis del instalador de LaszloApartman 2.1.11 ni del archivo EXE del programa. Las imágenes muestran los resultados de esos archivos en el momento del análisis. Los mensajes originales de AVG están en inglés.",
+  "avgInstaller": "Instalador: resultado del análisis de AVG",
+  "avgProgram": "Programa: resultado del análisis de AVG"
 }

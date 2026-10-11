@@ -107,5 +107,9 @@
   "checksumLabel": "SHA-256 ellenőrzőösszeg",
   "releaseLabel": "Verzió és kiadási fájlok",
   "vtNote": "A mellékelt vizsgálati jelentésben a 68 ellenőrzőmotor közül egyik sem jelzett kártevőt. Az eredmény a 2.1.11-es telepítő vizsgálatkori állapotára vonatkozik. Az aktuális jelentés a VirusTotal-linken tekinthető meg.",
-  "testImageLabel": "VirusTotal tesztkép megnyitása"
+  "testImageLabel": "VirusTotal tesztkép megnyitása",
+  "avgTitle": "AVG-ellenőrzés a számítógépen",
+  "avgNote": "A mellékelt képernyőképek szerint az AVG a vizsgálat végén nem talált fenyegetést sem a LaszloApartman 2.1.11 telepítőjében, sem a program EXE-fájljában. A képek az adott fájlok vizsgálatkori eredményét mutatják. Az eredeti AVG-üzenetek angolul láthatók.",
+  "avgInstaller": "Telepítő: AVG-vizsgálati eredmény",
+  "avgProgram": "Program: AVG-vizsgálati eredmény"
 }
