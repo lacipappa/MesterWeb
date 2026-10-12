@@ -6,7 +6,7 @@ Render Static Site: Publish Directory = .
 
 A kapcsolatfelvételi űrlap demonstrációs, nem küld valódi üzenetet.
 
-MesterWeb:
+Laszlo-MesterWeb:
 https://mesterweb-nco7.onrender.com
 
 Nyilvános képforrások:
