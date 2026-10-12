@@ -1,4 +1,4 @@
-# CostaCare Property Management – MesterWeb demo
+# CostaCare Property Management – Laszlo-MesterWeb demo
 
 Static multi-page property-management website template for GitHub + Render.
 
