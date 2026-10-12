@@ -70,8 +70,8 @@
   "form_success": "Demo: the request would be sent here.",
   "mw_eyebrow": "DO YOU RUN A GARAGE?",
   "mw_title": "Would you like a stylish, modern website for your auto service?",
-  "mw_text": "TORQ Garage is a demonstration website. MesterWeb creates websites tailored to your own business name, services, images and contact details for mechanics and other small businesses.",
-  "mw_btn": "Open MesterWeb →",
+  "mw_text": "TORQ Garage is a demonstration website. Laszlo-MesterWeb creates websites tailored to your own business name, services, images and contact details for mechanics and other small businesses.",
+  "mw_btn": "Open Laszlo-MesterWeb →",
   "faq_title": "Common questions before a service.",
   "faq1q": "The check-engine light is on. Can I still drive?",
   "faq1a": "There are many possible causes. If it flashes or the car has unusual noises, power loss or other serious symptoms, consult a professional before continuing to drive.",
@@ -86,4 +86,3 @@
   "footer_note": "Services and contact details are demo data.",
   "mobile_quote": "BOOK SERVICE"
 }
-

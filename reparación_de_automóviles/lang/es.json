@@ -1,9 +1,9 @@
 {
   "meta_title": "TORQ Garage",
-  "nav_services": "Servicios",
-  "nav_why": "¿Por qué nosotros?",
-  "nav_quote": "Pedir presupuesto",
-  "nav_call": "Llamar",
+  "nav_services": "Services",
+  "nav_why": "Why us?",
+  "nav_quote": "Request a quote",
+  "nav_call": "Call",
   "hero_eyebrow": "TALLER • DIAGNÓSTICO • MANTENIMIENTO",
   "hero_line1": "No adivinamos.",
   "hero_line2": "Lo reparamos.",
@@ -70,8 +70,8 @@
   "form_success": "Demo: aquí se enviaría la solicitud.",
   "mw_eyebrow": "¿TIENE UN TALLER?",
   "mw_title": "¿Quiere una web moderna y con estilo para su taller?",
-  "mw_text": "TORQ Garage es una web de demostración. MesterWeb crea páginas adaptadas al nombre, servicios, imágenes y datos de contacto de talleres y otras pequeñas empresas.",
-  "mw_btn": "Abrir MesterWeb →",
+  "mw_text": "TORQ Garage es una web de demostración. Laszlo-MesterWeb crea páginas adaptadas al nombre, servicios, imágenes y datos de contacto de talleres y otras pequeñas empresas.",
+  "mw_btn": "Abrir Laszlo-MesterWeb →",
   "faq_title": "Preguntas habituales antes del servicio.",
   "faq1q": "Está encendido el testigo del motor. ¿Puedo seguir conduciendo?",
   "faq1a": "Puede tener muchas causas. Si parpadea o aparecen ruidos anómalos, pérdida de potencia u otros síntomas serios, consulte con un profesional antes de continuar.",
@@ -86,4 +86,3 @@
   "footer_note": "Los servicios y datos de contacto son de demostración.",
   "mobile_quote": "PEDIR CITA"
 }
-
