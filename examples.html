@@ -18,8 +18,8 @@
 <link href="https://lnkr.es/examples.html" rel="canonical"/>
 <meta content="#0b1120" name="theme-color"/>
 <title>Examples | Laszlo-MesterWeb</title>
-<link href="style.css?v=20261012" rel="stylesheet"/>
-<style>.laszlo-program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.laszlo-program-card{padding:30px;border:1px solid #dbe3ee;border-radius:18px;background:#fff;box-shadow:0 12px 35px #0f172a08}.laszlo-program-card h3{font-size:24px;margin:18px 0 12px}.laszlo-program-card p{color:#64748b;line-height:1.7;margin-bottom:22px}.laszlo-program-badge{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#e8f3ff;color:#1677d2;font-weight:800}.header .nav{flex-wrap:wrap}.header nav{flex-wrap:wrap}.header .logo{white-space:nowrap;font-size:25px}#programs{scroll-margin-top:150px}@media(max-width:700px){.laszlo-program-grid{grid-template-columns:1fr}.header .logo{font-size:22px}.laszlo-program-card{padding:24px}} .header .logo{display:inline-flex;flex-shrink:0;overflow:visible;max-width:none}.header .logo .brand-name{color:#172033;font-size:inherit}.footer .logo .brand-name{color:#fff;font-size:inherit} .header{position:fixed!important;inset:0 0 auto 0;z-index:1000;width:100%;background:rgba(255,255,255,.98)}body{padding-top:130px}html{scroll-padding-top:150px}</style><link href="site-common.css?v=20261012" rel="stylesheet"/><script defer="True" src="site-common.js?v=20261012"></script><meta content="Laszlo-MesterWeb" property="og:site_name"/></head>
+<link href="style.css?v=20261012-fix2" rel="stylesheet"/>
+<style>.laszlo-program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.laszlo-program-card{padding:30px;border:1px solid #dbe3ee;border-radius:18px;background:#fff;box-shadow:0 12px 35px #0f172a08}.laszlo-program-card h3{font-size:24px;margin:18px 0 12px}.laszlo-program-card p{color:#64748b;line-height:1.7;margin-bottom:22px}.laszlo-program-badge{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#e8f3ff;color:#1677d2;font-weight:800}.header .nav{flex-wrap:wrap}.header nav{flex-wrap:wrap}.header .logo{white-space:nowrap;font-size:25px}#programs{scroll-margin-top:150px}@media(max-width:700px){.laszlo-program-grid{grid-template-columns:1fr}.header .logo{font-size:22px}.laszlo-program-card{padding:24px}} .header .logo{display:inline-flex;flex-shrink:0;overflow:visible;max-width:none}.header .logo .brand-name{color:#172033;font-size:inherit}.footer .logo .brand-name{color:#fff;font-size:inherit} .header{position:fixed!important;inset:0 0 auto 0;z-index:1000;width:100%;background:rgba(255,255,255,.98)}body{padding-top:130px}html{scroll-padding-top:150px}</style><link href="site-common.css?v=20261012-fix2" rel="stylesheet"/><script defer="True" src="site-common.js?v=20261012-fix2"></script><meta content="Laszlo-MesterWeb" property="og:site_name"/></head>
 <body data-laszlo-main="">
 <div class="topbar">
 <div class="container topbar-inner">
@@ -29,21 +29,8 @@
 </div>
 <header class="header">
 <div class="container nav">
-<a aria-label="Laszlo-MesterWeb" class="logo" href="index.html#top">
-<span class="brand-name">Laszlo-MesterWeb</span>
-</a>
-<nav aria-label="Main navigation">
-<a href="index.html#services">Services</a>
-<a href="index.html#examples">Examples</a>
-<a href="website-trial.html">Website trial</a>
-<a href="digital-systems.html">Digital systems</a>
-<a href="index.html#programs">Windows programs</a>
-<a href="why-mesterweb.html">Why Laszlo-MesterWeb?</a>
-<a href="index.html#process">How it works</a>
-<a href="about.html">About</a>
-<a href="faq.html">FAQ</a>
-<a href="index.html#contact">Contact</a>
-</nav>
+<a aria-label="Laszlo-MesterWeb" class="logo" href="index.html#top"><span class="brand-name">Laszlo-MesterWeb</span></a>
+<nav aria-label="Main navigation"><a data-i18n="nav_services" href="index.html#services">Servicios</a><a data-i18n="nav_examples" href="examples.html" rel="noopener noreferrer" target="_blank">Ejemplos</a><a data-i18n="nav_trial" href="website-trial.html">Prueba web</a><a data-i18n="nav_programs" href="index.html#programs">Programas para Windows</a><a data-i18n="nav_crm" href="digital-systems.html">Sistemas digitales</a><a data-i18n="footer_choice" href="landing-or-website.html">¿Landing o sitio web?</a><a data-i18n="nav_why" href="why-mesterweb.html">¿Por qué Laszlo-MesterWeb?</a><a data-i18n="nav_process" href="index.html#process">Cómo funciona</a><a data-i18n="nav_about" href="about.html">Sobre mí</a><a data-i18n="nav_faq" href="faq.html">Preguntas frecuentes</a><a data-i18n="nav_contact" href="index.html#contact">Contacto</a></nav>
 <div class="nav-right">
 <div aria-label="Language selector" class="lang-switcher">
 <button data-lang="en" type="button">EN</button>
@@ -158,29 +145,16 @@
 <footer class="footer">
 <div class="container footer-grid">
 <div>
-<a class="logo footer-logo" href="index.html#top"><span class="brand-name">Laszlo-MesterWeb</span></a>
+<a aria-label="Laszlo-MesterWeb" class="logo footer-logo" href="index.html#top"><span class="brand-name">Laszlo-MesterWeb</span></a>
 <p data-i18n="footer_desc">Webs personalizadas y programas propios para Windows.</p>
 <div class="footer-contact-links">
 <a href="mailto:mesterweb@lnkr.es">mesterweb@lnkr.es</a>
 <a data-i18n="footer_whatsapp" href="https://wa.me/34634208657" rel="noopener noreferrer" target="_blank">WhatsApp – solo mensajes</a>
 </div>
 </div>
+<div><strong data-i18n="footer_menu">Menú</strong><a data-i18n="nav_services" href="index.html#services">Servicios</a><a data-i18n="nav_examples" href="examples.html" rel="noopener noreferrer" target="_blank">Ejemplos</a><a data-i18n="nav_trial" href="website-trial.html">Prueba web</a><a data-i18n="nav_programs" href="index.html#programs">Programas para Windows</a><a data-i18n="nav_crm" href="digital-systems.html">Sistemas digitales</a><a data-i18n="footer_choice" href="landing-or-website.html">¿Landing o sitio web?</a><a data-i18n="nav_why" href="why-mesterweb.html">¿Por qué Laszlo-MesterWeb?</a><a data-i18n="nav_process" href="index.html#process">Cómo funciona</a><a data-i18n="nav_about" href="about.html">Sobre mí</a><a data-i18n="nav_faq" href="faq.html">Preguntas frecuentes</a><a data-i18n="nav_contact" href="index.html#contact">Contacto</a></div>
 <div>
-<strong data-i18n="footer_menu">Menú</strong>
-<a href="index.html#services">Services</a>
-<a href="index.html#examples">Examples</a>
-<a href="website-trial.html">Website trial</a>
-<a href="digital-systems.html">Digital systems</a>
-<a href="index.html#programs">Windows programs</a>
-<a href="why-mesterweb.html">Why Laszlo-MesterWeb?</a>
-<a href="landing-or-website.html">Landing or website?</a>
-<a href="index.html#process">How it works</a>
-<a href="about.html">About</a>
-<a href="faq.html">FAQ</a>
-<a href="index.html#contact">Contact</a>
-</div>
-<div>
-<strong>Image sources</strong>
+<strong data-i18n="footer_sources">Fuentes de imágenes</strong>
 <p class="credits">
 <a data-i18n="credit_note" href="image-sources.html">Ver fuentes de imágenes y fotógrafos →</a>
 </p>
@@ -194,6 +168,6 @@
 <a data-i18n="mobile_examples" href="index.html#examples">EJEMPLOS</a>
 <a data-i18n="mobile_contact" href="index.html#contact">CONSULTA</a>
 </div>
-<script src="script.js?v=20261012"></script>
+<script src="script.js?v=20261012-fix2"></script>
 </body>
 </html>

@@ -10,3 +10,5 @@ body[data-laszlo-main] .header .nav{gap:10px;padding-top:10px;padding-bottom:10p
 body[data-laszlo-main] .header .nav-right{margin-left:auto;}
 }
 @media(max-width:480px){body[data-laszlo-main] .header .logo{font-size:22px;}body[data-laszlo-main] .header .nav-right{gap:6px;}}
+
+.windows-programs-note{margin-top:28px;color:#64748b;line-height:1.7}
