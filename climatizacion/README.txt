@@ -14,4 +14,4 @@ Feltöltés előtt cserélendő:
 - A ClimaNova név és a CN embléma mintanév.
 - Az eredmény- és tapasztalati számok példaadatok.
 
-A MesterWeb ajánló gombja a https://lnkr.es/ oldalra mutat.
+A Laszlo-MesterWeb ajánló gombja a https://lnkr.es/ oldalra mutat.
