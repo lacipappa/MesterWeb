@@ -1,12 +1,12 @@
 {
   "nav": {
-    "home": "Kezdőlap",
-    "about": "Rólunk",
-    "services": "Kezelések",
-    "gallery": "Galéria",
-    "blog": "Napló",
-    "contact": "Kapcsolat",
-    "book": "Időpontfoglalás"
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "blog": "Journal",
+    "contact": "Contact",
+    "book": "Book now"
   },
   "footer": {
     "text": "Gondosan kialakított szépségrituálék, hogy bőröd egészséges, nyugodt és ragyogó legyen.",
@@ -127,7 +127,7 @@
   "mesterweb": {
     "eyebrow": "NINCS MÉG WEBOLDALA?",
     "title": "Modern weboldalt szeretne kozmetikai stúdiójának?",
-    "text": "A MesterWeb letisztult, mobilbarát üzleti weboldalakat készít, amelyek professzionálisan mutatják be szolgáltatásait és megkönnyítik az érdeklődők kapcsolatfelvételét.",
+    "text": "A Laszlo-MesterWeb letisztult, mobilbarát üzleti weboldalakat készít, amelyek professzionálisan mutatják be szolgáltatásait és megkönnyítik az érdeklődők kapcsolatfelvételét.",
     "button": "Érdeklődöm a weboldalról →"
   },
   "sources": {

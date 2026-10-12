@@ -1,12 +1,12 @@
 {
   "nav": {
-    "home": "Inicio",
-    "about": "Nosotros",
-    "services": "Servicios",
-    "gallery": "Galería",
-    "blog": "Revista",
-    "contact": "Contacto",
-    "book": "Reservar"
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "blog": "Journal",
+    "contact": "Contact",
+    "book": "Book now"
   },
   "footer": {
     "text": "Rituales de belleza pensados para que tu piel se sienta sana, calmada y luminosa.",
@@ -127,7 +127,7 @@
   "mesterweb": {
     "eyebrow": "¿AÚN NO TIENES WEB?",
     "title": "¿Quieres una web moderna para tu estudio de cosmética?",
-    "text": "MesterWeb crea páginas web limpias y adaptadas a móvil para presentar tus servicios de forma profesional y facilitar el contacto con tus clientes.",
+    "text": "Laszlo-MesterWeb crea páginas web limpias y adaptadas a móvil para presentar tus servicios de forma profesional y facilitar el contacto con tus clientes.",
     "button": "Me interesa una página web →"
   },
   "sources": {
