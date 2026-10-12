@@ -24,7 +24,7 @@
    apply();new MutationObserver(()=>queueMicrotask(apply)).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   }
   // Carry the selected language into the two product presentation pages.
-  document.addEventListener('click',event=>{const a=event.target.closest('a[href]');if(!a)return;const u=new URL(a.href);if(u.origin===location.origin && /\/(LaszloSaldo|LaszloApartman)\/$/.test(u.pathname)){u.searchParams.set('lang',document.documentElement.lang);a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';}});
+  document.addEventListener('click',event=>{const a=event.target.closest('a[href]');if(!a)return;const u=new URL(a.href);if(document.body.hasAttribute('data-laszlo-main') && u.origin===location.origin && /\/(LaszloSaldo|LaszloApartman)\/$/.test(u.pathname)){u.searchParams.set('lang',document.documentElement.lang);a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';}});
  };
  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start):start();
 })();
