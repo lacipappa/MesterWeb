@@ -76,7 +76,7 @@ details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:
 }
 
 
-/* MesterWeb ajánló blokk */
+/* Laszlo-MesterWeb ajánló blokk */
 .web-cta{background:var(--deep);color:#fff;padding:58px 0}
 .web-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:44px}
 .web-cta h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.04em;margin:8px 0 14px}
@@ -88,7 +88,7 @@ details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:
   .web-cta-button{width:100%}
 }
 
-/* ===== Apartman galéria – almappás MesterWeb elrendezés javítása ===== */
+/* ===== Apartman galéria – almappás Laszlo-MesterWeb elrendezés javítása ===== */
 #gallery .gallery-grid{
   display:grid !important;
   grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) !important;
