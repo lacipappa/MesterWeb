@@ -1,9 +1,9 @@
 {
   "brandLine": "Carpintería contemporánea",
-  "navAbout": "Nosotros",
-  "navServices": "Servicios",
-  "navProjects": "Proyectos",
-  "navContact": "Contacto",
+  "navAbout": "About",
+  "navServices": "Services",
+  "navProjects": "Projects",
+  "navContact": "Contact",
   "heroEyebrow": "Madera, oficio y atención al detalle",
   "heroTitle": "Espacios con carácter, creados para durar",
   "heroCopy": "Diseñamos y fabricamos mobiliario, cocinas y soluciones de carpintería a medida que encajan de verdad en tu espacio y en tu forma de vivir.",
@@ -77,7 +77,7 @@
   "rights": "Todos los derechos reservados.",
   "mwEyebrow": "¿TIENE UN NEGOCIO DE CARPINTERÍA?",
   "mwTitle": "¿Quiere una web que muestre la calidad de su trabajo desde el primer instante?",
-  "mwCopy": "ROBLE & ALMA es una web demo para carpintería. MesterWeb crea páginas igualmente únicas, adaptadas a sus servicios, imágenes, zona de trabajo y formas de contacto.",
-  "mwButton": "Abrir MesterWeb →",
+  "mwCopy": "ROBLE & ALMA es una web demo para carpintería. Laszlo-MesterWeb crea páginas igualmente únicas, adaptadas a sus servicios, imágenes, zona de trabajo y formas de contacto.",
+  "mwButton": "Abrir Laszlo-MesterWeb →",
   "imageSources": "Fuentes de las imágenes"
 }

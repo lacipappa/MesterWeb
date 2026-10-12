@@ -1,9 +1,9 @@
 {
   "brandLine": "Kortárs asztalosműhely",
-  "navAbout": "Rólunk",
-  "navServices": "Szolgáltatások",
-  "navProjects": "Munkáink",
-  "navContact": "Kapcsolat",
+  "navAbout": "About",
+  "navServices": "Services",
+  "navProjects": "Projects",
+  "navContact": "Contact",
   "heroEyebrow": "Fa, mesterség és figyelem a részletekre",
   "heroTitle": "Karakteres terek, hosszú évekre tervezve",
   "heroCopy": "Egyedi bútorokat, konyhákat és fa megoldásokat tervezünk és készítünk, amelyek valóban illenek a térhez és az életviteledhez.",
@@ -77,7 +77,7 @@
   "rights": "Minden jog fenntartva.",
   "mwEyebrow": "ASZTALOS VÁLLALKOZÁSA VAN?",
   "mwTitle": "Szeretne egy weboldalt, amely már az első pillanatban megmutatja munkája minőségét?",
-  "mwCopy": "A ROBLE & ALMA egy asztalosipari bemutató weboldal. A MesterWeb ugyanilyen egyedi oldalakat készít az Ön szolgáltatásaihoz, képeihez, működési területéhez és kapcsolattartási lehetőségeihez igazítva.",
-  "mwButton": "MesterWeb megnyitása →",
+  "mwCopy": "A ROBLE & ALMA egy asztalosipari bemutató weboldal. A Laszlo-MesterWeb ugyanilyen egyedi oldalakat készít az Ön szolgáltatásaihoz, képeihez, működési területéhez és kapcsolattartási lehetőségeihez igazítva.",
+  "mwButton": "Laszlo-MesterWeb megnyitása →",
   "imageSources": "Képforrások"
 }
