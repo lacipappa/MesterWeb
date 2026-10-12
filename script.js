@@ -1,5 +1,5 @@
 const LANGS = ['hu', 'en', 'es'];
-let currentLang = localStorage.getItem('mesterweb_lang') || 'es';
+let currentLang = /(?:^|\/)index\.html$|\/$/.test(location.pathname) ? 'es' : (localStorage.getItem('mesterweb_lang') || 'es');
 
 const digitalSystemsLabel = {
   hu: 'Digitális rendszerek',
@@ -11,7 +11,7 @@ async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json?v=20261006-header3`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261012`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
 
@@ -21,7 +21,7 @@ async function loadLanguage(lang) {
     });
 
     document.querySelectorAll('[data-i18n="nav_crm"]').forEach((el) => {
-      el.textContent = digitalSystemsLabel[lang];
+      el.textContent = 'Digital systems';
     });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
@@ -30,7 +30,9 @@ async function loadLanguage(lang) {
     });
 
     document.documentElement.lang = lang;
-    document.title = t.meta_title || document.title;
+    if (!location.pathname.endsWith('examples.html')) document.title = t.meta_title || document.title;
+    for (const selector of ['meta[name="description"]','meta[property="og:description"]','meta[name="twitter:description"]']) { const el=document.querySelector(selector); if(el && t.meta_description) el.content=t.meta_description; }
+    for (const selector of ['meta[property="og:title"]','meta[name="twitter:title"]']) { const el=document.querySelector(selector); if(el) el.content=document.title; }
 
     document.querySelectorAll('[data-lang]').forEach((button) => {
       button.classList.toggle('active', button.dataset.lang === lang);
@@ -72,7 +74,7 @@ function demoForm(event) {
     '',
     `${l.message}:`,
     message
-  ].join('\\n');
+  ].join('\n');
 
   window.location.href =
     `mailto:mesterweb@lnkr.es?subject=${encodeURIComponent(subjects[currentLang] || subjects.hu)}&body=${encodeURIComponent(body)}`;
@@ -88,18 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
   loadLanguage(currentLang);
 });
 
-// Keep content and anchor targets below the fixed navigation at every width.
-function syncFixedHeaderSpacing(){
- const header=document.querySelector('.header');if(!header)return;
- const height=Math.ceil(header.getBoundingClientRect().height);
- document.body.style.paddingTop=height+'px';
- document.documentElement.style.scrollPaddingTop=(height+16)+'px';
- document.querySelectorAll('section[id]').forEach(section=>section.style.scrollMarginTop='0px');
-}
-document.addEventListener('DOMContentLoaded',()=>{
- syncFixedHeaderSpacing();
- const header=document.querySelector('.header');
- if(header&&typeof ResizeObserver!=='undefined')new ResizeObserver(syncFixedHeaderSpacing).observe(header);
- window.addEventListener('resize',syncFixedHeaderSpacing);
- if(document.fonts)document.fonts.ready.then(syncFixedHeaderSpacing);
-});
