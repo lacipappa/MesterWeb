@@ -14,7 +14,7 @@
 @media(max-width:850px){.footer-gallery{grid-template-columns:repeat(5,1fr)}.footer-gallery-head{display:block}.footer-gallery-head span{display:block;margin-top:4px}}
 @media(max-width:520px){.footer-gallery{grid-template-columns:repeat(3,1fr)}}
 
-/* MesterWeb sales block — same visual hierarchy as the other MesterWeb demos */
+/* Laszlo-MesterWeb sales block — same visual hierarchy as the other Laszlo-MesterWeb demos */
 .mweb-cta{background:#815064;color:#fff;padding:74px 0}
 .mweb-cta .mweb-cta-grid{display:grid;grid-template-columns:minmax(0,1.8fr) auto;align-items:center;gap:70px}
 .mweb-cta .mweb-cta-copy{max-width:820px}

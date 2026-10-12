@@ -11,7 +11,7 @@ Főbb beállítások:
 - az árak egyértelműen példaként vannak jelölve
 - a vélemények nem valódi ügyfélvélemények; példaként vannak megjelölve
 - a képek Unsplash forrásai a kepforrasok.html oldalon találhatók
-- MesterWeb CTA az oldal alján megmaradt
+- Laszlo-MesterWeb CTA az oldal alján megmaradt
 
 Éles ügyféloldalnál a BUSINESS objektumban cserélendő:
 brandName, phone, whatsapp, email, address, instagram, primaryColor, képek, nyitvatartás, szolgáltatások és árak.
