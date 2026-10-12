@@ -63,7 +63,7 @@
 }
 
 
-/* ===== MesterWeb layout hardening / 2026-09 ===== */
+/* ===== Laszlo-MesterWeb layout hardening / 2026-09 ===== */
 html{scroll-behavior:smooth}
 html,body{max-width:100%;overflow-x:hidden}
 *,*::before,*::after{box-sizing:border-box}

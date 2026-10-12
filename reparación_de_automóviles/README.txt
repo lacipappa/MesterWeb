@@ -13,7 +13,7 @@ Komplett statikus demó:
 Nyelvek: HU / EN / ES
 A kapcsolatfelvételi űrlap demonstrációs, nem küld valódi üzenetet.
 
-MesterWeb CTA:
+Laszlo-MesterWeb CTA:
 https://mesterweb-nco7.onrender.com
 
 Nyilvános képforrások:
