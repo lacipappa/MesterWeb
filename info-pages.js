@@ -1,5 +1,5 @@
 const L=['hu','en','es'];
-let lang=localStorage.getItem('mesterweb_lang')||'es';
+let lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('mesterweb_lang')||'es';
 
 const T={
 hu:{

@@ -1,5 +1,6 @@
 const LANGS = ['hu', 'en', 'es'];
-let currentLang = /(?:^|\/)index\.html$|\/$/.test(location.pathname) ? 'es' : (localStorage.getItem('mesterweb_lang') || 'es');
+const requestedLanguage=new URLSearchParams(location.search).get('lang');
+let currentLang = LANGS.includes(requestedLanguage)?requestedLanguage:/(?:^|\/)index\.html$|\/$/.test(location.pathname) ? 'es' : (localStorage.getItem('mesterweb_lang') || 'es');
 
 const digitalSystemsLabel = {
   hu: 'Digitális rendszerek',
@@ -11,7 +12,7 @@ async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json?v=20261012-fix2`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261018-nyelv`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
 

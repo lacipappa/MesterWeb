@@ -12,3 +12,33 @@ body[data-laszlo-main] .header .nav-right{margin-left:auto;}
 @media(max-width:480px){body[data-laszlo-main] .header .logo{font-size:22px;}body[data-laszlo-main] .header .nav-right{gap:6px;}}
 
 .windows-programs-note{margin-top:28px;color:#64748b;line-height:1.7}
+
+/* Product cards and a separate, collapsible, fixed program navigation. */
+.laszlo-program-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.laszlo-program-card{display:flex;flex-direction:column;min-width:0}
+.laszlo-program-card .btn{align-self:flex-start;margin-top:auto}
+.laszlo-program-preview{display:block;margin:0 0 17px}
+.laszlo-program-preview img{display:block;width:100%;height:160px;object-fit:contain;background:#f3f5fb;border:1px solid #dbe1ec;border-radius:12px}
+.laszlo-program-badge.nyelv{background:#eee9ff;color:#493c9d}
+.program-language-note{display:block;font-size:.88rem;line-height:1.5;color:#493c9d;background:#f0ebff;border:1px solid #ddd4ff;border-radius:8px;padding:9px 12px;margin:10px 0 14px}
+.laszlonyelv-panel .btn-primary{background:#493c9d;border-color:#493c9d}
+body.has-windows-dock{padding-bottom:var(--windows-dock-space,180px)!important}
+.windows-program-dock{position:fixed;z-index:1100;bottom:max(12px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 24px));font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#16213a;background:rgba(255,255,255,.98);border:1px solid #cbd2df;border-radius:16px;box-shadow:0 10px 40px #0b11202e;isolation:isolate}
+.windows-program-dock *{box-sizing:border-box}
+.windows-program-dock summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:45px;padding:11px 17px;cursor:pointer;list-style:none;font-size:13px;line-height:1.4;color:#16213a}
+.windows-program-dock summary::-webkit-details-marker{display:none}
+.windows-program-dock summary::after{display:none!important}
+.windows-program-dock .dock-heading{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.windows-program-dock .dock-heading>span{font-weight:400;color:#58647b;font-size:12px}
+.windows-program-dock .dock-state{width:22px;text-align:center;font-size:22px;line-height:1;color:#493c9d}
+.windows-program-dock .dock-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 10px 10px;max-height:55vh;overflow:auto;margin:0}
+.windows-program-dock .dock-links a{display:flex;flex-direction:column;gap:3px;border:1px solid #e0e4ee;background:#f7f8fc;border-radius:10px;padding:11px 14px;text-decoration:none;color:#17213a;line-height:1.35;min-width:0}
+.windows-program-dock .dock-links a:hover,.windows-program-dock .dock-links a[aria-current=page]{background:#f0ebff;border-color:#bdb0e3}
+.windows-program-dock .dock-links strong{font-size:14px;font-weight:750;color:#263453}
+.windows-program-dock .dock-links span{font-size:12px;color:#58647b}
+.windows-program-dock .dock-links small{font-size:11px;color:#60439b;font-weight:650}
+.windows-program-dock a:focus-visible,.windows-program-dock summary:focus-visible{outline:3px solid #7960c5;outline-offset:3px}
+@media(max-width:1050px) and (min-width:701px){.laszlo-program-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:760px){.windows-program-dock .dock-heading>span{display:none}.windows-program-dock .dock-links{grid-template-columns:1fr;gap:6px}.windows-program-dock .dock-links a{padding:9px 12px}.windows-program-dock summary{min-height:43px;padding:10px 14px}.windows-program-dock{border-radius:12px}}
+@media(max-width:700px){.laszlo-program-grid{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.windows-program-dock *{scroll-behavior:auto}}
