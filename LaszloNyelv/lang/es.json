@@ -45,7 +45,7 @@
   "personalLimits": "Admite JPG, PNG o WebP de hasta 4 MB. El programa conserva las proporciones y reduce la imagen a un máximo de 512 × 512 píxeles y 64 KB. Los 600 MB permiten unas 9600 imágenes de tamaño máximo.",
   "personalBackup": "El programa guarda su propia copia; después puedes mover el archivo original. La copia ZIP completa incluye las imágenes y los datos de aprendizaje. También admite copias JSON anteriores.",
   "galleryTitle": "Mira el programa por dentro.",
-  "galleryIntro": "Capturas reales de la interfaz en húngaro. Elegir español en esta página no traduce las capturas ni el programa.",
+  "galleryIntro": "Las capturas muestran la interfaz del programa en húngaro. El programa está disponible únicamente en húngaro; esta web puede verse en húngaro, español o inglés.",
   "filterAll": "Todas",
   "filterLearn": "Aprendizaje",
   "filterGames": "Juegos",

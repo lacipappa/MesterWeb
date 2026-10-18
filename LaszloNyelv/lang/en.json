@@ -45,7 +45,7 @@
   "personalLimits": "Upload JPG, PNG or WebP up to 4 MB. The application preserves proportions and converts it to no more than 512 × 512 pixels and 64 KB. The 600 MB library holds approximately 9,600 maximum-size images.",
   "personalBackup": "The application keeps its own copy, so the original file can be moved later. A full ZIP backup includes your pictures and learning data. Older JSON backups can also be restored.",
   "galleryTitle": "Take a look inside.",
-  "galleryIntro": "Real screenshots of the Hungarian interface. Changing this page to English does not translate the application screenshots.",
+  "galleryIntro": "The screenshots show the program’s Hungarian interface. The program is available only in Hungarian; this website can be viewed in Hungarian, Spanish or English.",
   "filterAll": "All",
   "filterLearn": "Learning",
   "filterGames": "Games",

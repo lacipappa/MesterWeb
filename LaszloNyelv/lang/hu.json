@@ -45,7 +45,7 @@
   "personalLimits": "JPG, PNG vagy WebP, legfeljebb 4 MB. A program aránytartással maximum 512 × 512 képpontra és 64 KB-ra alakítja. A 600 MB-os keret körülbelül 9600 maximális méretű képnek elegendő.",
   "personalBackup": "Az eredeti képfájlt később áthelyezheted: a program saját másolatot őriz. A teljes ZIP-mentés a saját képeket és a tanulási adatokat együtt tartalmazza. A régi JSON-mentések is visszaállíthatók.",
   "galleryTitle": "Nézz bele a programba.",
-  "galleryIntro": "Valódi képernyőképek a magyar kezelőfelületről. A galéria nem egy lefordított programot mutat; a képek minden oldallang mellett magyarul maradnak.",
+  "galleryIntro": "A képernyőképeken a program magyar kezelőfelülete látható. A program kizárólag magyar nyelven használható; a weboldal nyelve magyarra, spanyolra vagy angolra váltható.",
   "filterAll": "Mindegyik",
   "filterLearn": "Tanulás",
   "filterGames": "Játékok",
