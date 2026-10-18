@@ -8,13 +8,16 @@ const digitalSystemsLabel = {
   es: 'Sistemas digitales'
 };
 
+let languageRequest = 0;
 async function loadLanguage(lang) {
+  const requestId = ++languageRequest;
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json?v=20261018-nyelv`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261018-nyelv-fix2`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
+    if (requestId !== languageRequest) return;
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
