@@ -14,7 +14,7 @@ async function loadLanguage(lang) {
   if (!LANGS.includes(lang)) lang = 'es';
 
   try {
-    const response = await fetch(`lang/${lang}.json?v=20261018-nyelv-fix2`, { cache: 'no-store' });
+    const response = await fetch(`lang/${lang}.json?v=20261025-seo`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Language file not found');
     const t = await response.json();
     if (requestId !== languageRequest) return;
@@ -34,9 +34,12 @@ async function loadLanguage(lang) {
     });
 
     document.documentElement.lang = lang;
+    if (window.applyPageSEO) { window.applyPageSEO(lang); } else {
     if (!location.pathname.endsWith('examples.html')) document.title = t.meta_title || document.title;
     for (const selector of ['meta[name="description"]','meta[property="og:description"]','meta[name="twitter:description"]']) { const el=document.querySelector(selector); if(el && t.meta_description) el.content=t.meta_description; }
     for (const selector of ['meta[property="og:title"]','meta[name="twitter:title"]']) { const el=document.querySelector(selector); if(el) el.content=document.title; }
+
+    }
 
     document.querySelectorAll('[data-lang]').forEach((button) => {
       button.classList.toggle('active', button.dataset.lang === lang);

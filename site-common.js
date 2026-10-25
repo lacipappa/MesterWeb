@@ -10,13 +10,11 @@
   }
   const key=new URL(location.href).pathname.replace(new URL(root).pathname,'');
   const pages={
-   'examples.html':['Examples','Ejemplos de páginas web personalizables para pequeños negocios.'],
+
    'digital-systems.html':['Digital systems','Programas propios para Windows: LaszloApartman y LaszloSaldo. También una demostración de CRM para empresas.'],
-   'about.html':['About','Conoce a Laszlo y su trabajo: páginas web personalizadas y programas propios para Windows.'],
-   'faq.html':['FAQ','Preguntas frecuentes sobre las páginas web, los programas para Windows y los servicios de Laszlo-MesterWeb.'],
-   'why-mesterweb.html':['Why Laszlo-MesterWeb?','Webs personalizadas, atención directa y soluciones adaptadas a las necesidades de tu negocio.'],
-   'website-trial.html':['Website trial','Descubre cómo funciona la prueba de 30 días de una página web personalizada.'],
-   'landing-or-website.html':['Landing or website?','Elige una landing page o una web completa según los objetivos de tu negocio.'],
+
+
+
    'image-sources.html':['Image sources','Créditos y fuentes de las imágenes utilizadas en Laszlo-MesterWeb.']
   };
   if(pages[key]){

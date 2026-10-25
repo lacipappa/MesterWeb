@@ -114,6 +114,7 @@ document.querySelectorAll('[data-i18n]').forEach(e=>{
 if(tx[e.dataset.i18n])e.textContent=tx[e.dataset.i18n]
 });
 
+if(window.applyPageSEO){window.applyPageSEO(x)}else{
 /* Page-specific metadata is set by site-common.js. */
 setMeta('meta-description',tx.meta_description);
 setMeta('og-title',tx.meta_title);
@@ -121,6 +122,7 @@ setMeta('og-description',tx.meta_description);
 setMeta('twitter-title',tx.meta_title);
 setMeta('twitter-description',tx.meta_description);
 setMeta('og-locale',x==='es'?'es_ES':x==='en'?'en_GB':'hu_HU');
+}
 localStorage.setItem('mesterweb_lang',x)
 }
 
