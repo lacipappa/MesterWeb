@@ -1,1 +1,25 @@
-
+{
+  "nav1": "Szolgáltatások",
+  "nav2": "Munkáink",
+  "nav3": "Rólunk",
+  "nav4": "Kapcsolat",
+  "eyebrow": "SZAKÉRTELEM • MEGBÍZHATÓSÁG • MINŐSÉG",
+  "intro": "Bemutatkozás",
+  "introtext": "A bemutató weboldal egy lehetséges arculatot és felépítést szemléltet. A végleges tartalom, képek, szolgáltatások és elérhetőségek az Ön vállalkozásához igazíthatók.",
+  "services": "Szolgáltatások",
+  "gallery": "Munkáink",
+  "contact": "Kérjen ajánlatot",
+  "contacttext": "Írja meg, miben segíthetünk. Vegye fel velünk a kapcsolatot, és egyeztessük az elképzeléseket.",
+  "send": "Kapcsolatfelvétel",
+  "sample": "Bemutató weboldal – a tartalom és a vállalkozás neve szabadon testre szabható.",
+  "meta_title": "WOOD & FORM | Laszlo-MesterWeb",
+  "brand": "WOOD & FORM",
+  "tagline": "BÚTORFELÚJÍTÁS • EGYEDI BÚTOR",
+  "headline": "Új élet a régi értékeknek.",
+  "hero_text": "Gondosan felújított bútorok és egyedi faipari megoldások, az Ön elképzeléseihez igazítva.",
+  "s1": "Bútorfelújítás",
+  "s2": "Egyedi bútorok",
+  "s3": "Faipari munkák",
+  "s4": "Felületkezelés",
+  "cta": "Kérjen egyedi ajánlatot"
+}
