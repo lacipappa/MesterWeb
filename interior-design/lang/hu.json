@@ -1,1 +1,25 @@
-
+{
+  "nav1": "Szolgáltatások",
+  "nav2": "Munkáink",
+  "nav3": "Rólunk",
+  "nav4": "Kapcsolat",
+  "eyebrow": "SZAKÉRTELEM • MEGBÍZHATÓSÁG • MINŐSÉG",
+  "intro": "Bemutatkozás",
+  "introtext": "A bemutató weboldal egy lehetséges arculatot és felépítést szemléltet. A végleges tartalom, képek, szolgáltatások és elérhetőségek az Ön vállalkozásához igazíthatók.",
+  "services": "Szolgáltatások",
+  "gallery": "Munkáink",
+  "contact": "Kérjen ajánlatot",
+  "contacttext": "Írja meg, miben segíthetünk. Vegye fel velünk a kapcsolatot, és egyeztessük az elképzeléseket.",
+  "send": "Kapcsolatfelvétel",
+  "sample": "Bemutató weboldal – a tartalom és a vállalkozás neve szabadon testre szabható.",
+  "meta_title": "FORMA Interior | Laszlo-MesterWeb",
+  "brand": "FORMA Interior",
+  "tagline": "BELSŐÉPÍTÉSZET • LAKBERENDEZÉS",
+  "headline": "Terek, amelyek történetet mesélnek.",
+  "hero_text": "Személyre szabott lakberendezési és belsőépítészeti megoldások otthonokhoz és üzleti terekhez.",
+  "s1": "Lakberendezési koncepció",
+  "s2": "Tértervezés",
+  "s3": "Anyag- és színválasztás",
+  "s4": "Projektmegvalósítás",
+  "cta": "Beszéljük meg elképzelését"
+}
