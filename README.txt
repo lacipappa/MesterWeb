@@ -1,7 +1,7 @@
 MesterWeb – képforrások
 
 A nyilvánosan megtekinthető, aktuális képforráslista:
-kepforrasok.html
+image-sources.html
 
 A jelenlegi bemutatók:
 - MesterFix – vízvezeték-szerelő / duguláselhárítás
@@ -13,7 +13,7 @@ A jelenlegi bemutatók:
 - CostaLuz – apartman / nyaralószállás
 
 A képek az Unsplash oldalairól származó demo/illusztrációs képek.
-A konkrét fotóoldalak a kepforrasok.html fájlban találhatók.
+A konkrét fotóoldalak a image-sources.html fájlban találhatók.
 
 
 Megjegyzés: A „Ugyanaz az alap, teljesen más vállalkozás” szekcióban ugyanazokat a már forrásolt képeket használjuk újra, ezért új képforrás nem került hozzáadásra.
