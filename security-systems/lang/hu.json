@@ -1,1 +1,25 @@
-
+{
+  "nav1": "Szolgáltatások",
+  "nav2": "Munkáink",
+  "nav3": "Rólunk",
+  "nav4": "Kapcsolat",
+  "eyebrow": "SZAKÉRTELEM • MEGBÍZHATÓSÁG • MINŐSÉG",
+  "intro": "Bemutatkozás",
+  "introtext": "A bemutató weboldal egy lehetséges arculatot és felépítést szemléltet. A végleges tartalom, képek, szolgáltatások és elérhetőségek az Ön vállalkozásához igazíthatók.",
+  "services": "Szolgáltatások",
+  "gallery": "Munkáink",
+  "contact": "Kérjen ajánlatot",
+  "contacttext": "Írja meg, miben segíthetünk. Vegye fel velünk a kapcsolatot, és egyeztessük az elképzeléseket.",
+  "send": "Kapcsolatfelvétel",
+  "sample": "Bemutató weboldal – a tartalom és a vállalkozás neve szabadon testre szabható.",
+  "meta_title": "SECURIX | Laszlo-MesterWeb",
+  "brand": "SECURIX",
+  "tagline": "RIASZTÓ • KAMERA • KAPUTECHNIKA",
+  "headline": "Biztonság, amelyre számíthat.",
+  "hero_text": "Kamerarendszerek, riasztók és modern beléptetési megoldások otthonoknak és vállalkozásoknak.",
+  "s1": "Kamerarendszerek",
+  "s2": "Riasztórendszerek",
+  "s3": "Kaputechnika",
+  "s4": "Karbantartás",
+  "cta": "Kérjen helyszíni felmérést"
+}
