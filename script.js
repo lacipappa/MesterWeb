@@ -2,12 +2,6 @@ const LANGS = ['hu', 'en', 'es'];
 const requestedLanguage=new URLSearchParams(location.search).get('lang');
 let currentLang = LANGS.includes(requestedLanguage)?requestedLanguage:/(?:^|\/)index\.html$|\/$/.test(location.pathname) ? 'es' : (localStorage.getItem('mesterweb_lang') || 'es');
 
-const digitalSystemsLabel = {
-  hu: 'Digitális rendszerek',
-  en: 'Digital systems',
-  es: 'Sistemas digitales'
-};
-
 let languageRequest = 0;
 async function loadLanguage(lang) {
   const requestId = ++languageRequest;
@@ -22,10 +16,6 @@ async function loadLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
       if (t[key] !== undefined) el.textContent = t[key];
-    });
-
-    document.querySelectorAll('[data-i18n="nav_crm"]').forEach((el) => {
-      el.textContent = digitalSystemsLabel[lang];
     });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {

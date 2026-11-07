@@ -110,21 +110,21 @@
       "description": "Conoce a Laszlo y su forma de crear páginas web para pequeños negocios: atención directa, diseño personalizado y soluciones ajustadas a tus necesidades.",
       "heading": "Soy László Slezák, desarrollador de Laszlo-MesterWeb.",
       "eyebrow": "SOBRE MÍ",
-      "lead": "Vivo en España. Creo webs modernas para pequeños negocios y desarrollo mis propios programas para Windows para las finanzas familiares y la gestión de apartamentos."
+      "lead": "Vivo en España. Creo webs modernas y personalizadas para pequeños negocios y profesionales locales."
     },
     "en": {
       "title": "About Laszlo and Your Website Design | Laszlo-MesterWeb",
       "description": "Meet Laszlo and discover a personal approach to building websites for small businesses, with tailored design, clear communication and practical features.",
       "heading": "I’m László Slezák, the developer behind Laszlo-MesterWeb.",
       "eyebrow": "ABOUT ME",
-      "lead": "I live in Spain. I build modern websites for small businesses and develop my own Windows software for family finances and apartment management."
+      "lead": "I live in Spain. I build modern, tailored websites for small businesses and local service providers."
     },
     "hu": {
       "title": "Rólam és az egyedi weboldalkészítésről | Laszlo-MesterWeb",
       "description": "Ismerd meg Lászlót és a weboldalkészítés menetét: személyes egyeztetés, egyedi megjelenés és a kisvállalkozásod igényeihez igazított, mobilbarát megoldások.",
       "heading": "Slezák László vagyok, a Laszlo-MesterWeb fejlesztője.",
       "eyebrow": "RÓLAM",
-      "lead": "Spanyolországban élek. Modern weboldalakat készítek kisvállalkozásoknak, és saját Windows-programokat fejlesztek a családi pénzügyek és az apartmanok kezeléséhez."
+      "lead": "Spanyolországban élek. Modern, személyre szabott weboldalakat készítek kisvállalkozásoknak és helyi szolgáltatóknak."
     }
   },
   "faq.html": {

@@ -13,7 +13,6 @@ topbar_link:'Egyeztessünk a projektjéről →',
 nav_services:"Services",
 nav_examples:"Examples",
 nav_trial:"Website trial",
-nav_crm:"Digital systems",
 nav_why:"Why Laszlo-MesterWeb?",
 nav_process:"How it works",
 nav_about:"About",
@@ -43,7 +42,6 @@ topbar_link:'Discuss your project →',
 nav_services:"Services",
 nav_examples:"Examples",
 nav_trial:"Website trial",
-nav_crm:"Digital systems",
 nav_why:"Why Laszlo-MesterWeb?",
 nav_process:"How it works",
 nav_about:"About",
@@ -73,7 +71,6 @@ topbar_link:'Hablemos de tu proyecto →',
 nav_services:"Services",
 nav_examples:"Examples",
 nav_trial:"Website trial",
-nav_crm:"Digital systems",
 nav_why:"Why Laszlo-MesterWeb?",
 nav_process:"How it works",
 nav_about:"About",
@@ -93,7 +90,7 @@ trial_examples_link:'Ver ejemplos →'
 }
 };
 
-const navigationTranslations={"hu": {"nav_services": "Szolgáltatások", "nav_examples": "Példák", "nav_trial": "Weboldalpróba", "nav_crm": "Digitális rendszerek", "nav_programs": "Windows-programok", "nav_why": "Miért Laszlo-MesterWeb?", "nav_process": "Hogyan működik?", "nav_about": "Rólam", "nav_faq": "GYIK", "nav_contact": "Kapcsolat", "nav_cta": "Érdeklődöm", "footer_choice": "Landing vagy weboldal?", "footer_sources": "Képforrások", "footer_desc": "Egyedi weboldalak és saját fejlesztésű Windows-programok.", "footer_copy": "© 2026 Laszlo-MesterWeb – Weboldalak és Windows-programok"}, "en": {"nav_services": "Services", "nav_examples": "Examples", "nav_trial": "Website trial", "nav_crm": "Digital systems", "nav_programs": "Windows programs", "nav_why": "Why Laszlo-MesterWeb?", "nav_process": "How it works", "nav_about": "About", "nav_faq": "FAQ", "nav_contact": "Contact", "nav_cta": "Enquire now", "footer_choice": "Landing or website?", "footer_sources": "Image sources", "footer_desc": "Custom websites and independently developed Windows software.", "footer_copy": "© 2026 Laszlo-MesterWeb – Websites and Windows software"}, "es": {"nav_services": "Servicios", "nav_examples": "Ejemplos", "nav_trial": "Prueba web", "nav_crm": "Sistemas digitales", "nav_programs": "Programas para Windows", "nav_why": "¿Por qué Laszlo-MesterWeb?", "nav_process": "Cómo funciona", "nav_about": "Sobre mí", "nav_faq": "Preguntas frecuentes", "nav_contact": "Contacto", "nav_cta": "Solicitar información", "footer_choice": "¿Landing o sitio web?", "footer_sources": "Fuentes de imágenes", "footer_desc": "Webs personalizadas y programas propios para Windows.", "footer_copy": "© 2026 Laszlo-MesterWeb – Webs y programas para Windows"}};
+const navigationTranslations={"hu": {"nav_services": "Szolgáltatások", "nav_examples": "Példák", "nav_trial": "Weboldalpróba", "nav_why": "Miért Laszlo-MesterWeb?", "nav_process": "Hogyan működik?", "nav_about": "Rólam", "nav_faq": "GYIK", "nav_contact": "Kapcsolat", "nav_cta": "Érdeklődöm", "footer_choice": "Landing vagy weboldal?", "footer_sources": "Képforrások", "footer_desc": "Egyedi weboldalak kisvállalkozásoknak.", "footer_copy": "© 2026 Laszlo-MesterWeb – Weboldalak vállalkozásoknak"}, "en": {"nav_services": "Services", "nav_examples": "Examples", "nav_trial": "Website trial", "nav_why": "Why Laszlo-MesterWeb?", "nav_process": "How it works", "nav_about": "About", "nav_faq": "FAQ", "nav_contact": "Contact", "nav_cta": "Enquire now", "footer_choice": "Landing or website?", "footer_sources": "Image sources", "footer_desc": "Custom websites for small businesses.", "footer_copy": "© 2026 Laszlo-MesterWeb – Websites for businesses"}, "es": {"nav_services": "Servicios", "nav_examples": "Ejemplos", "nav_trial": "Prueba web", "nav_why": "¿Por qué Laszlo-MesterWeb?", "nav_process": "Cómo funciona", "nav_about": "Sobre mí", "nav_faq": "Preguntas frecuentes", "nav_contact": "Contacto", "nav_cta": "Solicitar información", "footer_choice": "¿Landing o sitio web?", "footer_sources": "Fuentes de imágenes", "footer_desc": "Webs personalizadas para pequeños negocios.", "footer_copy": "© 2026 Laszlo-MesterWeb – Webs para negocios"}};
 Object.keys(navigationTranslations).forEach(code=>Object.assign(T[code], navigationTranslations[code]));
 
 function setMeta(id,content){
