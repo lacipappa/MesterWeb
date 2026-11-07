@@ -1,1 +1,25 @@
-
+{
+  "nav1": "Szolgáltatások",
+  "nav2": "Munkáink",
+  "nav3": "Rólunk",
+  "nav4": "Kapcsolat",
+  "eyebrow": "SZAKÉRTELEM • MEGBÍZHATÓSÁG • MINŐSÉG",
+  "intro": "Bemutatkozás",
+  "introtext": "A bemutató weboldal egy lehetséges arculatot és felépítést szemléltet. A végleges tartalom, képek, szolgáltatások és elérhetőségek az Ön vállalkozásához igazíthatók.",
+  "services": "Szolgáltatások",
+  "gallery": "Munkáink",
+  "contact": "Kérjen ajánlatot",
+  "contacttext": "Írja meg, miben segíthetünk. Vegye fel velünk a kapcsolatot, és egyeztessük az elképzeléseket.",
+  "send": "Kapcsolatfelvétel",
+  "sample": "Bemutató weboldal – a tartalom és a vállalkozás neve szabadon testre szabható.",
+  "meta_title": "NOVA Events | Laszlo-MesterWeb",
+  "brand": "NOVA Events",
+  "tagline": "DJ • ESKÜVŐ • RENDEZVÉNY",
+  "headline": "Egy este, amelyre sokáig emlékeznek.",
+  "hero_text": "Professzionális DJ- és rendezvényszolgáltatás esküvőkre, privát és céges eseményekre.",
+  "s1": "DJ szolgáltatás",
+  "s2": "Hang és fénytechnika",
+  "s3": "Esküvői DJ",
+  "s4": "Céges rendezvény",
+  "cta": "Kérjen ajánlatot"
+}
