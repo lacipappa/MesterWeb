@@ -84,5 +84,9 @@
   "footer_sources": "Imágenes",
   "footer_source_link": "Ver fuentes de imágenes →",
   "footer_note": "Los servicios y datos de contacto son de demostración.",
-  "mobile_quote": "PEDIR PRESUPUESTO"
+  "mobile_quote": "PEDIR PRESUPUESTO",
+  "diag_status1": "OK",
+  "diag_status2": "REVISAR",
+  "diag_status3": "OK",
+  "diag_status4": "LISTO"
 }

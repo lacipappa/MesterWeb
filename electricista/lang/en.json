@@ -84,5 +84,9 @@
   "footer_sources": "Image credits",
   "footer_source_link": "View image sources →",
   "footer_note": "Services and contact details are demo data.",
-  "mobile_quote": "REQUEST A QUOTE"
+  "mobile_quote": "REQUEST A QUOTE",
+  "diag_status1": "OK",
+  "diag_status2": "CHECK",
+  "diag_status3": "OK",
+  "diag_status4": "READY"
 }

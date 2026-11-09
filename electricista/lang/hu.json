@@ -84,5 +84,9 @@
   "footer_sources": "Képforrások",
   "footer_source_link": "Képforrások megtekintése →",
   "footer_note": "A szolgáltatások és elérhetőségek bemutató adatok.",
-  "mobile_quote": "AJÁNLATKÉRÉS"
+  "mobile_quote": "AJÁNLATKÉRÉS",
+  "diag_status1": "OK",
+  "diag_status2": "ELLENŐRIZD",
+  "diag_status3": "OK",
+  "diag_status4": "KÉSZ"
 }
