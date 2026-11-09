@@ -7,7 +7,7 @@ Fájlok:
 - lang/es.json – spanyol alapnyelv
 - lang/hu.json – magyar fordítás
 - lang/en.json – angol fordítás
-- kepforrasok.html – az összes használt Unsplash-kép teljes forráslinkje
+- image-sources.html – az összes használt Unsplash-kép teljes forráslinkje
 
 Feltöltés előtt cserélendő:
 - Az index.html fájlban az info@example.com e-mail-cím.
