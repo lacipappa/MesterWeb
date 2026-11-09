@@ -5,7 +5,7 @@ Komplett statikus demó:
 - index.html
 - style.css
 - script.js
-- kepforrasok.html
+- image-sources.html
 - lang/hu.json
 - lang/en.json
 - lang/es.json
@@ -17,7 +17,7 @@ Laszlo-MesterWeb CTA:
 https://mesterweb-nco7.onrender.com
 
 Nyilvános képforrások:
-kepforrasok.html
+image-sources.html
 
 Render Static Site:
 Root Directory: üres
