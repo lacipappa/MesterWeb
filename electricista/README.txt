@@ -10,4 +10,4 @@ Laszlo-MesterWeb:
 https://mesterweb-nco7.onrender.com
 
 Nyilvános képforrások:
-kepforrasok.html
+image-sources.html
