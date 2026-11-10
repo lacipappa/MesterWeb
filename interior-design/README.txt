@@ -1,4 +1,1 @@
-FORMA Interior bemutató weboldal
-Nyelvek: magyar, angol, spanyol.
-Képek: Unsplash CDN.
-Képforrások: image-sources.html
+CASAE Interior Studio demo website. Languages: Hungarian, English, Spanish. Image sources are listed in image-sources.html. Images open in a new browser tab. Navigation links open their section in a new tab.
