@@ -1,4 +1,1 @@
-WOOD & FORM bemutató weboldal
-Nyelvek: magyar, angol, spanyol.
-Képek: Unsplash CDN.
-Képforrások: image-sources.html
+RENEW Furniture Atelier demo website. Languages: Hungarian, English and Spanish. Image sources are listed in image-sources.html. Images open in a new browser tab.
