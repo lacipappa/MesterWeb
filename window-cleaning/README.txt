@@ -1,4 +1,1 @@
-CLEARView bemutató weboldal
-Nyelvek: magyar, angol, spanyol.
-Képek: Unsplash CDN.
-Képforrások: image-sources.html
+CLEARVIEW Window Care demo website. Languages: Hungarian, English and Spanish. The image-sources.html page lists the original Unsplash photo pages. Images open in a new browser tab.
