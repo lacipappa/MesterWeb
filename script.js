@@ -37,6 +37,7 @@ async function loadLanguage(lang) {
 
     localStorage.setItem('mesterweb_lang', lang);
     currentLang = lang;
+    applyTemplateSelection();
   } catch (error) {
     console.warn('Language loading failed:', error);
   }
@@ -80,11 +81,57 @@ function sendFormWhatsApp(form) {
   return false;
 }
 
+
+const templateDetails = {
+  'climatizacion': { business:'climate', names:{hu:'Klímaszerelés',en:'Air conditioning',es:'Climatización'} },
+  'masaje': { business:'massage', names:{hu:'Masszázs',en:'Massage',es:'Masaje'} },
+  'piscinas': { business:'pool', names:{hu:'Medencék',en:'Swimming pools',es:'Piscinas'} },
+  'cerrajeros': { business:'locksmith', names:{hu:'Lakatos / zárszerelés',en:'Locksmith',es:'Cerrajería'} },
+  'yoga': { business:'yoga', names:{hu:'Jóga',en:'Yoga',es:'Yoga'} },
+  'tejados': { business:'roofing', names:{hu:'Tetőfedés',en:'Roofing',es:'Tejados'} },
+  'jardineria': { business:'gardening', names:{hu:'Kertészet',en:'Gardening',es:'Jardinería'} },
+  'cafeteria': { business:'cafe', names:{hu:'Kávézó',en:'Café',es:'Cafetería'} },
+  'peluqueria': { business:'hair', names:{hu:'Fodrászat / borbély',en:'Hair salon / barber',es:'Peluquería / barbería'} },
+  'security-systems': { business:'security', names:{hu:'Biztonságtechnika – SECURIX',en:'Security systems – SECURIX',es:'Seguridad – SECURIX'} },
+  'solar-energy': { business:'solar', names:{hu:'Napelemes rendszerek – SOLARIS Energy',en:'Solar energy – SOLARIS Energy',es:'Energía solar – SOLARIS Energy'} },
+  'interior-design': { business:'interior', names:{hu:'Lakberendezés – FORMA Interior',en:'Interior design – FORMA Interior',es:'Interiorismo – FORMA Interior'} },
+  'window-cleaning': { business:'windows', names:{hu:'Ablaktisztítás – CLEARView',en:'Window cleaning – CLEARView',es:'Limpieza de cristales – CLEARView'} },
+  'furniture-restoration': { business:'furniture', names:{hu:'Bútorfelújítás – WOOD & FORM',en:'Furniture restoration – WOOD & FORM',es:'Restauración de muebles – WOOD & FORM'} },
+  'event-dj': { business:'dj', names:{hu:'Rendezvény-DJ – NOVA Events',en:'Event DJ – NOVA Events',es:'DJ para eventos – NOVA Events'} }
+};
+let quoteTemplateApplied = false;
+function applyTemplateSelection() {
+  const template = new URLSearchParams(window.location.search).get('template');
+  const details = templateDetails[template];
+  if (!details) return;
+  const business = document.getElementById('business');
+  if (business) business.value = details.business;
+  const message = document.getElementById('message');
+  if (message) {
+    const prefixes = {hu:'A kiválasztott mintasablon: ',en:'Selected website example: ',es:'Diseño de referencia seleccionado: '};
+    const line = (prefixes[currentLang] || prefixes.es) + details.names[currentLang] + '\n\n';
+    const oldPrefix = /^(A kiválasztott mintasablon: |Selected website example: |Diseño de referencia seleccionado: )[^\n]*\n\n?/;
+    if (!quoteTemplateApplied) {
+      message.value = line + message.value;
+      quoteTemplateApplied = true;
+    } else if (oldPrefix.test(message.value)) {
+      message.value = message.value.replace(oldPrefix, line);
+    }
+  }
+  if (!window.__quoteTemplateScrolled) {
+    window.__quoteTemplateScrolled = true;
+    const contact = document.getElementById('contact');
+    if (contact) setTimeout(() => contact.scrollIntoView({behavior:'smooth', block:'start'}), 350);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-lang]').forEach((button) => {
     button.addEventListener('click', () => loadLanguage(button.dataset.lang));
   });
 
   loadLanguage(currentLang);
+
+
 });
 
