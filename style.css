@@ -291,3 +291,8 @@ h3{line-height:1.2}
 .pricing-guide-side{display:flex;flex-direction:column;gap:13px;padding:28px;background:#fff;border:1px solid #dce6e8;border-radius:18px;box-shadow:0 12px 35px rgba(26,55,65,.06)}
 .pricing-guide-side>strong{font-size:1.35rem;line-height:1.25}.pricing-guide-side p{color:#53616a;line-height:1.65;margin:0 0 5px}.pricing-guide-side span{font-weight:600;color:#176b73}
 @media(max-width:800px){.pricing-guide{padding:58px 0}.pricing-guide-inner{grid-template-columns:1fr;gap:26px}.price-actions{align-items:flex-start;flex-direction:column}}
+
+/* Direct quote action on each website example */
+.example-content .example-quote-link{display:inline-block;margin:12px 0 0 14px;padding:9px 12px;border:1px solid var(--blue);border-radius:9px;text-decoration:none;font-weight:850;color:var(--blue)}
+.example-content .example-quote-link:hover{background:var(--blue);color:#fff}
+@media(max-width:520px){.example-content .example-quote-link{display:block;margin:12px 0 0;padding:10px;text-align:center}}

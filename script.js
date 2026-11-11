@@ -86,5 +86,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   loadLanguage(currentLang);
+
+  // Preselect the website example that brought the visitor to the quote form.
+  const template = new URLSearchParams(window.location.search).get('template');
+  if (template) {
+    const names = {
+      'climatizacion':'Climatización / légkondicionálás', 'masaje':'Masaje / masszázs',
+      'piscinas':'Piscinas / medencék', 'cerrajeros':'Cerrajeros / lakatos',
+      'yoga':'Yoga', 'tejados':'Tejados / tetőfedés', 'jardineria':'Jardinería / kertészet',
+      'cafeteria':'Cafetería / kávézó', 'peluqueria':'Peluquería / fodrászat',
+      'security-systems':'SECURIX – seguridad', 'solar-energy':'SOLARIS Energy',
+      'interior-design':'FORMA Interior', 'window-cleaning':'CLEARView',
+      'furniture-restoration':'WOOD & FORM', 'event-dj':'NOVA Events'
+    };
+    const labels = {hu:'A kiválasztott mintasablon: ',en:'Selected website example: ',es:'Diseño de referencia seleccionado: '};
+    const message = document.getElementById('message');
+    if (message && names[template]) {
+      message.value = (labels[currentLang] || labels.es) + names[template] + '\n\n';
+    }
+    const contact = document.getElementById('contact');
+    if (contact) setTimeout(() => contact.scrollIntoView({behavior:'smooth', block:'start'}), 250);
+  }
 });
 
