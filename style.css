@@ -272,27 +272,3 @@ h3{line-height:1.2}
 .contact-form .btn-whatsapp-form{margin-top:10px;background:#167b50;color:#fff;border:1px solid #167b50;cursor:pointer;}
 .contact-form .btn-whatsapp-form:hover{background:#11623f;border-color:#11623f;}
 .contact-form .form-privacy{display:block;margin-top:10px;line-height:1.55;}
-
-
-/* Indicative pricing guide */
-.pricing-guide{padding:84px 0;background:#f3f7f8}
-.pricing-guide-inner{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:42px;align-items:center}
-.pricing-guide-copy h2{max-width:760px;margin:0 0 16px;font-size:clamp(2rem,4vw,3rem);line-height:1.12}
-.pricing-guide-copy>p:not(.eyebrow){max-width:760px;color:#53616a;line-height:1.75}
-.price-start{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:25px 0 8px}
-.price-start span{font-weight:600;color:#24333b}
-.price-start strong{font-size:clamp(1.8rem,3vw,2.5rem);color:#087e83}
-.pricing-guide .price-note{font-size:.92rem;color:#64727a}
-.price-extra{display:flex;flex-wrap:wrap;gap:14px;margin:22px 0 10px}
-.price-extra>div{display:flex;flex-direction:column;gap:5px;min-width:210px;padding:15px 18px;background:#fff;border:1px solid #dce6e8;border-radius:12px}
-.price-extra strong{font-size:.95rem}.price-extra span{color:#087e83;font-weight:700}
-.price-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:22px}
-.price-faq-link{font-weight:650;color:#176b73;text-decoration:underline;text-underline-offset:3px}
-.pricing-guide-side{display:flex;flex-direction:column;gap:13px;padding:28px;background:#fff;border:1px solid #dce6e8;border-radius:18px;box-shadow:0 12px 35px rgba(26,55,65,.06)}
-.pricing-guide-side>strong{font-size:1.35rem;line-height:1.25}.pricing-guide-side p{color:#53616a;line-height:1.65;margin:0 0 5px}.pricing-guide-side span{font-weight:600;color:#176b73}
-@media(max-width:800px){.pricing-guide{padding:58px 0}.pricing-guide-inner{grid-template-columns:1fr;gap:26px}.price-actions{align-items:flex-start;flex-direction:column}}
-
-/* Direct quote action on each website example */
-.example-content .example-quote-link{display:inline-block;margin:12px 0 0 14px;padding:9px 12px;border:1px solid var(--blue);border-radius:9px;text-decoration:none;font-weight:850;color:var(--blue)}
-.example-content .example-quote-link:hover{background:var(--blue);color:#fff}
-@media(max-width:520px){.example-content .example-quote-link{display:block;margin:12px 0 0;padding:10px;text-align:center}}
