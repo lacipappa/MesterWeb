@@ -42,40 +42,41 @@ async function loadLanguage(lang) {
   }
 }
 
+function formRequest(form) {
+  if (!form.reportValidity()) return null;
+  const get = (id) => form.elements.namedItem(id);
+  const choice = (id) => { const field = get(id); return field.options[field.selectedIndex]?.text || ''; };
+  const t = {
+    hu: { name:'Név', business:'Vállalkozás', email:'E-mail', project:'Kért szolgáltatás', website:'Jelenlegi weboldal', languages:'Nyelvek', message:'Üzenet' },
+    en: { name:'Name', business:'Business', email:'Email', project:'Service requested', website:'Existing website', languages:'Languages', message:'Message' },
+    es: { name:'Nombre', business:'Negocio', email:'Correo electrónico', project:'Servicio solicitado', website:'Web actual', languages:'Idiomas', message:'Mensaje' }
+  };
+  const l=t[currentLang] || t.es;
+  const name=get('name').value.trim();
+  const business=choice('business');
+  const subject={hu:'Weboldal ajánlatkérés',en:'Website quote request',es:'Solicitud de presupuesto web'}[currentLang] || 'Solicitud de presupuesto web';
+  const parts=[
+    `${l.name}: ${name}`,
+    `${l.email}: ${get('email').value.trim()}`,
+    `${l.business}: ${business}`,
+    `${l.project}: ${choice('project')}`,
+    `${l.website}: ${get('website').value.trim() || '—'}`,
+    `${l.languages}: ${choice('languages')}`,
+    '', `${l.message}:`,get('message').value.trim()
+  ];
+  return {subject:`Laszlo-MesterWeb – ${subject} – ${business}`, body:parts.join('\n')};
+}
 function demoForm(event) {
   event.preventDefault();
-
-  const form = event.target;
-  const name = form.name.value.trim();
-  const business = form.business.options[form.business.selectedIndex]?.text || '';
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
-
-  const subjects = {
-    hu: `Laszlo-MesterWeb érdeklődés – ${business}`,
-    en: `Laszlo-MesterWeb enquiry – ${business}`,
-    es: `Consulta Laszlo-MesterWeb – ${business}`
-  };
-
-  const labels = {
-    hu: {name:'Név', business:'Vállalkozás', email:'E-mail', message:'Üzenet'},
-    en: {name:'Name', business:'Business', email:'Email', message:'Message'},
-    es: {name:'Nombre', business:'Negocio', email:'E-mail', message:'Mensaje'}
-  };
-
-  const l = labels[currentLang] || labels.hu;
-  const body = [
-    `${l.name}: ${name}`,
-    `${l.business}: ${business}`,
-    `${l.email}: ${email}`,
-    '',
-    `${l.message}:`,
-    message
-  ].join('\n');
-
-  window.location.href =
-    `mailto:mesterweb@lnkr.es?subject=${encodeURIComponent(subjects[currentLang] || subjects.hu)}&body=${encodeURIComponent(body)}`;
-
+  const request=formRequest(event.target);
+  if (!request) return false;
+  window.location.href=`mailto:mesterweb@lnkr.es?subject=${encodeURIComponent(request.subject)}&body=${encodeURIComponent(request.body)}`;
+  return false;
+}
+function sendFormWhatsApp(form) {
+  const request=formRequest(form);
+  if (!request) return false;
+  window.open(`https://wa.me/34634208657?text=${encodeURIComponent(request.subject+'\n\n'+request.body)}`, '_blank', 'noopener,noreferrer');
   return false;
 }
 
