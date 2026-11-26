@@ -1,9 +1,17 @@
-AQUAFIX / FONTANERIA – three-language plumbing landing-page demo
+AQUAFIX – Short HERO template
 
-Files: index.html, style.css, script.js, lang/es.json, lang/en.json, lang/hu.json, image-sources.html
+Path: /fontaneria/
+Languages: Spanish (default), English, Hungarian.
 
-Language switcher persists selection in localStorage. Hero before/after image comparison supports dragging and keyboard range input.
+This is a compact one-page HERO layout:
+- Hero headline and call-to-action
+- Interactive before/after image comparison slider
+- Four compact service items
+- Contact / call-to-action strip
+- Minimal footer and Unsplash image credits
 
-Replace the demo brand, phone, email, service area and sample service details before publishing. The contact form is demo-only and does not send messages.
+Before using for a real business, replace the demo phone number and email address, confirm the services and service area, and connect the contact actions to the real business.
 
-Unsplash photos are free under the Unsplash License; see image-sources.html. The before/after photos are illustrative and are not represented as the same real project.
+The before/after photos are illustrative, are not the same property or job, and are credited on image-sources.html. Both are from Unsplash and are free to use under the Unsplash License.
+
+The comparison control is a native range input and supports mouse, keyboard and touch interaction.

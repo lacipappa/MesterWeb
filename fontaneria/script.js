@@ -1,5 +1,53 @@
-const translations={};let current=localStorage.getItem('aquafix_lang')||'es';
-async function setLang(lang){if(!translations[lang]){const r=await fetch(`lang/${lang}.json`,{cache:'no-store'});translations[lang]=await r.json()}const t=translations[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k]!==undefined)el.textContent=t[k]});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.dataset.i18nPlaceholder;if(t[k]!==undefined)el.placeholder=t[k]});document.querySelectorAll('[data-i18n-aria]').forEach(el=>{const k=el.dataset.i18nAria;if(t[k]!==undefined)el.setAttribute('aria-label',t[k])});document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('aquafix_lang',lang);current=lang}
-document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-const range=document.getElementById('compareRange'),before=document.getElementById('compareBefore'),line=document.getElementById('compareLine');function updateCompare(){const v=range.value;before.style.clipPath=`inset(0 ${100-v}% 0 0)`;line.style.left=`${v}%`;range.style.setProperty('--value',`${v}%`)}range.addEventListener('input',updateCompare);updateCompare();
-document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();alert((translations[current]||{}).form_success||'Demo form')});setLang(current);
+const translations = {};
+let current = localStorage.getItem('aquafix_lang') || 'es';
+
+async function setLang(lang) {
+  if (!['es', 'en', 'hu'].includes(lang)) lang = 'es';
+  if (!translations[lang]) {
+    try {
+      const response = await fetch(`lang/${lang}.json`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Language file unavailable: ${lang}`);
+      translations[lang] = await response.json();
+    } catch (error) {
+      console.error(error);
+      return;
+    }
+  }
+  const words = translations[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.dataset.i18n;
+    if (words[key] !== undefined) element.textContent = words[key];
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+    const key = element.dataset.i18nAria;
+    if (words[key] !== undefined) element.setAttribute('aria-label', words[key]);
+  });
+  document.querySelectorAll('[data-lang]').forEach(button => {
+    button.classList.toggle('active', button.dataset.lang === lang);
+    button.setAttribute('aria-pressed', button.dataset.lang === lang ? 'true' : 'false');
+  });
+  current = lang;
+  localStorage.setItem('aquafix_lang', lang);
+}
+
+document.querySelectorAll('[data-lang]').forEach(button => {
+  button.addEventListener('click', () => setLang(button.dataset.lang));
+});
+
+const range = document.getElementById('compareRange');
+const before = document.getElementById('compareBefore');
+const line = document.getElementById('compareLine');
+function updateCompare() {
+  if (!range || !before || !line) return;
+  const value = Math.max(0, Math.min(100, Number(range.value)));
+  before.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+  line.style.left = `${value}%`;
+  range.setAttribute('aria-valuetext', `${value}%`);
+}
+if (range) {
+  range.addEventListener('input', updateCompare);
+  range.addEventListener('change', updateCompare);
+  updateCompare();
+}
+setLang(current);
