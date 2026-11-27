@@ -1,0 +1,5 @@
+const allowed=["es","hu","en"];let current="es";
+async function setLanguage(lang){if(!allowed.includes(lang))lang="es";try{const response=await fetch("lang/"+lang+".json");if(!response.ok)throw new Error("Language file unavailable");const dict=await response.json();document.documentElement.lang=lang;document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(Object.prototype.hasOwnProperty.call(dict,key))el.textContent=dict[key]});document.querySelectorAll(".lang").forEach(btn=>btn.classList.toggle("active",btn.dataset.lang===lang));current=lang;try{localStorage.setItem("masajeHeroLang",lang)}catch(e){}}catch(e){console.error("Could not load language:",lang,e)}}
+document.querySelectorAll(".lang").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
+try{const saved=localStorage.getItem("masajeHeroLang");if(saved&&allowed.includes(saved))current=saved}catch(e){}
+setLanguage(current);document.getElementById("year").textContent=new Date().getFullYear();
