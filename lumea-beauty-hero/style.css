@@ -164,3 +164,8 @@ input,textarea,select{min-width:0}
  .beauty-footer-inner{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:380px){.beauty-service-card{grid-template-columns:1fr}.beauty-service-card img{height:190px}.beauty-service-card>div{padding:16px}}
+
+/* Demo WhatsApp contact action */
+.whatsapp-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#062b18!important;border:0;border-radius:999px;padding:11px 18px;font-size:.86rem;font-weight:800;text-decoration:none!important;transition:filter .2s,transform .2s}.whatsapp-link:hover{filter:brightness(1.06);transform:translateY(-1px)}.demo-contact-note{font-size:.78rem;line-height:1.5;color:#b9c9c3;margin:12px 0 0;max-width:560px}
+
+.beauty-contact-card .whatsapp-link{font:700 .9rem Arial,sans-serif;width:max-content;max-width:100%}.beauty-contact-card .demo-contact-note{color:var(--muted)}
