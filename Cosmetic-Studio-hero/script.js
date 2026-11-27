@@ -1,0 +1,4 @@
+const translations={};let current=localStorage.getItem('eurelia_cosmetic_hero_lang')||'en';
+async function setLang(lang){if(!['en','es','hu'].includes(lang))lang='en';if(!translations[lang]){try{const r=await fetch(`lang/${lang}.json`,{cache:'no-store'});if(!r.ok)throw new Error('Language file unavailable');translations[lang]=await r.json()}catch(e){console.error(e);return}}
+const words=translations[lang];document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(words[k]!==undefined)el.textContent=words[k]});document.querySelectorAll('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});localStorage.setItem('eurelia_cosmetic_hero_lang',lang)}
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(current);
