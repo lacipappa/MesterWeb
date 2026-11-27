@@ -1,8 +1,8 @@
-LUMÉA HAIR & BEAUTY – KOMPLETT BEMUTATÓ WEBOLDAL
-=================================================
+LUMÉA HAIR & BEAUTY – EGYOLDALAS HERO
+====================================
 
-Mappa neve: beauty-hero
-Alapértelmezett nyelv: spanyol
+Mappanév: beauty-hero
+Szerkezet: a fontaneria-Hero mintájához igazított, rövid, egyoldalas HERO.
 
 Fájlok:
 - index.html
@@ -13,24 +13,19 @@ Fájlok:
 - lang/en.json
 - lang/hu.json
 
-Az oldal a fontaneria-Hero felépítését követi, de a LUMÉA Hair & Beauty tartalmával:
-- fejléc és navigáció
-- teljes nyitó szekció
-- bemutatkozás
-- fodrászati szolgáltatások
-- kozmetika és arcápolás
-- szempilla, szemöldök és smink
-- szalon bemutatása
-- képgaléria
-- időpontkérő blokk és kapcsolat
-- gyakori kérdések
-- lábléc és mobilon rögzített időpontkérő gomb
+Oldalszerkezet:
+- felső navigáció és ES / EN / HU nyelvváltó
+- fő HERO szekció rövid bemutatkozással és képpel
+- három szolgáltatás: Hair Studio, kozmetika és arcápolás, szempilla/szemöldök/smink
+- rövid LUMÉA képgaléria
+- kapcsolatfelvételi sáv és lábléc
+- mobilon rögzített időpontkérő gomb
 
-Nyelvváltás: a HU / EN / ES kapcsoló a külön JSON-fájlokat tölti be. A választott nyelv a böngészőben megmarad.
+A nyelvváltó a külön lang/*.json fájlokat tölti be; a választott nyelv a böngészőben megmarad.
 
-FONTOS:
-- A telefonszám (+34 600 123 456), az e-mail (hola@lumea-demo.es) és a WhatsApp hivatkozás demonstrációs adat.
-- Az időpontkérő űrlap csak bemutató célú: helyben megjelenít egy visszajelzést, de nem küld adatot, nem ír e-mailt és nem hoz létre valódi foglalást.
-- Az eredeti LUMÉA mintában nem szerepelt árlista, ezért az oldal nem tartalmaz kitalált árakat.
-- A fotók Unsplash forrásból származnak; a források és fotósok listája az image-sources.html fájlban található.
-- A head a közös MesterWeb site-common.css és site-common.js fájlokra hivatkozik, a többi oldal mintájához hasonlóan.
+Demóadatok:
+A +34 600 123 456 telefonszám, a hola@lumea-demo.es e-mail-cím és a kapcsolódó WhatsApp-link bemutatóadatok, publikálás előtt cserélendők.
+A forrásminta nem tartalmazott árlistát, ezért az oldalon nincsenek kitalált árak.
+A képek forrásai és a fotósok linkjei az image-sources.html fájlban találhatók.
+
+A head a projekt többi mintájához hasonlóan a közös ../site-common.css és ../site-common.js fájlokra hivatkozik.
