@@ -24,9 +24,10 @@
   "booking_title": "Tu próximo momento especial empieza aquí.",
   "booking_text": "Ponte en contacto con nosotros y encontraremos el servicio y el horario adecuados para ti.",
   "contact_label": "Citas e información",
-  "demo_note": "Datos de contacto de demostración – sustituir antes de publicar.",
+  "demo_note": "El teléfono y el correo electrónico son datos ficticios de demostración; muestran cómo funcionan los enlaces.",
   "footer_desc": "Hair & Beauty Studio · Web demo",
   "footer_source_link": "Fuentes de imágenes y fotógrafos →",
-  "footer_note": "Las imágenes y los datos de contacto son de demostración.",
-  "mobile_book": "PEDIR CITA"
+  "footer_note": "El teléfono y el correo electrónico son datos ficticios de demostración; muestran cómo funcionan los enlaces.",
+  "mobile_book": "PEDIR CITA",
+  "whatsapp_label": "Enviar mensaje por WhatsApp"
 }

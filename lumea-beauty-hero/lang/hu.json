@@ -24,9 +24,10 @@
   "booking_title": "A következő szép pillanatod itt kezdődik.",
   "booking_text": "Vedd fel velünk a kapcsolatot, és egyeztessük a számodra megfelelő szolgáltatást és időpontot.",
   "contact_label": "Időpont és információ",
-  "demo_note": "Bemutató elérhetőségek – éles használat előtt cserélendők.",
+  "demo_note": "A telefonszám és az e-mail-cím fiktív bemutatóadat; a hivatkozások működését szemléltetik.",
   "footer_desc": "Hair & Beauty Studio · Bemutató weboldal",
   "footer_source_link": "Képforrások és fotósok →",
-  "footer_note": "A képek és elérhetőségek bemutató adatok.",
-  "mobile_book": "IDŐPONTKÉRÉS"
+  "footer_note": "A telefonszám és az e-mail-cím fiktív bemutatóadat; a hivatkozások működését szemléltetik.",
+  "mobile_book": "IDŐPONTKÉRÉS",
+  "whatsapp_label": "WhatsApp üzenet"
 }

@@ -24,9 +24,10 @@
   "booking_title": "Your next beautiful moment starts here.",
   "booking_text": "Get in touch and let’s find the right service and appointment time for you.",
   "contact_label": "Appointments & information",
-  "demo_note": "Demo contact details – replace before using this site live.",
+  "demo_note": "The phone number and email address are fictional demo details, included to demonstrate how the links work.",
   "footer_desc": "Hair & Beauty Studio · Demo website",
   "footer_source_link": "Image sources and photographers →",
-  "footer_note": "Images and contact details are demo content.",
-  "mobile_book": "BOOK NOW"
+  "footer_note": "The phone number and email address are fictional demo details, included to demonstrate how the links work.",
+  "mobile_book": "BOOK NOW",
+  "whatsapp_label": "Message on WhatsApp"
 }
