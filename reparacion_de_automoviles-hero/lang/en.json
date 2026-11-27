@@ -30,5 +30,7 @@
   "contact_call": "Call · +34 600 999 111",
   "footer_desc": "Auto service · Demo website",
   "footer_images": "Image sources ↗",
-  "mobile_cta": "REQUEST A QUOTE"
+  "mobile_cta": "REQUEST A QUOTE",
+  "whatsapp_label": "Message on WhatsApp",
+  "demo_contact_note": "The phone number and email address are fictional demo details, included to demonstrate how the links work."
 }

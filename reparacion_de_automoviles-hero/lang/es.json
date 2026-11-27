@@ -30,5 +30,7 @@
   "contact_call": "Llamar · +34 600 999 111",
   "footer_desc": "Taller mecánico · Web de demostración",
   "footer_images": "Fuentes de imágenes ↗",
-  "mobile_cta": "SOLICITAR PRESUPUESTO"
+  "mobile_cta": "SOLICITAR PRESUPUESTO",
+  "whatsapp_label": "Enviar mensaje por WhatsApp",
+  "demo_contact_note": "El teléfono y el correo electrónico son datos ficticios de demostración; muestran cómo funcionan los enlaces."
 }

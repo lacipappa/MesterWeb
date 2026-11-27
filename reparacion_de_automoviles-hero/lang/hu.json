@@ -30,5 +30,7 @@
   "contact_call": "Hívás · +34 600 999 111",
   "footer_desc": "Autószerviz · Bemutató weboldal",
   "footer_images": "Képek forrásai ↗",
-  "mobile_cta": "AJÁNLATKÉRÉS"
+  "mobile_cta": "AJÁNLATKÉRÉS",
+  "whatsapp_label": "WhatsApp üzenet",
+  "demo_contact_note": "A telefonszám és az e-mail-cím fiktív bemutatóadat; a hivatkozások működését szemléltetik."
 }
