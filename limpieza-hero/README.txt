@@ -1,0 +1,1 @@
+TisztaPont Cleaning HERO demo\nFolder: limpieza-hero\nURL: /limpieza-hero/\nLanguages: Spanish, English, Hungarian\nDemo phone/email and WhatsApp details are fictional.\n
