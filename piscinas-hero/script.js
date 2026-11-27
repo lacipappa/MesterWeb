@@ -1,0 +1,4 @@
+const supported=["es","hu","en"];
+async function setLanguage(lang){if(!supported.includes(lang))lang="es";try{const res=await fetch("lang/"+lang+".json");if(!res.ok)throw new Error("Language file not found");const dict=await res.json();document.documentElement.lang=lang;document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(Object.prototype.hasOwnProperty.call(dict,key))el.textContent=dict[key]});document.querySelectorAll(".lang").forEach(btn=>btn.classList.toggle("active",btn.dataset.lang===lang));try{localStorage.setItem("piscinasHeroLang",lang)}catch(e){}}catch(err){console.error("Language load failed:",lang,err)}}
+document.querySelectorAll(".lang").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
+let initial="es";try{initial=localStorage.getItem("piscinasHeroLang")||"es"}catch(e){}setLanguage(initial);document.getElementById("year").textContent=new Date().getFullYear();
